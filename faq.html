@@ -1,39 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ – Residare</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
   <script src="translate.js" defer></script>
+  <style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #sidebar.open {
+      left: 0;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .faq-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+    .faq-section h2 {
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <header class="header">
-    <div class="header-container">
-      <img src="logo.png" alt="Residare Logo" class="logo" />
-      <nav class="nav">
-        <a href="index.html" data-i18n="nav.home">Start</a>
-        <a href="listings.html" data-i18n="nav.listings">Angebote</a>
-        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-        <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-        <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-      </nav>
-      <select id="language-selector">
-        <option value="de">🇩🇪</option>
-        <option value="pl">🇵🇱</option>
-      </select>
-    </div>
-  </header>
+  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+  <div id="sidebar">
+    <a href="index.html" data-i18n="nav.home">Start</a>
+    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+  </div>
 
-  <main style="max-width:800px;margin:auto;padding:2rem;">
-    <h1 data-i18n="faq.title">Häufige Fragen (FAQ)</h1>
-    <h3 data-i18n="faq.q1">Wie funktioniert Residare?</h3>
-    <p data-i18n="faq.a1">Residare verbindet deutsche und polnische Immobilienmärkte mit einer mehrsprachigen Oberfläche.</p>
-    <h3 data-i18n="faq.q2">Ist die Nutzung kostenlos?</h3>
-    <p data-i18n="faq.a2">Ja, für Interessenten ist die Nutzung vollständig kostenlos.</p>
-    <h3 data-i18n="faq.q3">Wie werden die Angebote übersetzt?</h3>
-    <p data-i18n="faq.a3">Die Inhalte werden automatisiert per KI in beide Sprachen übersetzt.</p>
+  <main class="faq-section">
+    <h2 data-i18n="faq.title">Häufige Fragen</h2>
+
+    <div class="faq-item">
+      <h3 data-i18n="faq.q1">Wie funktioniert Residare?</h3>
+      <p data-i18n="faq.a1">Residare verbindet deutsch-polnische Immobilieninteressenten und erleichtert grenzüberschreitende Angebote.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-i18n="faq.q2">Kann ich als Makler meine Objekte eintragen?</h3>
+      <p data-i18n="faq.a2">Ja, mit einem Login-Zugang können Makler eigene Angebote im Adminbereich einstellen.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 data-i18n="faq.q3">Ist Residare kostenlos?</h3>
+      <p data-i18n="faq.a3">Für Interessenten ist Residare kostenlos. Makler zahlen ggf. für Premium-Features.</p>
+    </div>
   </main>
 
   <footer class="footer">

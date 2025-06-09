@@ -1,72 +1,44 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  const langSelector = document.getElementById('language-selector');
-  const storedLang = localStorage.getItem('lang') || 'de';
-  setLanguage(storedLang);
-  if (langSelector) langSelector.value = storedLang;
+const translations = {};
+let currentLanguage = localStorage.getItem('language') || 'de';
 
-  if (langSelector) {
-    langSelector.addEventListener('change', (e) => {
-      const newLang = e.target.value;
-      setLanguage(newLang);
-      localStorage.setItem('lang', newLang);
+function loadTranslations(lang) {
+  return fetch(`${lang}.json`)
+    .then(response => response.json())
+    .then(data => {
+      translations[lang] = data;
+      return data;
+    });
+}
+
+function applyTranslations() {
+  const lang = currentLanguage;
+  const dict = translations[lang];
+  if (!dict) return;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) el.innerText = dict[key];
+  });
+}
+
+function changeLanguage(lang) {
+  localStorage.setItem('language', lang);
+  currentLanguage = lang;
+  if (!translations[lang]) {
+    loadTranslations(lang).then(applyTranslations);
+  } else {
+    applyTranslations();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadTranslations(currentLanguage).then(applyTranslations);
+  const selector = document.getElementById('language-selector');
+  if (selector) {
+    selector.value = currentLanguage;
+    selector.addEventListener('change', e => {
+      changeLanguage(e.target.value);
     });
   }
 });
-
-let translations = {};
-
-function setLanguage(lang) {
-  fetch(lang + '.json')
-    .then(res => res.json())
-    .then(data => {
-      translations = data;
-      translatePage();
-    });
-}
-
-function translatePage() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[key]) el.innerText = translations[key];
-  });
-
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[key]) el.setAttribute('placeholder', translations[key]);
-  });
-
-  document.querySelectorAll('[data-i18n-title]').forEach(el => {
-    const key = el.getAttribute('data-i18n-title');
-    if (translations[key]) el.setAttribute('title', translations[key]);
-  });
-
-  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
-    const key = el.getAttribute('data-i18n-alt');
-    if (translations[key]) el.setAttribute('alt', translations[key]);
-  });
-
-  translateDropdowns();
-}
-
-function translateDropdowns() {
-  const transaction = document.getElementById('transaction');
-  const property = document.getElementById('property');
-  const searchInput = document.getElementById('searchInput');
-
-  if (transaction) {
-    transaction.options[0].text = translations['form.transaction.buy'] || 'Kaufen';
-    transaction.options[1].text = translations['form.transaction.rent'] || 'Mieten';
-  }
-
-  if (property) {
-    property.options[0].text = translations['form.property.flat'] || 'Wohnung';
-    property.options[1].text = translations['form.property.house'] || 'Haus';
-    property.options[2].text = translations['form.property.lokal'] || 'Lokal użytkowy';
-    property.options[3].text = translations['form.property.building'] || 'Budynek użytkowy';
-  }
-
-  if (searchInput) {
-    searchInput.setAttribute('placeholder', translations['form.search.placeholder'] || 'Stadt / Stadtteil / Straße');
-  }
-}
