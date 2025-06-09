@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,26 +6,52 @@
   <title>Kontakt – Residare</title>
   <link href="style.css" rel="stylesheet">
   <script src="translate.js" defer></script>
+  <style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #sidebar.open {
+      left: 0;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <header class="header">
-    <div class="header-container">
-      <img src="logo.png" alt="Residare Logo" class="logo" />
-      <nav class="nav">
-        <a href="index.html" data-i18n="nav.home">Start</a>
-        <a href="listings.html" data-i18n="nav.listings">Angebote</a>
-        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-        <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-        <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-      </nav>
-      <select id="language-selector">
-        <option value="de">🇩🇪</option>
-        <option value="pl">🇵🇱</option>
-      </select>
-    </div>
-  </header>
+  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+  <div id="sidebar">
+    <a href="index.html" data-i18n="nav.home">Start</a>
+    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+  </div>
 
-  <main class="contact-form" style="max-width:600px;margin:auto;padding:2rem;">
+  <main style="max-width:600px;margin:auto;padding:2rem;">
     <h1 data-i18n="contact.title">Kontaktformular</h1>
     <form>
       <label for="name" data-i18n="contact.name">Ihr Name</label><br>
