@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angebote – Residare</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="translate.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="header">
+    <div class="header-container">
+      <img src="logo.png" alt="Residare Logo" class="logo" />
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav.home">Start</a>
+        <a href="listings.html" data-i18n="nav.listings">Angebote</a>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+        <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+      </nav>
+      <select id="language-selector">
+        <option value="de">🇩🇪</option>
+        <option value="pl">🇵🇱</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="listings">
+    <h1 data-i18n="listings.title">Aktuelle Immobilienangebote</h1>
+    <div class="grid">
+      <div class="card">
+        <img src="hero_gdansk.jpg" alt="Gdańsk Wohnung" />
+        <div class="info">
+          <h2>Gdańsk – Moderne Wohnung</h2>
+          <p>78 m² · 3 Zimmer · 289.000 EUR</p>
+          <a href="#" class="card-link" data-i18n="listings.more">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="hero_gdansk.jpg" alt="Berlin Loft" />
+        <div class="info">
+          <h2>Berlin – Stilvolles Loft</h2>
+          <p>95 m² · 2 Zimmer · 435.000 EUR</p>
+          <a href="#" class="card-link" data-i18n="listings.more">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="hero_gdansk.jpg" alt="Haus in Stettin" />
+        <div class="info">
+          <h2>Stettin – Großes Einfamilienhaus</h2>
+          <p>150 m² · 5 Zimmer · 360.000 EUR</p>
+          <a href="#" class="card-link" data-i18n="listings.more">Mehr erfahren</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <nav>
+      <a href="index.html" data-i18n="nav.home">Start</a>
+      <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+      <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <p>&copy; 2025 Residare</p>
+  </footer>
+</body>
+</html>

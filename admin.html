@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adminpanel – Residare</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="translate.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <main style="max-width:600px;margin:auto;padding:2rem;">
+    <h1 data-i18n="admin.title">Neues Inserat erstellen</h1>
+    <form>
+      <label for="title" data-i18n="admin.title.label">Titel</label><br>
+      <input type="text" id="title" name="title" style="width:100%;margin-bottom:1rem;"><br>
+
+      <label for="location" data-i18n="admin.location">Ort</label><br>
+      <input type="text" id="location" name="location" style="width:100%;margin-bottom:1rem;"><br>
+
+      <label for="size" data-i18n="admin.size">Fläche (m²)</label><br>
+      <input type="number" id="size" name="size" style="width:100%;margin-bottom:1rem;"><br>
+
+      <label for="price" data-i18n="admin.price">Preis (€)</label><br>
+      <input type="number" id="price" name="price" style="width:100%;margin-bottom:1rem;"><br>
+
+      <label for="image" data-i18n="admin.image">Bild hochladen</label><br>
+      <input type="file" id="image" name="image" style="margin-bottom:1rem;"><br>
+
+      <label for="lang" data-i18n="admin.language">Sprache des Inserats</label><br>
+      <select id="lang" name="lang" style="width:100%;margin-bottom:1rem;">
+        <option value="de">Deutsch</option>
+        <option value="pl">Polnisch</option>
+      </select><br>
+
+      <button type="submit" class="cta-button" data-i18n="admin.submit">Inserat speichern</button>
+    </form>
+  </main>
+</body>
+</html>

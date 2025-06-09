@@ -1,0 +1,22 @@
+{
+  "nav.home": "Start",
+  "nav.listings": "Angebote",
+  "nav.faq": "FAQ",
+  "nav.contact": "Kontakt",
+  "nav.impress": "Impressum",
+  "hero.title": "Finden Sie Ihre Immobilie in Deutschland & Polen",
+  "hero.subtitle": "Grenzüberschreitend. Einfach. Residare.",
+  "hero.button.buy": "Kaufen",
+  "hero.button.rent": "Mieten",
+  "hero.button.house": "Haus",
+  "hero.button.flat": "Wohnung",
+  "regions.title": "Top-Regionen",
+  "why.title": "Warum Residare?",
+  "why.one": "Grenzüberschreitender Fokus",
+  "why.two": "Einfache, KI-gestützte Übersetzung",
+  "why.three": "Unabhängig und flexibel",
+  "cta.title": "Jetzt unverbindlich Kontakt aufnehmen",
+  "cta.button": "Kontaktformular öffnen",
+  "listings.title": "Aktuelle Immobilienangebote",
+  "listings.more": "Mehr erfahren"
+}
