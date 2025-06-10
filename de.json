@@ -22,5 +22,17 @@
   "nav.impress": "Impressum",
   "region.gdansk": "Danzig",
   "region.swinemuende": "Swinemünde",
-  "region.misdroy": "Misdroy"
+  "region.misdroy": "Misdroy",
+  "faq.title": "Häufige Fragen",
+  "faq.q1": "Wie funktioniert Residare?",
+  "faq.a1": "Residare verbindet deutsch-polnische Immobilieninteressenten und erleichtert grenzüberschreitende Angebote.",
+  "faq.q2": "Kann ich als Makler meine Objekte eintragen?",
+  "faq.a2": "Ja, mit einem Login-Zugang können Makler eigene Angebote im Adminbereich einstellen.",
+  "faq.q3": "Ist Residare kostenlos?",
+  "faq.a3": "Für Interessenten ist Residare kostenlos. Makler zahlen ggf. für Premium-Features.",
+  "impressum.title": "Impressum",
+  "impressum.owner": "Angaben gemäß §5 TMG:\\nResidare GmbH\\nMusterstraße 1\\n12345 Berlin",
+  "impressum.represented": "Vertreten durch:\\nMax Mustermann",
+  "impressum.contact": "Kontakt:\\nE-Mail: kontakt@residare.de\\nTelefon: +49 123 456789",
+  "impressum.legal": "Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:\\nMax Mustermann, Anschrift wie oben"
 }
