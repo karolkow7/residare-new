@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Residare – Immobilien in Polen</title>
-  <link href="style.css" rel="stylesheet" />
-  <script src="translate.js" defer></script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Residare – Immobilien in Polen</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="translate.js"></script>
+<style>
     #sidebar {
       position: fixed;
       top: 0;
-      left: -250px;
+      left: -290px;
       width: 250px;
       height: 100%;
       background: #ffffff;
@@ -54,88 +55,81 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
-  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-  <div id="sidebar">
-    <a href="index.html" data-i18n="nav.home">Start</a>
-    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
-    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-  </div>
-
-  <header class="header">
-    <div class="header-container">
-      <img src="logo.png" alt="Residare Logo" class="logo" />
-      <select id="language-selector">
-        <option value="de">🇩🇪</option>
-        <option value="pl">🇵🇱</option>
-      </select>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1 data-i18n="hero.title">Finden Sie Ihre Immobilie in Polen</h1>
-      <p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
-      <div class="form-inline">
-        <select id="transaction">
-          <option value="buy">Kaufen</option>
-          <option value="rent">Mieten</option>
-        </select>
-        <select id="property">
-          <option value="flat">Wohnung</option>
-          <option value="house">Haus</option>
-          <option value="lokal">Lokal użytkowy</option>
-          <option value="building">Budynek użytkowy</option>
-        </select>
-      </div>
-      <div class="form-inline">
-        <input type="text" id="searchInput" placeholder="Stadt / Stadtteil / Straße" />
-      </div>
-    </div>
-    <img src="hero_gdansk.jpg" alt="Gdańsk" class="hero-image" />
-  </section>
-
-  <section class="top-regions">
-    <h2 data-i18n="regions.title">Top-Regionen</h2>
-    <div class="region-cards">
-      <div class="card">
-        <img src="hero_gdansk.jpg" alt="Danzig" />
-        <p data-i18n="region.gdansk">Danzig</p>
-      </div>
-      <div class="card">
-        <img src="hero_gdansk.jpg" alt="Swinemünde" />
-        <p data-i18n="region.swinemuende">Swinemünde</p>
-      </div>
-      <div class="card">
-        <img src="hero_gdansk.jpg" alt="Misdroy" />
-        <p data-i18n="region.misdroy">Misdroy</p>
-      </div>
-    </div>
-  
-  </section>
-
-  <section class="why-residare">
-    <h2 data-i18n="why.title">Warum Residare?</h2>
-    <ul>
-      <li data-i18n="why.one">Grenzüberschreitender Fokus</li>
-      <li data-i18n="why.two">Einfache, KI-gestützte Übersetzung</li>
-      <li data-i18n="why.three">Unabhängig und flexibel</li>
-    </ul>
-  </section>
-
-  <section class="cta">
-    <h2 data-i18n="cta.title">Jetzt unverbindlich Kontakt aufnehmen</h2>
-    <a href="kontakt.html" class="cta-button" data-i18n="cta.button">Kontaktformular öffnen</a>
-  </section>
-
-  <footer class="footer">
-    <nav>
-      <a href="index.html" data-i18n="nav.home">Start</a>
-      <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-      <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-    </nav>
-    <p>&copy; 2025 Residare</p>
-  </footer>
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.listings" href="listings.html">Angebote</a>
+<a data-i18n="nav.faq" href="faq.html">FAQ</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+</div>
+<header class="header">
+<div class="header-container">
+<img alt="Residare Logo" class="logo" src="logo.png"/>
+<select id="language-selector">
+<option value="de">🇩🇪</option>
+<option value="pl">🇵🇱</option>
+</select>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<h1 data-i18n="hero.title">Finden Sie Ihre Immobilie in Polen</h1>
+<p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
+<div class="form-inline">
+<select id="transaction">
+<option value="buy">Kaufen</option>
+<option value="rent">Mieten</option>
+</select>
+<select id="property">
+<option value="flat">Wohnung</option>
+<option value="house">Haus</option>
+<option value="lokal">Lokal użytkowy</option>
+<option value="building">Budynek użytkowy</option>
+</select>
+</div>
+<div class="form-inline">
+<input id="searchInput" placeholder="Stadt / Stadtteil / Straße" type="text"/>
+</div>
+</div>
+<img alt="Gdańsk" class="hero-image" src="hero_gdansk.jpg"/>
+</section>
+<section class="top-regions">
+<h2 data-i18n="regions.title">Top-Regionen</h2>
+<div class="region-cards">
+<div class="card">
+<img alt="Danzig" src="hero_gdansk.jpg"/>
+<p data-i18n="region.gdansk">Danzig</p>
+</div>
+<div class="card">
+<img alt="Swinemünde" src="hero_gdansk.jpg"/>
+<p data-i18n="region.swinemuende">Swinemünde</p>
+</div>
+<div class="card">
+<img alt="Misdroy" src="hero_gdansk.jpg"/>
+<p data-i18n="region.misdroy">Misdroy</p>
+</div>
+</div>
+</section>
+<section class="why-residare">
+<h2 data-i18n="why.title">Warum Residare?</h2>
+<ul>
+<li data-i18n="why.one">Grenzüberschreitender Fokus</li>
+<li data-i18n="why.two">Einfache, KI-gestützte Übersetzung</li>
+<li data-i18n="why.three">Unabhängig und flexibel</li>
+</ul>
+</section>
+<section class="cta">
+<h2 data-i18n="cta.title">Jetzt unverbindlich Kontakt aufnehmen</h2>
+<a class="cta-button" data-i18n="cta.button" href="kontakt.html">Kontaktformular öffnen</a>
+</section>
+<footer class="footer">
+<nav>
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</nav>
+<p>© 2025 Residare</p>
+</footer>
 </body>
 </html>
