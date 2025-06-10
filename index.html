@@ -63,7 +63,28 @@
         max-width: 240px;
       }
     }
-    </style>
+    
+
+/* Einheitliche vertikale Ausrichtung */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.topbar .logo {
+  height: 160px !important;
+  width: auto !important;
+  margin-left: 1rem;
+}
+
+.topbar select {
+  height: 2.5rem;
+  font-size: 1rem;
+  margin-left: auto;
+}
+</style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
@@ -76,7 +97,7 @@
 </div>
 <header class="header">
 <div class="header-container">
-<img alt="Residare Logo" class="logo" src="logo.png" style="height: 160px !important; width: auto !important; margin-left: 1rem;"/>
+<img alt="Residare Logo" class="logo" id="main-logo" src="logo.png" style="height: 160px !important; width: auto !important; margin-left: 1rem;"/>
 <select id="language-selector" style=" font-family: inherit;">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
