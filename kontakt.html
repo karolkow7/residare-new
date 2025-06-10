@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Residare</title>
-  <link href="style.css" rel="stylesheet">
-  <script src="translate.js" defer></script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kontakt – Residare</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="translate.js"></script>
+<style>
     #sidebar {
       position: fixed;
       top: 0;
@@ -41,39 +42,34 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-  <div id="sidebar">
-    <a href="index.html" data-i18n="nav.home">Start</a>
-    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
-    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-  </div>
-
-  <main style="max-width:600px;margin:auto;padding:2rem;">
-    <h1 data-i18n="contact.title">Kontaktformular</h1>
-    <form>
-      <label for="name" data-i18n="contact.name">Ihr Name</label><br>
-      <input type="text" id="name" name="name" style="width:100%;margin-bottom:1rem;"><br>
-
-      <label for="email" data-i18n="contact.email">Ihre E-Mail</label><br>
-      <input type="email" id="email" name="email" style="width:100%;margin-bottom:1rem;"><br>
-
-      <label for="message" data-i18n="contact.message">Nachricht</label><br>
-      <textarea id="message" name="message" rows="5" style="width:100%;margin-bottom:1rem;"></textarea><br>
-
-      <button type="submit" class="cta-button" data-i18n="contact.send">Absenden</button>
-    </form>
-  </main>
-
-  <footer class="footer">
-    <nav>
-      <a href="index.html" data-i18n="nav.home">Start</a>
-      <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-      <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-    </nav>
-    <p>&copy; 2025 Residare</p>
-  </footer>
+<body class="bg-gray-50 text-gray-900"><div style="position:fixed; top:1rem; right:1rem; z-index:1200;"><select id="language-selector"><option value="de">🇩🇪</option><option value="pl">🇵🇱</option></select></div>
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.listings" href="listings.html">Angebote</a>
+<a data-i18n="nav.faq" href="faq.html">FAQ</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+</div>
+<main style="max-width:600px;margin:auto;padding:2rem;">
+<h1 data-i18n="contact.title">Kontaktformular</h1>
+<form>
+<label data-i18n="contact.name" for="name">Ihr Name</label><br/>
+<input id="name" name="name" style="width:100%;margin-bottom:1rem;" type="text"/><br/>
+<label data-i18n="contact.email" for="email">Ihre E-Mail</label><br/>
+<input id="email" name="email" style="width:100%;margin-bottom:1rem;" type="email"/><br/>
+<label data-i18n="contact.message" for="message">Nachricht</label><br/>
+<textarea id="message" name="message" rows="5" style="width:100%;margin-bottom:1rem;"></textarea><br/>
+<button class="cta-button" data-i18n="contact.send" type="submit">Absenden</button>
+</form>
+</main>
+<footer class="footer">
+<nav>
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</nav>
+<p>© 2025 Residare</p>
+</footer>
 </body>
 </html>
