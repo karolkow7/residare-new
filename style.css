@@ -160,3 +160,23 @@ body {
   margin: 0 0.5rem;
   text-decoration: none;
 }
+
+
+/* Einheitliche vertikale Ausrichtung von Logo, Dropdown, Menü */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.topbar .logo {
+  max-height: 60px;
+  height: auto;
+}
+
+.topbar select {
+  font-size: 1rem;
+  height: 2.5rem;
+  margin-left: auto;
+}
