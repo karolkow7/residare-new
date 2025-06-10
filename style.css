@@ -21,7 +21,9 @@ body {
 }
 
 .logo {
-  height: 40px;
+  max-width: 600px;
+  height: auto;
+  display: block;
 }
 
 .nav a {
