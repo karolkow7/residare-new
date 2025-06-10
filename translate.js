@@ -81,6 +81,14 @@ document.addEventListener("DOMContentLoaded", function () {
         el.innerText = translations[lang][key];
       }
     });
+
+    document.querySelectorAll("option[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+
     document.querySelectorAll("[data-translate]").forEach(el => {
       const langAttr = el.getAttribute("data-lang");
       if (langAttr) {
