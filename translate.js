@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "property.building": "Nutzgebäude",
       "transaction.buy": "Kaufen",
       "transaction.rent": "Mieten",
+      "search.placeholder": "Ort oder Postleitzahl eingeben",
+      "search.button": "Suchen",
       "regions.title": "Top-Regionen",
       "region.gdansk": "Danzig",
       "region.swinemuende": "Swinemünde",
@@ -51,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "property.building": "Budynek użytkowy",
       "transaction.buy": "Kupno",
       "transaction.rent": "Wynajem",
+      "search.placeholder": "Miejscowość lub kod pocztowy",
+      "search.button": "Szukaj",
       "regions.title": "Najlepsze regiony",
       "region.gdansk": "Gdańsk",
       "region.swinemuende": "Świnoujście",
@@ -84,6 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (translations[lang] && translations[lang][key]) {
         if (el.tagName === "OPTION") {
           el.textContent = translations[lang][key];
+        } else if (el.placeholder !== undefined) {
+          el.placeholder = translations[lang][key];
         } else {
           el.innerText = translations[lang][key];
         }
