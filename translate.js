@@ -105,3 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updateLanguage(selector.value || "de");
   }
 });
+
+// Zusätzliche Übersetzungen für das linke Dropdown
+translations.de["transaction.buy"] = "Kaufen";
+translations.de["transaction.rent"] = "Mieten";
+translations.pl["transaction.buy"] = "Kupno";
+translations.pl["transaction.rent"] = "Wynajem";
