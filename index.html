@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Residare – Immobilien in Deutschland & Polen</title>
+  <title>Residare – Immobilien in Polen</title>
   <link href="style.css" rel="stylesheet" />
   <script src="translate.js" defer></script>
   <style>
@@ -39,6 +39,18 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+    .form-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .form-inline select, .form-inline input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      min-width: 180px;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -63,13 +75,22 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1 data-i18n="hero.title">Finden Sie Ihre Immobilie in Deutschland & Polen</h1>
+      <h1 data-i18n="hero.title">Finden Sie Ihre Immobilie in Polen</h1>
       <p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
-      <div class="button-group">
-        <button data-i18n="hero.button.buy">Kaufen</button>
-        <button data-i18n="hero.button.rent">Mieten</button>
-        <button data-i18n="hero.button.house">Haus</button>
-        <button data-i18n="hero.button.flat">Wohnung</button>
+      <div class="form-inline">
+        <select id="transaction">
+          <option value="buy">Kaufen</option>
+          <option value="rent">Mieten</option>
+        </select>
+        <select id="property">
+          <option value="flat">Wohnung</option>
+          <option value="house">Haus</option>
+          <option value="lokal">Lokal użytkowy</option>
+          <option value="building">Budynek użytkowy</option>
+        </select>
+      </div>
+      <div class="form-inline">
+        <input type="text" id="searchInput" placeholder="Stadt / Stadtteil / Straße" />
       </div>
     </div>
     <img src="hero_gdansk.jpg" alt="Gdańsk" class="hero-image" />
@@ -83,37 +104,14 @@
         <p>Danzig</p>
       </div>
       <div class="card">
-        <img src="hero_gdansk.jpg" alt="Berlin" />
-        <p>Berlin</p>
+        <img src="hero_gdansk.jpg" alt="Swinemünde" />
+        <p>Swinemünde</p>
       </div>
       <div class="card">
-        <img src="hero_gdansk.jpg" alt="Stettin" />
-        <p>Stettin</p>
+        <img src="hero_gdansk.jpg" alt="Misdroy" />
+        <p>Misdroy</p>
       </div>
     </div>
   </section>
-
-  <section class="why-residare">
-    <h2 data-i18n="why.title">Warum Residare?</h2>
-    <ul>
-      <li data-i18n="why.one">Grenzüberschreitender Fokus</li>
-      <li data-i18n="why.two">Einfache, KI-gestützte Übersetzung</li>
-      <li data-i18n="why.three">Unabhängig und flexibel</li>
-    </ul>
-  </section>
-
-  <section class="cta">
-    <h2 data-i18n="cta.title">Jetzt unverbindlich Kontakt aufnehmen</h2>
-    <a href="kontakt.html" class="cta-button" data-i18n="cta.button">Kontaktformular öffnen</a>
-  </section>
-
-  <footer class="footer">
-    <nav>
-      <a href="index.html" data-i18n="nav.home">Start</a>
-      <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-      <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-    </nav>
-    <p>&copy; 2025 Residare</p>
-  </footer>
 </body>
 </html>
