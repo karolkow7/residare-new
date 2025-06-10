@@ -112,10 +112,3 @@ document.addEventListener("DOMContentLoaded", function () {
     updateLanguage(selector.value || "de");
   }
 });
-translations.de["title-Danzig"] = "Danzig – Altbauwohnung im Zentrum";
-translations.pl["title-Danzig"] = "Gdańsk – Mieszkanie w kamienicy w centrum";
-translations.de["title-Swinemünde"] = "Swinemünde – Moderne Ferienwohnung";
-translations.pl["title-Swinemünde"] = "Świnoujście – Nowoczesne mieszkanie wakacyjne";
-translations.de["title-Misdroy"] = "Misdroy – Einfamilienhaus mit Garten";
-translations.pl["title-Misdroy"] = "Międzyzdroje – Dom z ogrodem";
-}
