@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "property.house": "Haus",
       "property.lokal": "Gewerbeeinheit",
       "property.building": "Nutzgebäude",
+      "transaction.buy": "Kaufen",
+      "transaction.rent": "Mieten",
       "regions.title": "Top-Regionen",
       "region.gdansk": "Danzig",
       "region.swinemuende": "Swinemünde",
@@ -47,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "property.house": "Dom",
       "property.lokal": "Lokal użytkowy",
       "property.building": "Budynek użytkowy",
+      "transaction.buy": "Kupno",
+      "transaction.rent": "Wynajem",
       "regions.title": "Najlepsze regiony",
       "region.gdansk": "Gdańsk",
       "region.swinemuende": "Świnoujście",
@@ -78,14 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
       if (translations[lang] && translations[lang][key]) {
-        el.innerText = translations[lang][key];
-      }
-    });
-
-    document.querySelectorAll("option[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
+        if (el.tagName === "OPTION") {
+          el.textContent = translations[lang][key];
+        } else {
+          el.innerText = translations[lang][key];
+        }
       }
     });
 
@@ -105,9 +106,3 @@ document.addEventListener("DOMContentLoaded", function () {
     updateLanguage(selector.value || "de");
   }
 });
-
-// Zusätzliche Übersetzungen für das linke Dropdown
-translations.de["transaction.buy"] = "Kaufen";
-translations.de["transaction.rent"] = "Mieten";
-translations.pl["transaction.buy"] = "Kupno";
-translations.pl["transaction.rent"] = "Wynajem";
