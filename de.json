@@ -34,5 +34,10 @@
   "impressum.owner": "Angaben gemäß §5 TMG:\\nResidare GmbH\\nMusterstraße 1\\n12345 Berlin",
   "impressum.represented": "Vertreten durch:\\nMax Mustermann",
   "impressum.contact": "Kontakt:\\nE-Mail: kontakt@residare.de\\nTelefon: +49 123 456789",
-  "impressum.legal": "Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:\\nMax Mustermann, Anschrift wie oben"
+  "impressum.legal": "Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:\\nMax Mustermann, Anschrift wie oben",
+  "contact.title": "Kontaktformular",
+  "contact.name": "Ihr Name",
+  "contact.email": "Ihre E-Mail",
+  "contact.message": "Nachricht",
+  "contact.send": "Absenden"
 }
