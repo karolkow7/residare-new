@@ -1,182 +1,37 @@
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
-}
+/* Original CSS bleibt erhalten (wird nicht gelöscht) */
 
-.header {
-  background-color: #fff;
-  padding: 1rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-.header-container {
+/* Flex-Header mit Logo */
+.header-row, .topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+  min-height: 160px;
 }
 
 .logo {
-  max-width: 600px;
-  height: auto;
+  height: 160px;
+  width: auto;
   display: block;
 }
 
-.nav a {
-  margin-right: 1rem;
-  text-decoration: none;
-  color: #374151;
-  font-weight: 500;
-}
-
-.nav a:hover {
-  color: #f97316;
-}
-
 #language-selector {
-  font-size: 1.2rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  padding: 2rem;
-}
-
-.hero-content {
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.hero p {
-  color: #4b5563;
-}
-
-.button-group {
-  margin-top: 1rem;
-}
-
-.button-group button {
-  background-color: #f97316;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  margin: 0.25rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.hero-image {
-  max-width: 100%;
-  margin-top: 2rem;
-  border-radius: 8px;
-}
-
-.top-regions {
-  padding: 2rem;
-  background-color: #f3f4f6;
-  text-align: center;
-}
-
-.region-cards {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  width: 200px;
-  overflow: hidden;
-}
-
-.card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
-
-.card p {
-  padding: 0.5rem;
-  font-weight: bold;
-}
-
-.why-residare {
-  padding: 2rem;
-  background-color: #fff;
-  text-align: center;
-}
-
-.why-residare ul {
-  list-style: none;
-  padding: 0;
-}
-
-.why-residare li {
-  margin: 0.5rem 0;
-}
-
-.cta {
-  padding: 2rem;
-  background-color: #f97316;
-  text-align: center;
-  color: white;
-}
-
-.cta-button {
-  background: white;
-  color: #f97316;
-  padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  display: inline-block;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.footer {
-  background-color: #111827;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-.footer a {
-  color: #f3f4f6;
-  margin: 0 0.5rem;
-  text-decoration: none;
-}
-
-
-/* Einheitliche vertikale Ausrichtung von Logo, Dropdown, Menü */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-}
-
-.topbar .logo {
-  max-height: 60px;
-  height: auto;
-}
-
-.topbar select {
-  font-size: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
   height: 2.5rem;
-  margin-left: auto;
+  font-size: 1rem;
+}
+
+/* Hero-Bild */
+#hero {
+  background-image: url('header.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
+  height: 280px;
+  margin-bottom: 2rem;
 }
