@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kontakt – Residare</title>
+<title>Impressum – Residare</title>
 <link href="style.css" rel="stylesheet"/>
 <script defer="" src="translate.js"></script>
 <style>
@@ -40,6 +40,17 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
+    .content {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+    .content h2 {
+      margin-bottom: 1rem;
+    }
+    .content p {
+      margin-bottom: 0.8rem;
+    }
   
 .logo-container {
   position: absolute;
@@ -66,7 +77,7 @@
 <header class="header">
   <div class="header-container">
     <div class="logo-container">
-      <img src="logo.png" alt="Residare Logo" class="header-logo" />
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
     </div>
     <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
       <option value="de">🇩🇪</option>
@@ -74,7 +85,6 @@
     </select>
   </div>
 </header>
-
 
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <div id="sidebar">
@@ -84,18 +94,9 @@
 <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
 <a data-i18n="nav.impress" href="impressum.html">Impressum</a>
 </div>
-<main style="max-width:600px;margin:auto;padding:2rem;">
-<h1 data-i18n="contact.title">Kontaktformular</h1>
-<form>
-<label data-i18n="contact.name" for="name">Ihr Name</label><br/>
-<input id="name" name="name" style="width:100%;margin-bottom:1rem;" type="text"/><br/>
-<label data-i18n="contact.email" for="email">Ihre E-Mail</label><br/>
-<input id="email" name="email" style="width:100%;margin-bottom:1rem;" type="email"/><br/>
-<label data-i18n="contact.message" for="message">Nachricht</label><br/>
-<textarea id="message" name="message" rows="5" style="width:100%;margin-bottom:1rem;"></textarea><br/>
-<button class="cta-button" data-i18n="contact.send" type="submit">Absenden</button>
-</form>
-</main>
+<main class="content">
+<h2 data-i18n="impressum.title">Impressum</h2>
+<p data-lang="de" data-translate="impressum.owner">Angaben gemäß §5 TMG:<br/>Residare GmbH<br/>Bergerhof 40<br/>44536 Lünen</p><p data-lang="pl" data-translate="impressum.owner" style="display: none;">Informacje zgodnie z §5 TMG:<br/>Residare GmbH<br/>Bergerhof 40<br/>44536 Lünen</p><p data-lang="de" data-translate="impressum.represented">Vertreten durch:<br/>Karol Kowalczyk</p><p data-lang="pl" data-translate="impressum.represented" style="display: none;">Reprezentowany przez:<br/>Karol Kowalczyk</p><p data-lang="de" data-translate="impressum.contact">Kontakt:<br/>E-Mail: kontakt@residare.de</p><p data-lang="pl" data-translate="impressum.contact" style="display: none;">Kontakt:<br/>E-Mail: kontakt@residare.de</p><p data-lang="de" data-translate="impressum.legal">Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:<br/>Karol Kowalczyk, Anschrift wie oben</p><p data-lang="pl" data-translate="impressum.legal" style="display: none;">Odpowiedzialny za treść zgodnie z §55 ust. 2 RStV:<br/>Karol Kowalczyk, adres jak wyżej</p></main>
 <footer class="footer">
 <nav>
 <a data-i18n="nav.home" href="index.html">Start</a>

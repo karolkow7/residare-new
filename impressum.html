@@ -51,9 +51,41 @@
     .content p {
       margin-bottom: 0.8rem;
     }
-  </style>
+  
+.logo-container {
+  position: absolute;
+  top: -80px;
+  left: 25%;
+  transform: translateX(-50%);
+  height: 240px;
+}
+.header-logo {
+  height: 240px;
+  width: auto;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+</style>
 </head>
-<body class="bg-gray-50 text-gray-900"><img alt="Residare-Logo" class="logo" src="logo.png"/><div style="position:fixed; top:1rem; right:1rem; z-index:1200;"><select id="language-selector"><option value="de">🇩🇪</option><option value="pl">🇵🇱</option></select></div>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <img src="logo.png" alt="Residare Logo" class="header-logo" />
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
+</header>
+
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <div id="sidebar">
 <a data-i18n="nav.home" href="index.html">Start</a>
