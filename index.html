@@ -85,14 +85,23 @@
   margin-left: auto;
 }
 
-    .hero-image {
-      width: 100%;
-      height: 360px;
-      background-image: url('header.jpg');
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 1rem;
-    }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem;
+}
+.logo-container {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+}
+.header-logo {
+  height: 60px;
+  width: auto;
+}
+
 </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -106,6 +115,10 @@
 </div>
 <header class="header">
 <div class="header-container">
+  <div class="logo-container">
+    <img src="logo.png" alt="Residare Logo" class="header-logo" />
+  </div>
+
 <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
@@ -115,7 +128,7 @@
 <section class="hero">
 <div class="hero-content">
 <h1 data-i18n="hero.title">Finden Sie Ihre Immobilie in Polen</h1>
-<p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>  <div class="hero-image"></div>
+<p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
 <div class="form-inline">
 <select id="transaction" style=" font-family: inherit;"><option data-i18n="transaction.buy" value="buy">Kaufen</option><option data-i18n="transaction.rent" value="rent">Mieten</option></select>
 <select id="property" style=" font-family: inherit;"><option data-i18n="property.flat" value="flat">Wohnung</option><option data-i18n="property.house" value="house">Haus</option><option data-i18n="property.lokal" value="lokal">Gewerbeeinheit</option><option data-i18n="property.building" value="building">Nutzgebäude</option></select>
