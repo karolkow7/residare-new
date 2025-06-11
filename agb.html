@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGB – Residare</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="translate.js"></script>
+  <style>
+    .agb-section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+    .agb-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    .agb-section p {
+      margin: 0.75rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <header class="header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
+      </div>
+      <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+        <option value="de">🇩🇪</option>
+        <option value="pl">🇵🇱</option>
+      </select>
+    </div>
+  </header>
+
+  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+  <div id="sidebar">
+    <a href="index.html" data-i18n="nav.home">Start</a>
+    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+  </div>
+
+  <main class="agb-section">
+    <h1 data-i18n="agb.title">Allgemeine Geschäftsbedingungen (AGB)</h1>
+
+    <h2 data-i18n="agb.scope">1. Geltungsbereich</h2>
+    <p data-i18n="agb.scope.text">Diese AGB gelten für alle Nutzer der Online-Plattform Residare (nachfolgend „Residare“ genannt), betrieben durch den Einzelunternehmer Paul Smith. Sie regeln das Verhältnis zwischen dem Betreiber und den Besuchern sowie registrierten Nutzern der Plattform.</p>
+
+    <h2 data-i18n="agb.services">2. Leistungen</h2>
+    <p data-i18n="agb.services.text">Residare bietet die Möglichkeit, Immobilienanzeigen einzusehen und eigene Angebote zu veröffentlichen. Der Betreiber agiert nicht als Makler und vermittelt keine Verträge. Alle Leistungen erfolgen im Rahmen der gesetzlichen Möglichkeiten ohne Maklerlizenz.</p>
+
+    <h2 data-i18n="agb.costs">3. Kostenpflichtige Dienste</h2>
+    <p data-i18n="agb.costs.text">Residare behält sich vor, bestimmte Funktionen – wie das Erstellen oder Hervorheben von Inseraten – künftig kostenpflichtig anzubieten. Die Nutzer werden vorab deutlich informiert.</p>
+
+    <h2 data-i18n="agb.withdrawal">4. Widerrufsrecht</h2>
+    <p data-i18n="agb.withdrawal.text">Verbraucher haben das Recht, innerhalb von 14 Tagen nach Vertragsabschluss ohne Angabe von Gründen zu widerrufen. Die Details und ein Musterformular sind unter „Widerrufsbelehrung“ zu finden.</p>
+
+    <h2 data-i18n="agb.liability">5. Haftung</h2>
+    <p data-i18n="agb.liability.text">Residare übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der veröffentlichten Inhalte. Für externe Links ist ausschließlich der jeweilige Betreiber verantwortlich.</p>
+
+    <h2 data-i18n="agb.law">6. Anwendbares Recht</h2>
+    <p data-i18n="agb.law.text">Es gilt ausschließlich deutsches Recht. Gerichtsstand ist der Sitz des Betreibers.</p>
+
+    <h2 data-i18n="agb.language">7. Sprache</h2>
+    <p data-i18n="agb.language.text">Diese AGB sind in deutscher und polnischer Sprache abrufbar. Im Zweifelsfall ist ausschließlich die deutsche Fassung maßgeblich.</p>
+  </main>
+
+  <footer class="footer">
+    <nav>
+      <a href="index.html" data-i18n="nav.home">Start</a>
+      <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+      <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <p>© 2025 Residare</p>
+  </footer>
+
+</body>
+</html>
