@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kontakt – Residare</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="translate.js"></script>
+<style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -290px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #sidebar.open {
+      left: 0;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+.logo-container {
+  position: absolute;
+  top: -80px;
+  left: 25%;
+  transform: translateX(-50%);
+  height: 240px;
+}
+.header-logo {
+  height: 240px;
+  width: auto;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
+</header>
+
+
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.listings" href="listings.html">Angebote</a>
+<a data-i18n="nav.faq" href="faq.html">FAQ</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+</div>
+<main style="max-width:600px;margin:auto;padding:2rem;">
+<h1 data-i18n="contact.title">Kontaktformular</h1>
+<form>
+<label data-i18n="contact.name" for="name">Ihr Name</label><br/>
+<input id="name" name="name" style="width:100%;margin-bottom:1rem;" type="text"/><br/>
+<label data-i18n="contact.email" for="email">Ihre E-Mail</label><br/>
+<input id="email" name="email" style="width:100%;margin-bottom:1rem;" type="email"/><br/>
+<label data-i18n="contact.message" for="message">Nachricht</label><br/>
+<textarea id="message" name="message" rows="5" style="width:100%;margin-bottom:1rem;"></textarea><br/>
+<button class="cta-button" data-i18n="contact.send" type="submit">Absenden</button>
+</form>
+</main>
+<footer class="footer">
+<nav>
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</nav>
+<p>© 2025 Residare</p>
+</footer>
+</body>
+</html>

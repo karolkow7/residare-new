@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Residare</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="translate.js" defer></script>
+  <style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #sidebar.open {
+      left: 0;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .login-container label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #1f2937;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+.logo-container {
+  position: absolute;
+  top: -80px;
+  left: 25%;
+  transform: translateX(-50%);
+  height: 240px;
+}
+.header-logo {
+  height: 240px;
+  width: auto;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+</style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
+</header>
+
+  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+  <div id="sidebar">
+    <a href="index.html" data-i18n="nav.home">Start</a>
+    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+  </div>
+
+  <main class="login-container">
+    <h2 data-i18n="login.title">Makler-Login</h2>
+    <form>
+      <label for="email" data-i18n="login.email">E-Mail</label>
+      <input type="email" id="email" name="email" placeholder="E-Mail">
+
+      <label for="password" data-i18n="login.password">Passwort</label>
+      <input type="password" id="password" name="password" placeholder="Passwort">
+
+      <button type="submit" data-i18n="login.submit">Anmelden</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <nav>
+      <a href="index.html" data-i18n="nav.home">Start</a>
+      <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
+      <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <p>&copy; 2025 Residare</p>
+  </footer>
+</body>
+</html>

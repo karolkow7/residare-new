@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Angebote – Residare</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="translate.js"></script>
+<style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -290px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #sidebar.open {
+      left: 0;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+    @media (min-width: 1024px) {
+      .listings-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 2rem;
+      }
+      .listings-grid {
+        flex: 1 1 60%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .map-container {
+        flex: 1 1 40%;
+        height: auto;
+        min-height: 600px;
+      }
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+.logo-container {
+  position: absolute;
+  top: -80px;
+  left: 25%;
+  transform: translateX(-50%);
+  height: 240px;
+}
+.header-logo {
+  height: 240px;
+  width: auto;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+</style>
+</head>
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.listings" href="listings.html">Angebote</a>
+<a data-i18n="nav.faq" href="faq.html">FAQ</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+</div>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
+</header>
+
+<header class="header">
+<div class="header-container">
+
+<select id="language-selector">
+<option value="de">🇩🇪</option>
+<option value="pl">🇵🇱</option>
+</select>
+</div>
+</header>
+<main class="listings"><h1 data-i18n="listings.title">Aktuelle Immobilienangebote</h1><div class="listings-wrapper"><div class="listings-grid">
+<div class="card">
+<img alt="Danzig – Altbauwohnung im Zentrum" src="gdansk.jpg"/>
+<div class="info"><h2 data-lang="de" data-translate="title-Danzig">Danzig – Altbauwohnung im Zentrum</h2><h2 data-lang="pl" data-translate="title-Danzig" style="display:none;">Gdańsk – Mieszkanie w kamienicy w centrum</h2><p>65 m² · 3 Zimmer · 299.000 EUR</p><a class="card-link" data-i18n="listings.more" href="#">Mehr erfahren</a></div>
+</div>
+<div class="card">
+<img alt="Swinemünde – Moderne Ferienwohnung" src="swinemünde.jpg"/>
+<div class="info"><h2 data-lang="de" data-translate="title-Swinemünde">Swinemünde – Moderne Ferienwohnung</h2><h2 data-lang="pl" data-translate="title-Swinemünde" style="display:none;">Świnoujście – Nowoczesne mieszkanie wakacyjne</h2><p>48 m² · 2 Zimmer · 179.000 EUR</p><a class="card-link" data-i18n="listings.more" href="#">Mehr erfahren</a></div>
+</div>
+<div class="card">
+<img alt="Misdroy – Einfamilienhaus mit Garten" src="miedzyzdroje.jpg"/>
+<div class="info"><h2 data-lang="de" data-translate="title-Misdroy">Misdroy – Einfamilienhaus mit Garten</h2><h2 data-lang="pl" data-translate="title-Misdroy" style="display:none;">Międzyzdroje – Dom z ogrodem</h2><p>120 m² · 4 Zimmer · 320.000 EUR</p><a class="card-link" data-i18n="listings.more" href="#">Mehr erfahren</a></div>
+</div>
+</div><div class="map-container"><iframe loading="lazy" src="https://www.google.com/maps"></iframe></div></div></main>
+<footer class="footer">
+<nav>
+<a data-i18n="nav.home" href="index.html">Start</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</nav>
+<p>© 2025 Residare</p>
+</footer>
+</body>
+</html>
