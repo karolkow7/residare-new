@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     de: {
+      "nav.favorites": "Favoriten",
+      "nav.post": "Inserieren",
+      "nav.login": "Einloggen",
+      "faq.title": "Häufige Fragen",
       "nav.home": "Start",
       "nav.listings": "Angebote",
       "nav.faq": "FAQ",
       "nav.contact": "Kontakt",
       "nav.impress": "Impressum",
-      "nav.agb": "AGB",
-      "nav.favorites": "Favoriten",
-      "nav.post": "Inserieren",
-      "nav.login": "Einloggen",
       "hero.title": "Finden Sie Ihre Immobilie in Polen",
       "hero.subtitle": "Grenzüberschreitend. Einfach. Residare.",
       "property.flat": "Wohnung",
@@ -25,22 +25,34 @@ document.addEventListener("DOMContentLoaded", function () {
       "region.swinemuende": "Swinemünde",
       "region.misdroy": "Misdroy",
       "why.title": "Warum Residare?",
-      "why.one": "Verlässliche Partner in Deutschland und Polen",
-      "why.two": "Zweisprachige Abwicklung ohne Missverständnisse",
-      "why.three": "Unabhängig, bodenständig und leicht erreichbar",
+      "why.one": "Grenzüberschreitender Fokus",
+      "why.two": "Einfache, KI-gestützte Übersetzung",
+      "why.three": "Unabhängig und flexibel",
       "cta.title": "Jetzt unverbindlich Kontakt aufnehmen",
-      "cta.button": "Kontaktformular öffnen"
+      "cta.button": "Kontaktformular öffnen",
+      "contact.title": "Kontaktformular",
+      "contact.name": "Ihr Name",
+      "contact.email": "Ihre E-Mail",
+      "contact.message": "Nachricht",
+      "contact.send": "Absenden",
+      "impressum.title": "Impressum",
+      "impressum.owner": "Angaben gemäß §5 TMG:\nResidare GmbH\nMusterstraße 1\n12345 Berlin",
+      "impressum.represented": "Vertreten durch:\nMax Mustermann",
+      "impressum.contact": "Kontakt:\nE-Mail: kontakt@residare.de\nTelefon: +49 123 456789",
+      "impressum.legal": "Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:\nMax Mustermann, Anschrift wie oben",
+      "listings.title": "Aktuelle Immobilienangebote",
+      "listings.more": "Mehr erfahren"
     },
     pl: {
+      "nav.favorites": "Ulubione",
+      "nav.post": "Dodaj ogłoszenie",
+      "nav.login": "Zaloguj się",
+      "faq.title": "Najczęstsze pytania",
       "nav.home": "Start",
       "nav.listings": "Oferty",
       "nav.faq": "FAQ",
       "nav.contact": "Kontakt",
       "nav.impress": "Impressum",
-      "nav.agb": "Regulamin",
-      "nav.favorites": "Ulubione",
-      "nav.post": "Dodaj ogłoszenie",
-      "nav.login": "Zaloguj się",
       "hero.title": "Znajdź swoją nieruchomość w Polsce",
       "hero.subtitle": "Ponad granicami. Łatwo. Residare.",
       "property.flat": "Mieszkanie",
@@ -56,11 +68,23 @@ document.addEventListener("DOMContentLoaded", function () {
       "region.swinemuende": "Świnoujście",
       "region.misdroy": "Międzyzdroje",
       "why.title": "Dlaczego Residare?",
-      "why.one": "Partnerzy w Niemczech i Polsce",
-      "why.two": "Dwujęzyczna obsługa bez nieporozumień",
-      "why.three": "Niezależni, rzeczowi, dostępni",
+      "why.one": "Transgraniczne podejście",
+      "why.two": "Łatwe tłumaczenie oparte na AI",
+      "why.three": "Niezależność i elastyczność",
       "cta.title": "Skontaktuj się z nami bez zobowiązań",
-      "cta.button": "Otwórz formularz kontaktowy"
+      "cta.button": "Otwórz formularz kontaktowy",
+      "contact.title": "Formularz kontaktowy",
+      "contact.name": "Imię i nazwisko",
+      "contact.email": "Twój e-mail",
+      "contact.message": "Wiadomość",
+      "contact.send": "Wyślij",
+      "impressum.title": "Impressum",
+      "impressum.owner": "Informacje zgodnie z §5 TMG:\nResidare GmbH\nul. Przykładowa 1\n12345 Berlin",
+      "impressum.represented": "Reprezentowany przez:\nMax Mustermann",
+      "impressum.contact": "Kontakt:\nE-Mail: kontakt@residare.de\nTelefon: +49 123 456789",
+      "impressum.legal": "Odpowiedzialny za treść zgodnie z §55 ust. 2 RStV:\nMax Mustermann, adres jak wyżej",
+      "listings.title": "Aktualne oferty nieruchomości",
+      "listings.more": "Zobacz więcej"
     }
   };
 
@@ -75,25 +99,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (el.placeholder !== undefined) {
           el.placeholder = translations[lang][key];
         } else {
-          const icon = el.querySelector("i");
-          if (icon && el.childNodes.length > 1) {
-            for (let i = 0; i < el.childNodes.length; i++) {
-              const node = el.childNodes[i];
-              if (node.nodeType === Node.TEXT_NODE) {
-                node.textContent = " " + translations[lang][key];
-                break;
-              }
-            }
-          } else {
-            el.textContent = translations[lang][key];
-          }
+          el.innerText = translations[lang][key];
         }
       }
     });
 
     document.querySelectorAll("[data-translate]").forEach(el => {
       const langAttr = el.getAttribute("data-lang");
-      el.style.display = langAttr === lang ? "block" : "none";
+      if (langAttr) {
+        el.style.display = langAttr === lang ? "block" : "none";
+      }
     });
   }
 
