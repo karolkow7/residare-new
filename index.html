@@ -1,99 +1,235 @@
-
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Residare – Immobilien in Polen</title>
-  <link href="style.css" rel="stylesheet"/>
-  <script defer src="translate.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Residare – Immobilien in Polen</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="translate.js"></script>
+<style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -290px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #sidebar.open {
+      left: 0;
+    }
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .form-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .form-inline select, .form-inline input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      min-width: 180px;
+    }
+  
+    #main-logo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+    @media (max-width: 768px) {
+      #main-logo {
+        max-width: 240px;
+      }
+    }
+    
+
+/* Einheitliche vertikale Ausrichtung */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.topbar .logo {
+  height: 160px !important;
+  width: auto !important;
+  margin-left: 1rem;
+}
+
+.topbar select {
+  height: 2.5rem;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.logo-container {
+  position: absolute;
+  top: -80px;
+  left: 25%;
+  transform: translateX(-50%);
+  height: 240px;
+}
+.header-logo {
+  height: 240px;
+  width: auto;
+}
+
+
+.top-regions a:hover .card {
+  animation: pulse 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+i.fa-heart {
+  color: crimson;
+}
+i.fa-circle-plus {
+  color: teal;
+}
+i.fa-user {
+  color: darkslateblue;
+}
+
+.hero-image {
+  background-image: url('town.jpg');
+  background-size: cover;
+  background-position: center center;
+  height: 400px;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.hero {
+  background-color: white;
+}
+.top-regions {
+  background-color: white;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 998;
+}
+.sidebar.open ~ #overlay {
+  display: block;
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/><style>
+.top-regions a {
+  display: block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.top-regions a:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style></head>
 <body class="bg-gray-50 text-gray-900">
-  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-  <div id="sidebar">
-    <a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
-    <a data-i18n="nav.favorites" href="#">Favoriten</a>
-    <a data-i18n="nav.post" href="admin.html">Inserieren</a>
-    <a data-i18n="nav.blog" href="faq.html">Blog</a>
-    <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
-  </div>
-  <div id="overlay"></div>
+<button class="hamburger" data-i18n="auto." onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar"><a data-i18n="nav.listings" href="listings.html">Angebote finden</a><a data-i18n="nav.favorites" href="#">Favoriten</a><a data-i18n="nav.post" href="admin.html">Inserieren</a><a data-i18n="nav.blog" href="faq.html">Blog</a><a data-i18n="nav.contact" href="kontakt.html">Kontakt</a></div>
+<header class="header">
+<div class="header-container" style="; gap: 2rem;">
+<div class="logo-container">
+<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
+</div>
+<div style="position: absolute; top: 1.5rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;"><a data-i18n="nav.favorites" href="#" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;"><i class="fa-regular fa-heart"></i> Favoriten</a><a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a><a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;"><i class="fa-regular fa-user"></i> Einloggen</a></div><select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+<option value="de">🇩🇪</option>
+<option value="pl">🇵🇱</option>
+</select>
+</div>
+</header><div class="hero-image"></div>
+<section class="hero">
+<div class="hero-content">
+<h1 data-i18n="hero.dream">Finden Sie Ihre Traumimmobilie in Polen</h1>
+<p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
+<div class="form-inline">
+<select id="transaction" style=" font-family: inherit;"><option data-i18n="transaction.buy" value="buy">Kaufen</option><option data-i18n="transaction.rent" value="rent">Mieten</option></select>
+<select id="property" style=" font-family: inherit;"><option data-i18n="property.flat" value="flat">Wohnung</option><option data-i18n="property.house" value="house">Haus</option><option data-i18n="property.lokal" value="lokal">Gewerbeeinheit</option><option data-i18n="property.building" value="building">Nutzgebäude</option></select>
+</div>
+<div class="form-inline"><div style="display: flex; gap: 1rem; width: 376px; justify-content: space-between;"><input data-i18n="search.placeholder" id="locationInput" placeholder="Ort oder Postleitzahl eingeben" style="padding:0.5rem; font-size:1rem; width:240px; font-family: inherit;" type="text"/><button data-i18n="search.button" onclick="window.location.href='listings.html'" style="background-color:#0077cc; color:white; padding:0.5rem 1rem; font-size:1rem; border:none; cursor:pointer; width:116px; font-family: inherit;" type="button">Suchen</button></div></div>
+</div>
+</section>
+<section class="top-regions">
+<h2 data-i18n="regions.title">Beliebteste Regionen</h2>
+<div class="region-cards">
+<a href="listings.html" style="text-decoration: none; color: inherit;"><div class="card">
+<img alt="Danzig" src="gdansk.jpg"/>
+<p data-i18n="region.gdansk">Danzig</p>
+</div></a>
+<a href="listings.html" style="text-decoration: none; color: inherit;"><div class="card">
+<img alt="Swinemünde" src="swinemünde.jpg"/>
+<p data-i18n="region.swinemuende">Swinemünde</p>
+</div></a>
+<a href="listings.html" style="text-decoration: none; color: inherit;"><div class="card">
+<img alt="Misdroy" src="miedzyzdroje.jpg"/>
+<p data-i18n="region.misdroy">Misdroy</p>
+</div></a>
+</div>
+</section>
+<section class="why-residare">
+<h2 data-i18n="why.title">Warum Residare?</h2>
+<ul><li data-i18n="why.one">Verlässliche Partner in Deutschland und Polen</li><li data-i18n="why.two">Zweisprachige Abwicklung ohne Missverständnisse</li><li data-i18n="why.three">Unabhängig, bodenständig und leicht erreichbar</li></ul>
+</section>
+<section class="cta">
+<h2 data-i18n="cta.title">Jetzt unverbindlich Kontakt aufnehmen</h2>
+<a class="cta-button" data-i18n="cta.button" href="kontakt.html">Kontaktformular öffnen</a>
+</section>
+<footer class="footer">
+<nav><a data-i18n="nav.contact" href="kontakt.html">Kontakt</a><a data-i18n="nav.agb" href="agb.html">AGB</a><a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a><a data-i18n="nav.impress" href="impressum.html">Impressum</a></nav>
+<p data-i18n="auto._2025_residare">© 2025 Residare</p>
+</footer>
+<script>
+document.addEventListener("click", function (event) {
+  const sidebar = document.getElementById("sidebar");
+  const hamburger = document.querySelector(".hamburger");
+  const isClickInsideSidebar = sidebar.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
 
-  <header class="header">
-    <div class="header-container" style="gap: 2rem;">
-      <div class="logo-container" style="position: absolute; top: -80px; left: 25%; transform: translateX(-50%); height: 240px;">
-        <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
-      </div>
-      <div style="position: absolute; top: 1.5rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
-        <a data-i18n="nav.favorites" href="#"><i class="fa-regular fa-heart"></i> Favoriten</a>
-        <a data-i18n="nav.post" href="admin.html"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
-        <a data-i18n="nav.login" href="login.html"><i class="fa-regular fa-user"></i> Einloggen</a>
-      </div>
-      <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
-        <option value="de">🇩🇪</option>
-        <option value="pl">🇵🇱</option>
-      </select>
-    </div>
-  </header>
-
-  <div class="hero-image"></div>
-  <section class="hero">
-    <div class="hero-content">
-      <h1 data-i18n="hero.dream">Finden Sie Ihre Traumimmobilie in Polen</h1>
-      <p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
-      <div class="form-inline">
-        <select id="transaction">
-          <option data-i18n="transaction.buy" value="buy">Kaufen</option>
-          <option data-i18n="transaction.rent" value="rent">Mieten</option>
-        </select>
-        <select id="property">
-          <option data-i18n="property.flat" value="flat">Wohnung</option>
-          <option data-i18n="property.house" value="house">Haus</option>
-          <option data-i18n="property.lokal" value="lokal">Gewerbeeinheit</option>
-          <option data-i18n="property.building" value="building">Nutzgebäude</option>
-        </select>
-      </div>
-      <div class="form-inline">
-        <div style="display: flex; gap: 1rem; width: 376px; justify-content: space-between;">
-          <input data-i18n="search.placeholder" id="locationInput" placeholder="Ort oder Postleitzahl eingeben" type="text" />
-          <button data-i18n="search.button" onclick="window.location.href='listings.html'" type="button">Suchen</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="top-regions">
-    <h2 data-i18n="regions.title">Beliebteste Regionen</h2>
-    <div class="region-cards">
-      <a href="listings.html"><div class="card"><img src="gdansk.jpg" alt="Danzig"/><p data-i18n="region.gdansk">Danzig</p></div></a>
-      <a href="listings.html"><div class="card"><img src="swinemünde.jpg" alt="Swinemünde"/><p data-i18n="region.swinemuende">Swinemünde</p></div></a>
-      <a href="listings.html"><div class="card"><img src="miedzyzdroje.jpg" alt="Misdroy"/><p data-i18n="region.misdroy">Misdroy</p></div></a>
-    </div>
-  </section>
-
-  <section class="why-residare">
-    <h2 data-i18n="why.title">Warum Residare?</h2>
-    <ul>
-      <li data-i18n="why.one">Verlässliche Partner in Deutschland und Polen</li>
-      <li data-i18n="why.two">Zweisprachige Abwicklung ohne Missverständnisse</li>
-      <li data-i18n="why.three">Unabhängig, bodenständig und leicht erreichbar</li>
-    </ul>
-  </section>
-
-  <section class="cta">
-    <h2 data-i18n="cta.title">Jetzt unverbindlich Kontakt aufnehmen</h2>
-    <a class="cta-button" data-i18n="cta.button" href="kontakt.html">Kontaktformular öffnen</a>
-  </section>
-
-  <footer class="footer">
-    <nav>
-      <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
-      <a data-i18n="nav.agb" href="agb.html">AGB</a>
-      <a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a>
-      <a data-i18n="nav.impress" href="impressum.html">Impressum</a>
-    </nav>
-    <p data-i18n="auto._2025_residare">© 2025 Residare</p>
-  </footer>
-</body>
+  if (sidebar.classList.contains("open") && !isClickInsideSidebar && !isClickOnHamburger) {
+    sidebar.classList.remove("open");
+  }
+});
+</script><div id="overlay"></div></body>
 </html>
