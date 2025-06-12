@@ -87,17 +87,26 @@ document.addEventListener("DOMContentLoaded", function () {
       const key = el.getAttribute("data-i18n");
       if (translations[lang] && translations[lang][key]) {
         
+
 if (el.tagName === "OPTION") {
   el.textContent = translations[lang][key];
 } else if (el.placeholder !== undefined) {
   el.placeholder = translations[lang][key];
 } else {
-  // Ersetze nur den Textknoten, nicht HTML oder Symbole
   const icon = el.querySelector("i");
-  el.childNodes.forEach(n => {
-    if (n.nodeType === Node.TEXT_NODE) {
-      n.textContent = " " + translations[lang][key];
+  if (icon && el.childNodes.length > 1) {
+    for (let i = 0; i < el.childNodes.length; i++) {
+      const node = el.childNodes[i];
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = " " + translations[lang][key];
+        break;
+      }
     }
+  } else {
+    el.innerText = translations[lang][key];
+  }
+}
+
   });
 }
 
