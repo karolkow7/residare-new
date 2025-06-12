@@ -170,5 +170,16 @@
 </nav>
 <p>© 2025 Residare</p>
 </footer>
-</body>
+<script>
+document.addEventListener("click", function (event) {
+  const sidebar = document.getElementById("sidebar");
+  const hamburger = document.querySelector(".hamburger");
+  const isClickInsideSidebar = sidebar.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+
+  if (sidebar.classList.contains("open") && !isClickInsideSidebar && !isClickOnHamburger) {
+    sidebar.classList.remove("open");
+  }
+});
+</script></body>
 </html>
