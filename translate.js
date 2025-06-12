@@ -82,25 +82,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const selector = document.getElementById("language-selector");
 
-  function updateLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        
-
-if (el.tagName === "OPTION") {
-  el.textContent = translations[lang][key];
-} else if (el.placeholder !== undefined) {
-  el.placeholder = translations[lang][key];
-} else {
-  const icon = el.querySelector("i");
-  if (icon && el.childNodes.length > 1) {
-    for (let i = 0; i < el.childNodes.length; i++) {
-      const node = el.childNodes[i];
-      if (node.nodeType === Node.TEXT_NODE) {
-        node.textContent = " " + translations[lang][key];
-        break;
+  
+function updateLanguage(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      if (el.tagName === "OPTION") {
+        el.textContent = translations[lang][key];
+      } else if (el.placeholder !== undefined) {
+        el.placeholder = translations[lang][key];
+      } else {
+        const icon = el.querySelector("i");
+        if (icon && el.childNodes.length > 1) {
+          // Ersetze nur Textknoten nach dem Icon
+          for (let i = 0; i < el.childNodes.length; i++) {
+            const node = el.childNodes[i];
+            if (node.nodeType === Node.TEXT_NODE) {
+              node.textContent = " " + translations[lang][key];
+              break;
+            }
+          }
+        } else {
+          el.textContent = translations[lang][key];
+        }
       }
+    }
+  });
+
+  document.querySelectorAll("[data-translate]").forEach(el => {
+    const langAttr = el.getAttribute("data-lang");
+    if (langAttr) {
+      el.style.display = langAttr === lang ? "block" : "none";
+    }
+  });
+}
     }
   } else {
     el.innerText = translations[lang][key];
