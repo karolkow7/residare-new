@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "nav.favorites": "Favoriten",
       "nav.post": "Inserieren",
       "nav.login": "Einloggen",
-      "nav.blog": "Blog"
-    
+      "nav.blog": "Blog",
       "hero.title": "Finden Sie Ihre Immobilie in Polen",
       "hero.subtitle": "Grenzüberschreitend. Einfach. Residare.",
       "transaction.buy": "Kaufen",
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "why.two": "Zweisprachige Abwicklung ohne Missverständnisse",
       "why.three": "Unabhängig, bodenständig und leicht erreichbar",
       "cta.title": "Jetzt unverbindlich Kontakt aufnehmen",
-      "cta.button": "Kontaktformular öffnen",
+      "cta.button": "Kontaktformular öffnen"
     },
     pl: {
       "nav.home": "Start",
@@ -45,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "nav.favorites": "Ulubione",
       "nav.post": "Dodaj ogłoszenie",
       "nav.login": "Zaloguj się",
-      "nav.blog": "Blog"
-    
+      "nav.blog": "Blog",
       "hero.title": "Znajdź swoją nieruchomość w Polsce",
       "hero.subtitle": "Ponad granicami. Łatwo. Residare.",
       "transaction.buy": "Kupno",
@@ -66,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "why.two": "Dwujęzyczna obsługa bez nieporozumień",
       "why.three": "Niezależni, rzeczowi, dostępni",
       "cta.title": "Skontaktuj się z nami bez zobowiązań",
-      "cta.button": "Otwórz formularz kontaktowy",
+      "cta.button": "Otwórz formularz kontaktowy"
     }
   };
 
