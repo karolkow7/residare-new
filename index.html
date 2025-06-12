@@ -104,7 +104,7 @@
 }
 
 </style>
-</head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <body class="bg-gray-50 text-gray-900">
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <div id="sidebar">
@@ -113,15 +113,14 @@
 <a data-i18n="nav.faq" href="faq.html">FAQ</a>
 <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
 <a data-i18n="nav.impress" href="impressum.html">Impressum</a>
-<a href="agb.html" data-i18n="nav.agb">AGB</a>
+<a data-i18n="nav.agb" href="agb.html">AGB</a>
 </div>
 <header class="header">
 <div class="header-container">
-  <div class="logo-container">
-    <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo" /></a>
-  </div>
-
-<select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
+<div class="logo-container">
+<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
+</div>
+<div style="position: absolute; top: 1rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;"><a data-i18n="nav.favorites" href="#"><i class="fa-regular fa-heart"></i> Favoriten</a><a data-i18n="nav.post" href="#"><i class="fa-solid fa-circle-plus"></i> Inserieren</a><a data-i18n="nav.login" href="login.html"><i class="fa-regular fa-user"></i> Einloggen</a></div><select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
 </select>
