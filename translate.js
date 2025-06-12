@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     de: {
-      "nav.favorites": "Favoriten",
-      "nav.post": "Inserieren",
-      "nav.login": "Einloggen",
-      "faq.title": "Häufige Fragen",
       "nav.home": "Start",
       "nav.listings": "Angebote",
       "nav.faq": "FAQ",
@@ -44,10 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "listings.more": "Mehr erfahren"
     },
     pl: {
-      "nav.favorites": "Ulubione",
-      "nav.post": "Dodaj ogłoszenie",
-      "nav.login": "Zaloguj się",
-      "faq.title": "Najczęstsze pytania",
       "nav.home": "Start",
       "nav.listings": "Oferty",
       "nav.faq": "FAQ",
@@ -94,13 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
       if (translations[lang] && translations[lang][key]) {
-        if (el.tagName === "OPTION") {
-          el.textContent = translations[lang][key];
-        } else if (el.placeholder !== undefined) {
-          el.placeholder = translations[lang][key];
-        } else {
-          el.innerText = translations[lang][key];
-        }
+        
+if (el.tagName === "OPTION") {
+  el.textContent = translations[lang][key];
+} else if (el.placeholder !== undefined) {
+  el.placeholder = translations[lang][key];
+} else {
+  // Ersetze nur den Textknoten, nicht HTML oder Symbole
+  const icon = el.querySelector("i");
+  el.childNodes.forEach(n => {
+    if (n.nodeType === Node.TEXT_NODE) {
+      n.textContent = " " + translations[lang][key];
+    }
+  });
+}
+
       }
     });
 
