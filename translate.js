@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     de: {
@@ -33,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "why.two": "Zweisprachige Abwicklung ohne Missverständnisse",
       "why.three": "Unabhängig, bodenständig und leicht erreichbar",
       "cta.title": "Jetzt unverbindlich Kontakt aufnehmen",
-      "cta.button": "Kontaktformular öffnen"
+      "cta.button": "Kontaktformular öffnen",
+      "contact.title": "Kontaktformular",
+      "contact.name": "Ihr Name",
+      "contact.email": "Ihre E-Mail",
+      "contact.message": "Nachricht",
+      "contact.send": "Absenden"
     },
     pl: {
       "hero.dream": "Znajdź swoją wymarzoną nieruchomość w Polsce",
@@ -68,31 +74,42 @@ document.addEventListener("DOMContentLoaded", function () {
       "why.two": "Dwujęzyczna obsługa bez nieporozumień",
       "why.three": "Niezależni, rzeczowi, dostępni",
       "cta.title": "Skontaktuj się z nami bez zobowiązań",
-      "cta.button": "Otwórz formularz kontaktowy"
+      "cta.button": "Otwórz formularz kontaktowy",
+      "contact.title": "Formularz kontaktowy",
+      "contact.name": "Twoje imię",
+      "contact.email": "Twój e-mail",
+      "contact.message": "Wiadomość",
+      "contact.send": "Wyślij"
     }
   };
 
   function updateLanguage(lang) {
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        if (el.tagName === "OPTION") {
-          el.textContent = translations[lang][key];
-        } else if (el.placeholder !== undefined) {
-          el.placeholder = translations[lang][key];
-        } else {
-          const icon = el.querySelector("i");
-          let replaced = false;
-          el.childNodes.forEach(n => {
-            if (n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== "") {
-              n.textContent = " " + translations[lang][key];
-              replaced = true;
-            }
-          });
-          if (!replaced) {
-            const newText = document.createTextNode(translations[lang][key]);
-            el.appendChild(newText);
+      const value = translations[lang]?.[key];
+      if (!value) return;
+
+      if (el.tagName === "OPTION") {
+        el.textContent = value;
+      } else if (el.tagName === "LABEL") {
+        el.textContent = value;
+      } else if (el.placeholder !== undefined) {
+        el.placeholder = value;
+      } else if (el.hasAttribute("title")) {
+        el.setAttribute("title", value);
+      } else if (el.hasAttribute("alt")) {
+        el.setAttribute("alt", value);
+      } else {
+        const icon = el.querySelector("i");
+        let replaced = false;
+        el.childNodes.forEach(n => {
+          if (n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== "") {
+            n.textContent = " " + value;
+            replaced = true;
           }
+        });
+        if (!replaced) {
+          el.textContent = value;
         }
       }
     });
