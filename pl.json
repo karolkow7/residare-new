@@ -39,5 +39,15 @@
   "contact.name": "Twoje imię",
   "contact.email": "Twój e-mail",
   "contact.message": "Wiadomość",
-  "contact.send": "Wyślij"
+  "contact.send": "Wyślij",
+  "admin.title": "Dodaj nowe ogłoszenie",
+  "admin.title.label": "Tytuł",
+  "admin.location": "Lokalizacja",
+  "admin.size": "Powierzchnia (m²)",
+  "admin.price": "Cena (€)",
+  "admin.image": "Dodaj zdjęcie",
+  "admin.language": "Język ogłoszenia",
+  "admin.description": "Opis",
+  "admin.submit": "Zapisz ogłoszenie",
+  "admin.transaction": "Typ ogłoszenia"
 }

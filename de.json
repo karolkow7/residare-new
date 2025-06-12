@@ -39,5 +39,15 @@
   "contact.name": "Ihr Name",
   "contact.email": "Ihre E-Mail",
   "contact.message": "Nachricht",
-  "contact.send": "Absenden"
+  "contact.send": "Absenden",
+  "admin.title": "Neues Inserat erstellen",
+  "admin.title.label": "Titel",
+  "admin.location": "Ort",
+  "admin.size": "Fläche (m²)",
+  "admin.price": "Preis (€)",
+  "admin.image": "Bild hochladen",
+  "admin.language": "Sprache des Inserats",
+  "admin.description": "Beschreibung",
+  "admin.submit": "Inserat speichern",
+  "admin.transaction": "Art des Inserats"
 }
