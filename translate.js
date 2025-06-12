@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     de: {
+      "hero.dream": "Finden Sie Ihre Traumimmobilie in Polen",
       "nav.home": "Start",
       "nav.listings": "Angebote",
       "nav.faq": "FAQ",
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "cta.button": "Kontaktformular öffnen"
     },
     pl: {
+      "hero.dream": "Znajdź swoją wymarzoną nieruchomość w Polsce",
       "nav.home": "Start",
       "nav.listings": "Oferty",
       "nav.faq": "FAQ",

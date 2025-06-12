@@ -103,10 +103,31 @@
   width: auto;
 }
 
+
+.top-regions a:hover .card {
+  animation: pulse 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
 </style>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/><style>
+.top-regions a {
+  display: block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.top-regions a:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style></head>
 <body class="bg-gray-50 text-gray-900">
-<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<button class="hamburger" data-i18n="auto." onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <div id="sidebar"><a data-i18n="nav.listings" href="listings.html">Angebote finden</a><a data-i18n="nav.favorites" href="#">Favoriten</a><a data-i18n="nav.post" href="#">Inserieren</a><a data-i18n="nav.blog" href="faq.html">Blog</a><a data-i18n="nav.contact" href="kontakt.html">Kontakt</a></div>
 <header class="header">
 <div class="header-container" style="; gap: 2rem;">
@@ -121,7 +142,7 @@
 </header>
 <section class="hero">
 <div class="hero-content">
-<h1 data-i18n="hero.title">Finden Sie Ihre Immobilie in Polen</h1>
+<h1 data-i18n="hero.dream">Finden Sie Ihre Traumimmobilie in Polen</h1>
 <p data-i18n="hero.subtitle">Grenzüberschreitend. Einfach. Residare.</p>
 <div class="form-inline">
 <select id="transaction" style=" font-family: inherit;"><option data-i18n="transaction.buy" value="buy">Kaufen</option><option data-i18n="transaction.rent" value="rent">Mieten</option></select>
@@ -157,7 +178,7 @@
 </section>
 <footer class="footer">
 <nav><a data-i18n="nav.contact" href="kontakt.html">Kontakt</a><a data-i18n="nav.agb" href="agb.html">AGB</a><a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a><a data-i18n="nav.impress" href="impressum.html">Impressum</a></nav>
-<p>© 2025 Residare</p>
+<p data-i18n="auto._2025_residare">© 2025 Residare</p>
 </footer>
 <script>
 document.addEventListener("click", function (event) {
