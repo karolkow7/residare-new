@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     de: {
+      "faq.title": "Häufige Fragen",
       "nav.home": "Start",
       "nav.listings": "Angebote",
       "nav.faq": "FAQ",
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "listings.more": "Mehr erfahren"
     },
     pl: {
+      "faq.title": "Najczęstsze pytania",
       "nav.home": "Start",
       "nav.listings": "Oferty",
       "nav.faq": "FAQ",
