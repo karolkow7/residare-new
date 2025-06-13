@@ -98,7 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (el.hasAttribute("alt")) {
         el.setAttribute("alt", value);
       } else {
-        el.innerText = value; // direkte und robuste Übersetzung
+        // Spezialsupport für <i>Symbole + Text
+        const icon = el.querySelector("i");
+        if (icon) {
+          el.innerHTML = icon.outerHTML + " " + value;
+        } else {
+          el.textContent = value;
+        }
       }
     });
 
