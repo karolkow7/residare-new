@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "search.placeholder": "Ort oder Postleitzahl eingeben",
       "search.button": "Suchen",
       "regions.popular": "Beliebteste Regionen",
+      "regions.title": "Beliebteste Regionen",
       "region.gdansk": "Danzig",
       "region.swinemuende": "Swinemünde",
       "region.misdroy": "Misdroy",
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "search.placeholder": "Miejscowość lub kod pocztowy",
       "search.button": "Szukaj",
       "regions.popular": "Najpopularniejsze regiony",
-      "regions.title": "Najlepsze regiony",
+      "regions.title": "Najpopularniejsze regiony",
       "region.gdansk": "Gdańsk",
       "region.swinemuende": "Świnoujście",
       "region.misdroy": "Międzyzdroje",
@@ -88,9 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const value = translations[lang]?.[key];
       if (!value) return;
 
-      if (el.tagName === "OPTION") {
-        el.textContent = value;
-      } else if (el.tagName === "LABEL") {
+      if (el.tagName === "OPTION" || el.tagName === "LABEL") {
         el.textContent = value;
       } else if (el.placeholder !== undefined) {
         el.placeholder = value;
@@ -99,17 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (el.hasAttribute("alt")) {
         el.setAttribute("alt", value);
       } else {
-        const icon = el.querySelector("i");
-        let replaced = false;
-        el.childNodes.forEach(n => {
-          if (n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== "") {
-            n.textContent = " " + value;
-            replaced = true;
-          }
-        });
-        if (!replaced) {
-          el.textContent = value;
-        }
+        el.innerText = value; // direkte und robuste Übersetzung
       }
     });
 
