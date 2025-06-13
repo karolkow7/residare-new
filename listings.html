@@ -85,8 +85,51 @@
   padding: 1rem;
 }
 
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+.card .info {
+  padding: 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card h2 {
+  min-height: 3rem;
+  font-size: 1rem;
+}
+.heart-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: crimson;
+  border: 2px solid crimson;
+  border-radius: 50%;
+  padding: 0.2rem 0.4rem;
+  background: white;
+  cursor: pointer;
+}
+.heart-icon.filled {
+  background: crimson;
+  color: white;
+}
 </style>
-</head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <div id="sidebar">
 <a data-i18n="nav.home" href="index.html">Start</a>
@@ -133,15 +176,15 @@
 <a href="#" style="text-decoration: none; color: inherit; display: block;"><div class="card">
 <img alt="Danzig – Altbauwohnung im Zentrum" src="gdansk.jpg"/>
 <div class="info"><h2 data-lang="de" data-translate="title-Danzig">Danzig – Altbauwohnung im Zentrum</h2><h2 data-lang="pl" data-translate="title-Danzig" style="display:none;">Gdańsk – Mieszkanie w kamienicy w centrum</h2><p>65 m² · 3 Zimmer · 299.000 EUR</p></div>
-</div></a>
+<i class="fa fa-heart heart-icon" onclick="this.classList.toggle('filled')"></i></div></a>
 <a href="#" style="text-decoration: none; color: inherit; display: block;"><div class="card">
 <img alt="Swinemünde – Moderne Ferienwohnung" src="swinemünde.jpg"/>
 <div class="info"><h2 data-lang="de" data-translate="title-Swinemünde">Swinemünde – Moderne Ferienwohnung</h2><h2 data-lang="pl" data-translate="title-Swinemünde" style="display:none;">Świnoujście – Nowoczesne mieszkanie wakacyjne</h2><p>48 m² · 2 Zimmer · 179.000 EUR</p></div>
-</div></a>
+<i class="fa fa-heart heart-icon" onclick="this.classList.toggle('filled')"></i></div></a>
 <a href="#" style="text-decoration: none; color: inherit; display: block;"><div class="card">
 <img alt="Misdroy – Einfamilienhaus mit Garten" src="miedzyzdroje.jpg"/>
 <div class="info"><h2 data-lang="de" data-translate="title-Misdroy">Misdroy – Einfamilienhaus mit Garten</h2><h2 data-lang="pl" data-translate="title-Misdroy" style="display:none;">Międzyzdroje – Dom z ogrodem</h2><p>120 m² · 4 Zimmer · 320.000 EUR</p></div>
-</div></a>
+<i class="fa fa-heart heart-icon" onclick="this.classList.toggle('filled')"></i></div></a>
 </div><div class="map-container">
 <div id="map" style="width: 100%; height: 500px;"></div>
 <script>
