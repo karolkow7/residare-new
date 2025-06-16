@@ -108,9 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    document.querySelectorAll("[data-translate]").forEach(el => {
-      const langAttr = el.getAttribute("data-lang");
-      el.style.display = langAttr === lang ? "block" : "none";
+    document.querySelectorAll("[data-lang]").forEach(el => {
+      el.style.display = el.getAttribute("data-lang") === lang ? "" : "none";
     });
   }
 
