@@ -1,225 +1,96 @@
 <!DOCTYPE html>
 
-<html lang="de"><head><meta charset="utf-8"/><title>Listings – Residare</title><style>
+<html lang="de"><head><meta charset="utf-8"/><title>Listings</title><style>
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-}
-.hamburger {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-#sidebar {
-  transform: translateX(-100%);
-  visibility: hidden;
-
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: white;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  padding: 2rem 1rem;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-#sidebar.open {
-  transform: translateX(0);
-  visibility: visible;
-
-  left: 0;
-}
-#sidebar ul {
-  list-style: none;
+  margin: 0;
   padding: 0;
 }
-#sidebar li {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-#overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 999;
-}
-#overlay.show {
-  display: block;
-}
-header {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-  text-align: left;
-  padding-left: 80px;
-}
-.header-logo {
-  height: 90px;
-}
-#language-selector {
-  position: fixed;
-  top: 25px;
-  right: 20px;
-  font-size: 1.2rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-.search-bar {
-  padding: 1rem;
-  background: #f4f4f4;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-.search-bar input,
-.search-bar select {
-  padding: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  min-width: 150px;
-}
-.search-bar button {
-  padding: 0.5rem 1rem;
-  background: #00bfa6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-}
-main {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  padding: 1rem;
-}
-#results {
-  flex: 1.5;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease;
+button, select, input {
+  font-family: inherit;
 }
 .card:hover {
   transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
 }
 .card img {
-  width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
 }
-.card div {
-  padding: 0.8rem;
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
-footer {
-  padding: 1rem;
-  font-size: 0.95rem;
-  background: #f5f5f5;
-  text-align: center;
+.search-bar input,
+.search-bar select,
+.search-bar button {
+  border-radius: 8px;
 }
-</style></head><body><button class="hamburger" style="position: fixed; top: 20px; left: 20px; font-size: 24px; background: none; border: none; z-index: 1001; cursor: pointer;">☰</button>
-
-<section class="form-inline" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem;">
-<input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="padding: 0.5rem; font-size: 1rem; min-width: 180px;" type="text"/>
-<select data-i18n-placeholder="search.price" style="padding: 0.5rem; font-size: 1rem; min-width: 120px;"><option>Kaufpreis</option></select>
-<select data-i18n-placeholder="search.area" style="padding: 0.5rem; font-size: 1rem; min-width: 120px;"><option>Wohnfläche</option></select>
-<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; font-size: 1rem; min-width: 120px;"><option>Zimmer</option></select>
-<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 4px;">Suche speichern</button>
-</section>
-<div class="topbar" style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1rem; background: #f4f4f4;">
-<button class="hamburger" style="font-size: 1.5rem; background: none; border: none; cursor: pointer;">☰</button>
-<img alt="Residare Logo" class="logo" src="logo.png" style="height: 160px; width: auto;"/>
-<select id="language-selector" style="height: 2.5rem; font-size: 1rem;">
+</style></head><body>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; background: white; border-bottom: 1px solid #ddd;">
+<div style="display: flex; align-items: center; gap: 1rem;"><button id="hamburger" style="font-size: 1.5rem; background: none; border: none;">☰</button><img alt="Residare Logo" src="logo.png" style="height: 55px;"/></div>
+<select id="language-selector" style="font-size: 1.2rem; border: none; background: transparent;">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
 </select>
-</div>
-
-<div class="logo-container" style="position: relative;">
-<img alt="Residare Logo" class="header-logo" src="logo.png" style="height: 240px; position: absolute; top: -80px; left: 25%;"/>
-</div>
-<select id="language-selector" style="position: fixed; top: 20px; right: 20px; font-size: 1.2rem; border: none; background: transparent; cursor: pointer; z-index: 1001;">
-<option value="de">🇩🇪</option>
-<option value="pl">🇵🇱</option>
-</select>
-<nav id="sidebar">
-<ul>
-<li><a data-i18n="menu.listings" href="listings.html">Angebote</a></li>
-<li><a data-i18n="menu.favorites" href="favoriten.html">Favoriten</a></li>
-<li><a data-i18n="menu.submit" href="admin.html">Inserieren</a></li>
-<li><a data-i18n="menu.blog" href="blog.html">Blog</a></li>
-<li><a data-i18n="menu.contact" href="kontakt.html">Kontakt</a></li>
+</header>
+<nav id="sidebar" style="position: fixed; top: 0; left: -290px; width: 250px; height: 100%; background: #f4f4f4; box-shadow: 2px 0 5px rgba(0,0,0,0.1); padding: 5rem 1rem 1rem; transition: left 0.3s ease-in-out; z-index: 1000;">
+<ul style="list-style: none; padding: 0; font-size: 1.1rem;">
+<li><a data-i18n="menu.listings" href="listings.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Angebote</a></li>
+<li><a data-i18n="menu.favorites" href="favoriten.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Favoriten</a></li>
+<li><a data-i18n="menu.submit" href="admin.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Inserieren</a></li>
+<li><a data-i18n="menu.blog" href="blog.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Blog</a></li>
+<li><a data-i18n="menu.contact" href="kontakt.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Kontakt</a></li>
 </ul>
 </nav>
-<div id="overlay"></div>
-
-<main>
-<div id="results">
-<div class="card">
-<img alt="Wohnung 1" src="wohnung1.jpg"/>
-<div>
-<h3 data-i18n="listing.title1">Moderne Wohnung in Kassel</h3>
-<p data-i18n="listing.details1">330.000 € – 105 m² – 3 Zi.</p>
-<p style="color: #555;">Süd, Kassel</p>
+<div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: none; z-index: 999;"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    hamburger.onclick = () => { sidebar.style.left = '0'; overlay.style.display = 'block'; };
+    overlay.onclick = () => { sidebar.style.left = '-250px'; overlay.style.display = 'none'; };
+  });
+</script>
+<section class="search-bar" style="padding: 1rem; background: #f4f4f4; display: flex; flex-wrap: wrap; gap: 1rem;">
+<input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="flex: 1; min-width: 180px; padding: 0.5rem;" type="text"/>
+<select data-i18n-placeholder="search.price" style="padding: 0.5rem; min-width: 120px;"><option>Kaufpreis</option></select>
+<select data-i18n-placeholder="search.area" style="padding: 0.5rem; min-width: 120px;"><option>Wohnfläche</option></select>
+<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;"><option>Zimmer</option></select>
+<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 4px;">Suche speichern</button>
+</section>
+<main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
+<div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff;">
+<img alt="Wohnung 1" src="wohnung1.jpg" style="width: 100%; height: 180px; object-fit: cover;"/>
+<div style="padding: 0.8rem;">
+<h3 data-i18n="listing.title1" style="margin: 0;">Moderne Wohnung in Kassel</h3>
+<p data-i18n="listing.details1" style="margin: 0.2rem 0;">330.000 € – 105 m² – 3 Zi.</p>
+<p style="margin: 0; font-size: 0.9em; color: #555;">Süd, Kassel</p>
 </div>
 </div>
-<div class="card">
-<img alt="Wohnung 2" src="wohnung2.jpg"/>
-<div>
-<h3 data-i18n="listing.title2">Helle Wohnung mit Balkon</h3>
-<p data-i18n="listing.details2">298.000 € – 101 m² – 4 Zi.</p>
-<p style="color: #555;">Brasselsberg, Kassel</p>
-</div>
-</div>
-<div class="card">
-<img alt="Wohnung 3" src="wohnung3.jpg"/>
-<div>
-<h3 data-i18n="listing.title3">Charmante Altbauwohnung</h3>
-<p data-i18n="listing.details3">312.000 € – 99 m² – 3 Zi.</p>
-<p style="color: #555;">Vorderer Westen, Kassel</p>
+<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff;">
+<img alt="Wohnung 2" src="wohnung2.jpg" style="width: 100%; height: 180px; object-fit: cover;"/>
+<div style="padding: 0.8rem;">
+<h3 data-i18n="listing.title2" style="margin: 0;">Helle Wohnung mit Balkon</h3>
+<p data-i18n="listing.details2" style="margin: 0.2rem 0;">298.000 € – 101 m² – 4 Zi.</p>
+<p style="margin: 0; font-size: 0.9em; color: #555;">Brasselsberg, Kassel</p>
 </div>
 </div>
 </div>
-<div id="map" style="flex: 1; min-width: 380px; height: 600px; border: 1px solid #ccc; border-radius: 8px;">
-<!-- Map Container -->
-</div>
+<div id="map" style="flex: 1; min-width: 400px; height: 600px; border: 1px solid #ccc; border-radius: 8px;; background: #ddd; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold;">Karte folgt hier...</div>
 </main>
-<footer class="footer" style="padding: 2rem 1rem; background: #f5f5f5; text-align: center; font-size: 0.95rem; border-top: 1px solid #ccc;">
+<footer class="footer" style="padding: 2rem 1rem; background: #1f2937; color: white; text-align: center; font-size: 0.95rem;">
 <nav style="margin-bottom: 0.5rem;">
-<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
-<a data-i18n="nav.agb" href="agb.html">AGB</a>
-<a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a>
-<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+<a data-i18n="nav.contact" href="kontakt.html" style="color: white; margin-right: 1rem;">Kontakt</a>
+<a data-i18n="nav.agb" href="agb.html" style="color: white; margin-right: 1rem;">AGB</a>
+<a data-i18n="nav.privacy" href="datenschutz.html" style="color: white; margin-right: 1rem;">Datenschutz</a>
+<a data-i18n="nav.impress" href="impressum.html" style="color: white;">Impressum</a>
 </nav>
 <p data-i18n="auto._2025_residare">© 2025 Residare</p>
 </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-    document.querySelector(".hamburger").onclick = () => {
-      sidebar.classList.add("open");
-      overlay.classList.add("show");
-    };
-    overlay.onclick = () => {
-      sidebar.classList.remove("open");
-      overlay.classList.remove("show");
-    };
-  });
-</script>
 </body></html>
