@@ -1,43 +1,44 @@
-<!DOCTYPE html>
 
-<html lang="de"><head><meta charset="utf-8"/><title>Listings</title><style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-button, select, input {
-  font-family: inherit;
-}
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.2s ease-in-out;
-}
-.card img {
-  aspect-ratio: 1/1;
-  object-fit: cover;
-}
-.card {
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-.search-bar input,
-.search-bar select,
-.search-bar button {
-  border-radius: 8px;
-}
-</style></head><body>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listings – Residare</title>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer src="translate.js"></script>
+
+<div class="logo-container">
+<div style="position: absolute; top: 1.5rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+  <a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 1.05rem;">
+    <i class="fa-solid fa-heart" style="color: red;"></i> Favoriten
+  </a>
+  <a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 1.05rem;">
+    <i class="fa-solid fa-circle-plus" style="color: green;"></i> Inserieren
+  </a>
+  <a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 1.05rem;">
+    <i class="fa-solid fa-user" style="color: blue;"></i> Einloggen
+  </a>
+</div>
+<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a></div>
 <header style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; background: white; border-bottom: 1px solid #ddd;">
-<div style="display: flex; align-items: center; gap: 1rem;"><button id="hamburger" style="font-size: 1.5rem; background: none; border: none;">☰</button><img alt="Residare Logo" src="logo.png" style="height: 55px;"/></div>
-<select id="language-selector" style="font-size: 1.2rem; border: none; background: transparent;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<div class="logo-container" style="position: absolute; top: -80px; left: 25%; transform: translateX(-50%); height: 240px;">
+<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png" style=""/></a>
+</div>
+<button class="hamburger" id="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')" style="position: fixed; top: 1rem; left: 1rem; z-index: 1100; background: none; border: none; font-size: 1.5rem; cursor: pointer;">☰</button>
+</div>
+<select id="language-selector" style="font-size: 1rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem;">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
 </select>
+<div style="position: absolute; top: 1.5rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+<a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 1.05rem;"><i class="fa-solid fa-heart" style="color: red;"></i> Favoriten</a>
+<a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 1.05rem;"><i class="fa-solid fa-circle-plus" style="color: green;"></i> Inserieren</a>
+<a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem; font-size: 1.05rem;"><i class="fa-solid fa-user" style="color: blue;"></i> Einloggen</a>
+</div>
 </header>
-<nav id="sidebar" style="position: fixed; top: 0; left: -290px; width: 250px; height: 100%; background: #f4f4f4; box-shadow: 2px 0 5px rgba(0,0,0,0.1); padding: 5rem 1rem 1rem; transition: left 0.3s ease-in-out; z-index: 1000;">
+<nav id="sidebar" style="position: fixed; top: 0; left: -300px; width: 250px; height: 100%; background: #f4f4f4; box-shadow: 2px 0 5px rgba(0,0,0,0.1); padding: 5rem 1rem 1rem; transition: left 0.3s ease-in-out; z-index: 1000;">
 <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
 <li><a data-i18n="menu.listings" href="listings.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Angebote</a></li>
 <li><a data-i18n="menu.favorites" href="favoriten.html" style="display: block; font-size: 1rem; color: #111; text-decoration: none; margin-bottom: 1rem;">Favoriten</a></li>
@@ -53,7 +54,7 @@ button, select, input {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
     hamburger.onclick = () => { sidebar.style.left = '0'; overlay.style.display = 'block'; };
-    overlay.onclick = () => { sidebar.style.left = '-250px'; overlay.style.display = 'none'; };
+    overlay.onclick = () => { sidebar.style.left = '-300px'; overlay.style.display = 'none'; };
   });
 </script>
 <section class="search-bar" style="padding: 1rem; background: #f4f4f4; display: flex; flex-wrap: wrap; gap: 1rem;">
@@ -65,7 +66,7 @@ button, select, input {
 </section>
 <main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
 <div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
-<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff;">
+<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff; width: 100%; aspect-ratio: 1 / 1;">
 <img alt="Wohnung 1" src="wohnung1.jpg" style="width: 100%; height: 180px; object-fit: cover;"/>
 <div style="padding: 0.8rem;">
 <h3 data-i18n="listing.title1" style="margin: 0;">Moderne Wohnung in Kassel</h3>
@@ -73,12 +74,20 @@ button, select, input {
 <p style="margin: 0; font-size: 0.9em; color: #555;">Süd, Kassel</p>
 </div>
 </div>
-<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff;">
+<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff; width: 100%; aspect-ratio: 1 / 1;">
 <img alt="Wohnung 2" src="wohnung2.jpg" style="width: 100%; height: 180px; object-fit: cover;"/>
 <div style="padding: 0.8rem;">
 <h3 data-i18n="listing.title2" style="margin: 0;">Helle Wohnung mit Balkon</h3>
 <p data-i18n="listing.details2" style="margin: 0.2rem 0;">298.000 € – 101 m² – 4 Zi.</p>
 <p style="margin: 0; font-size: 0.9em; color: #555;">Brasselsberg, Kassel</p>
+</div>
+</div>
+<div class="card" style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #fff; width: 100%; aspect-ratio: 1 / 1;">
+<img alt="Wohnung 3" src="wohnung3.jpg" style="width: 100%; height: 180px; object-fit: cover;"/>
+<div style="padding: 0.8rem;">
+<h3 data-i18n="listing.title3" style="margin: 0;">Zentrale Wohnung mit Aufzug</h3>
+<p data-i18n="listing.details3" style="margin: 0.2rem 0;">315.000 € – 98 m² – 3 Zi.</p>
+<p style="margin: 0; font-size: 0.9em; color: #555;">Mitte, Kassel</p>
 </div>
 </div>
 </div>
