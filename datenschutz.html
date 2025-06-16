@@ -1,116 +1,98 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Datenschutz – Residare</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="translate.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Datenschutz – Residare</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="translate.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
-
-  <header class="header">
-    <div class="header-container">
-      <div class="logo-container">
-        <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo"/></a>
-      </div>
-      <select id="language-selector" style="position:absolute; top:1rem; right:1rem;">
-        <option value="de">🇩🇪</option>
-        <option value="pl">🇵🇱</option>
-      </select>
-    </div>
-  </header>
-
-  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-  <div id="sidebar">
-    <a href="index.html" data-i18n="nav.home">Start</a>
-    <a href="listings.html" data-i18n="nav.listings">Angebote</a>
-    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
-    <a href="impressum.html" data-i18n="nav.impress">Impressum</a>
-    <a href="agb.html" data-i18n="nav.agb">AGB</a>
-    <a href="datenschutz.html" data-i18n="nav.privacy">Datenschutz</a>
-  </div>
-
-  <main class="content">
-    <section class="text-content" style="max-width:800px; margin:4rem auto; padding:0 1rem;">
-      <h1 data-i18n="privacy.title">Datenschutzerklärung</h1>
-      <p>Stand: 11.06.2025</p>
-
-      <h2 data-i18n="privacy.controller">1. Verantwortlicher</h2>
-      <p data-i18n="privacy.controller.text">
+<header class="header"><div class="header-container" style="gap: 2rem;"><div class="logo-container"><a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a></div><select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;"><option value="de">🇩🇪</option><option value="pl">🇵🇱</option></select></div></header>
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar"><a data-i18n="nav.listings" href="listings.html">Angebote finden</a><a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a><a data-i18n="nav.post" href="admin.html">Inserieren</a><a data-i18n="nav.blog" href="faq.html">Blog</a><a data-i18n="nav.contact" href="kontakt.html">Kontakt</a></div>
+<main class="content">
+<section class="text-content" style="max-width:800px; margin:4rem auto; padding:0 1rem;">
+<h1 data-i18n="privacy.title">Datenschutzerklärung</h1>
+<p>Stand: 11.06.2025</p>
+<h2 data-i18n="privacy.controller">1. Verantwortlicher</h2>
+<p data-i18n="privacy.controller.text">
         Paul Smith – Residare (Einzelunternehmen)<br/>
         Adresse folgt<br/>
         E-Mail: info@residare.de
       </p>
-
-      <h2 data-i18n="privacy.hosting">2. Hosting</h2>
-      <p data-i18n="privacy.hosting.text">
+<h2 data-i18n="privacy.hosting">2. Hosting</h2>
+<p data-i18n="privacy.hosting.text">
         Unsere Website wird bei einem europäischen Hosting-Anbieter betrieben. Die dort gespeicherten Daten (z. B. IP-Adressen, Zugriffszeitpunkte) dienen dem sicheren und stabilen Betrieb und werden automatisch in Logfiles protokolliert.
       </p>
-
-      <h2 data-i18n="privacy.accessData">3. Zugriffsdaten und Server-Logs</h2>
-      <p data-i18n="privacy.accessData.text">
+<h2 data-i18n="privacy.accessData">3. Zugriffsdaten und Server-Logs</h2>
+<p data-i18n="privacy.accessData.text">
         Beim Besuch unserer Website erheben wir automatisiert Daten über Zugriffe und speichern diese als Server-Logfiles. Dazu zählen: besuchte Seiten, Uhrzeit, Browsertyp, Betriebssystem, Referrer-URL, IP-Adresse. Diese Daten dienen ausschließlich der Sicherstellung eines störungsfreien Betriebs.
       </p>
-
-      <h2 data-i18n="privacy.cookies">4. Cookies</h2>
-      <p data-i18n="privacy.cookies.text">
+<h2 data-i18n="privacy.cookies">4. Cookies</h2>
+<p data-i18n="privacy.cookies.text">
         Wir verwenden Cookies, um grundlegende Funktionen zu ermöglichen und die Nutzung zu analysieren. Technisch notwendige Cookies sind für den Betrieb der Seite unverzichtbar. Optional können Tracking-Cookies eingesetzt werden, sofern du einwilligst.
       </p>
-
-      <h2 data-i18n="privacy.contactform">5. Kontaktformular</h2>
-      <p data-i18n="privacy.contactform.text">
+<h2 data-i18n="privacy.contactform">5. Kontaktformular</h2>
+<p data-i18n="privacy.contactform.text">
         Wenn du über unser Formular Kontakt aufnimmst, speichern wir deine Angaben zur Bearbeitung der Anfrage sowie für Rückfragen. Diese Daten geben wir nicht ohne Einwilligung weiter.
       </p>
-
-      <h2 data-i18n="privacy.googlefonts">6. Google Fonts</h2>
-      <p data-i18n="privacy.googlefonts.text">
+<h2 data-i18n="privacy.googlefonts">6. Google Fonts</h2>
+<p data-i18n="privacy.googlefonts.text">
         Auf unserer Website werden Google Fonts lokal eingebunden. Es findet kein externer Abruf bei Google-Servern statt. Dadurch werden keine personenbezogenen Daten an Google übermittelt.
       </p>
-
-      <h2 data-i18n="privacy.maps">7. OpenStreetMap</h2>
-      <p data-i18n="privacy.maps.text">
+<h2 data-i18n="privacy.maps">7. OpenStreetMap</h2>
+<p data-i18n="privacy.maps.text">
         Zur Darstellung von Karten nutzen wir OpenStreetMap. Beim Aufruf einer Karte können Daten an Server von OpenStreetMap übertragen werden. Dies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an nutzerfreundlicher Darstellung).
       </p>
-
-      <h2 data-i18n="privacy.rights">8. Deine Rechte</h2>
-      <ul>
-        <li data-i18n="privacy.rights.access">Auskunft über gespeicherte Daten</li>
-        <li data-i18n="privacy.rights.rectification">Berichtigung unrichtiger Daten</li>
-        <li data-i18n="privacy.rights.deletion">Löschung gespeicherter Daten</li>
-        <li data-i18n="privacy.rights.restriction">Einschränkung der Verarbeitung</li>
-        <li data-i18n="privacy.rights.objection">Widerspruch gegen die Verarbeitung</li>
-        <li data-i18n="privacy.rights.portability">Datenübertragbarkeit</li>
-      </ul>
-
-      <h2 data-i18n="privacy.rights.contact">9. Kontaktstelle</h2>
-      <p data-i18n="privacy.rights.contact.text">
+<h2 data-i18n="privacy.rights">8. Deine Rechte</h2>
+<ul>
+<li data-i18n="privacy.rights.access">Auskunft über gespeicherte Daten</li>
+<li data-i18n="privacy.rights.rectification">Berichtigung unrichtiger Daten</li>
+<li data-i18n="privacy.rights.deletion">Löschung gespeicherter Daten</li>
+<li data-i18n="privacy.rights.restriction">Einschränkung der Verarbeitung</li>
+<li data-i18n="privacy.rights.objection">Widerspruch gegen die Verarbeitung</li>
+<li data-i18n="privacy.rights.portability">Datenübertragbarkeit</li>
+</ul>
+<h2 data-i18n="privacy.rights.contact">9. Kontaktstelle</h2>
+<p data-i18n="privacy.rights.contact.text">
         Bei Fragen oder zur Wahrnehmung deiner Rechte kannst du dich jederzeit per E-Mail an uns wenden: info@residare.de
       </p>
-
-      <h2 data-i18n="privacy.changes">10. Änderungen</h2>
-      <p data-i18n="privacy.changes.text">
+<h2 data-i18n="privacy.changes">10. Änderungen</h2>
+<p data-i18n="privacy.changes.text">
         Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Gültig ist immer die aktuelle Version auf dieser Website.
       </p>
-    
-      <h2 data-i18n="privacy.consent">11. Cookie-Einwilligung</h2>
-      <p data-i18n="privacy.consent.text">
+<h2 data-i18n="privacy.consent">11. Cookie-Einwilligung</h2>
+<p data-i18n="privacy.consent.text">
         Beim ersten Besuch unserer Website wird ggf. ein Cookie-Banner angezeigt, über das du bestimmten Verarbeitungen zustimmen oder diese ablehnen kannst. Deine Einstellungen kannst du jederzeit ändern.
       </p>
-
-      <h2 data-i18n="privacy.analytics">12. Webanalyse und Tracking</h2>
-      <p data-i18n="privacy.analytics.text">
+<h2 data-i18n="privacy.analytics">12. Webanalyse und Tracking</h2>
+<p data-i18n="privacy.analytics.text">
         Zur Optimierung unseres Angebots behalten wir uns vor, künftig Webanalyse-Dienste wie Google Analytics oder Matomo einzusetzen. Dabei können Cookies verwendet und pseudonyme Nutzungsprofile erstellt werden. Du kannst dem jederzeit widersprechen.
       </p>
-
-      <h2 data-i18n="privacy.marketing">13. Marketing-Dienste Dritter</h2>
-      <p data-i18n="privacy.marketing.text">
+<h2 data-i18n="privacy.marketing">13. Marketing-Dienste Dritter</h2>
+<p data-i18n="privacy.marketing.text">
         Sofern du einwilligst, können in Zukunft Dienste wie Facebook Pixel, Google Ads oder vergleichbare Technologien eingesetzt werden, um dir personalisierte Werbung anzuzeigen. Du wirst im Rahmen des Cookie-Banners transparent informiert und kannst jederzeit widerrufen.
       </p>
-    </section>
-    
-  </main>
-
-</body>
+</section>
+</main>
+<footer class="footer"><nav><a data-i18n="nav.contact" href="kontakt.html">Kontakt</a><a data-i18n="nav.agb" href="agb.html">AGB</a><a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a><a data-i18n="nav.impress" href="impressum.html">Impressum</a></nav><p data-i18n="auto._2025_residare">© 2025 Residare</p></footer><script>
+document.addEventListener("click", function (event) {
+  const sidebar = document.getElementById("sidebar");
+  const hamburger = document.querySelector(".hamburger");
+  const isClickInsideSidebar = sidebar.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+  if (sidebar.classList.contains("open") && !isClickInsideSidebar && !isClickOnHamburger) {
+    sidebar.classList.remove("open");
+  }
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const selector = document.getElementById("language-selector");
+  if (selector && typeof updateLanguage === "function") {
+    updateLanguage(selector.value || "de");
+  }
+});
+</script></body>
 </html>
