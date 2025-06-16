@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de"><head><meta charset="utf-8"/><title>Listings – Residare</title><style>
 body {
   margin: 0;
@@ -14,7 +15,11 @@ body {
   cursor: pointer;
   z-index: 1001;
 }
+
 #sidebar {
+  transform: translateX(-100%);
+  visibility: hidden;
+
   position: fixed;
   top: 0;
   left: -250px;
@@ -26,7 +31,11 @@ body {
   transition: left 0.3s ease;
   z-index: 1000;
 }
+
 #sidebar.open {
+  transform: translateX(0);
+  visibility: visible;
+
   left: 0;
 }
 #sidebar ul {
@@ -128,7 +137,18 @@ footer {
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
 </select>
-<header><img alt="Residare Logo" class="header-logo" src="logo.png"/></header>
+
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 1rem;">
+<div style="display: flex; align-items: center; gap: 1rem;">
+<button class="hamburger">☰</button>
+<img alt="Residare Logo" class="header-logo" src="logo.png" style="height: 60px;"/>
+</div>
+<select id="language-selector">
+<option value="de">🇩🇪</option>
+<option value="pl">🇵🇱</option>
+</select>
+</header>
+
 <nav id="sidebar">
 <ul>
 <li><a data-i18n="menu.listings" href="listings.html">Angebote</a></li>
@@ -139,7 +159,6 @@ footer {
 </ul>
 </nav>
 <div id="overlay"></div>
-
 <section class="search-bar">
 <input data-i18n-placeholder="search.location" placeholder="📍 Kassel" type="text"/>
 <select data-i18n-placeholder="search.price"><option>Kaufpreis</option></select>
@@ -147,7 +166,6 @@ footer {
 <select data-i18n-placeholder="search.rooms"><option>Zimmer</option></select>
 <button data-i18n="search.save">Suche speichern</button>
 </section>
-
 <main>
 <div id="results">
 <div class="card">
@@ -179,14 +197,12 @@ footer {
 <!-- Map Container -->
 </div>
 </main>
-
-<footer>
+<footer style="background-color: #f5f5f5; padding: 1rem; text-align: center; font-size: 0.95rem; border-top: 1px solid #ccc;">
 <a data-i18n="footer.start" href="index.html">Start</a> |
-  <a data-i18n="footer.agb" href="agb.html">AGB</a> |
-  <a data-i18n="footer.datenschutz" href="datenschutz.html">Datenschutz</a> |
-  <a data-i18n="footer.impressum" href="impressum.html">Impressum</a>
+<a data-i18n="footer.agb" href="agb.html">AGB</a> |
+<a data-i18n="footer.datenschutz" href="datenschutz.html">Datenschutz</a> |
+<a data-i18n="footer.impressum" href="impressum.html">Impressum</a>
 </footer>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
