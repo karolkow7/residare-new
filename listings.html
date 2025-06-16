@@ -69,8 +69,7 @@
 .logo-container {
   position: absolute;
   top: -80px;
-  left: 25%;
-  transform: translateX(-50%);
+  left: 2.5rem;
   height: 240px;
 }
 .header-logo {
@@ -130,11 +129,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 <div id="sidebar">
-  <a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
-  <a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
-  <a data-i18n="nav.post" href="admin.html">Inserieren</a>
-  <a data-i18n="nav.blog" href="faq.html">Blog</a>
-  <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+<a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
+<a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
+<a data-i18n="nav.post" href="admin.html">Inserieren</a>
+<a data-i18n="nav.blog" href="faq.html">Blog</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
 </div>
 <body class="bg-gray-50 text-gray-900">
 <header class="header">
@@ -148,7 +147,7 @@
 </select>
 </div>
 </header>
-<main class="listings"><h1 data-i18n="listings.title">Aktuelle Immobilienangebote</h1>
+<main class="listings">
 <div style="padding: 1rem;">
 <label for="viewToggle" style="font-weight: bold;">Ansicht:</label>
 <select id="viewToggle" onchange="toggleView()" style="margin-left: 0.5rem; padding: 0.4rem;">
