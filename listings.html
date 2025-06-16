@@ -132,22 +132,15 @@ footer {
   background: #f5f5f5;
   text-align: center;
 }
-</style></head><body><button class="hamburger">☰</button>
-<select id="language-selector">
-<option value="de">🇩🇪</option>
-<option value="pl">🇵🇱</option>
-</select>
-
-<header style="display: flex; align-items: center; justify-content: space-between; padding: 1rem;">
-<div style="display: flex; align-items: center; gap: 1rem;">
-<button class="hamburger">☰</button>
-<img alt="Residare Logo" class="header-logo" src="logo.png" style="height: 60px;"/>
+</style></head><body><button class="hamburger" style="position: fixed; top: 20px; left: 20px; font-size: 24px; background: none; border: none; z-index: 1001; cursor: pointer;">☰</button>
+<div class="logo-container" style="position: relative;">
+<img alt="Residare Logo" class="header-logo" src="logo.png" style="height: 240px; position: absolute; top: -80px; left: 25%;"/>
 </div>
-<select id="language-selector">
+
+<select id="language-selector" style="position: fixed; top: 20px; right: 20px; font-size: 1.2rem; border: none; background: transparent; cursor: pointer; z-index: 1001;">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
 </select>
-</header>
 
 <nav id="sidebar">
 <ul>
@@ -197,12 +190,17 @@ footer {
 <!-- Map Container -->
 </div>
 </main>
-<footer style="background-color: #f5f5f5; padding: 1rem; text-align: center; font-size: 0.95rem; border-top: 1px solid #ccc;">
-<a data-i18n="footer.start" href="index.html">Start</a> |
-<a data-i18n="footer.agb" href="agb.html">AGB</a> |
-<a data-i18n="footer.datenschutz" href="datenschutz.html">Datenschutz</a> |
-<a data-i18n="footer.impressum" href="impressum.html">Impressum</a>
+
+<footer class="footer" style="padding: 2rem 1rem; background: #f5f5f5; text-align: center; font-size: 0.95rem; border-top: 1px solid #ccc;">
+<nav style="margin-bottom: 0.5rem;">
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+<a data-i18n="nav.agb" href="agb.html">AGB</a>
+<a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a>
+<a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+</nav>
+<p data-i18n="auto._2025_residare">© 2025 Residare</p>
 </footer>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
