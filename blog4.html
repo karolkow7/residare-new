@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Residare – Template-Seite</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer src="translate.js"></script>
+<style>
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    padding: 5rem 1rem 1rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #sidebar.open {
+    left: 0;
+  }
+  #sidebar a {
+    display: block;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  #main-logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    #main-logo {
+      max-width: 240px;
+    }
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .topbar .logo {
+    height: 160px !important;
+    width: auto !important;
+    margin-left: 1rem;
+  }
+
+  .topbar select {
+    height: 2.5rem;
+    font-size: 1rem;
+    margin-left: auto;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: -80px;
+    left: 25%;
+    transform: translateX(-50%);
+    height: 240px;
+  }
+
+  .header-logo {
+    height: 240px;
+    width: auto;
+  }
+
+  i.fa-heart {
+    color: crimson;
+  }
+
+  i.fa-circle-plus {
+    color: teal;
+  }
+
+  i.fa-user {
+    color: darkslateblue;
+  }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 998;
+  }
+
+  .sidebar.open ~ #overlay {
+    display: block;
+  }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body style="background-color: white; color: #1f2937;">
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+  <a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
+  <a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
+  <a data-i18n="nav.post" href="admin.html">Inserieren</a>
+  <a data-i18n="nav.blog" href="faq.html">Blog</a>
+  <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</div>
+
+<header class="header">
+  <div class="header-container" style="gap: 2rem;">
+    <div class="logo-container">
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo"/></a>
+    </div>
+    <div style="position: absolute; top: 1rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+      <a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-heart"></i> Favoriten</a>
+      <a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
+      <a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-user"></i> Einloggen</a>
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;"">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
+</header>
+
+<main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
+  <div data-lang="de" data-translate="True">
+    <section class="text-content">
+      <h1 style="font-size: 2rem;">Warum jetzt einsteigen? Die wirtschaftlichen Argumente für polnische Immobilien 2025</h1>
+
+<h2 style="font-size: 1.25rem;">Ein stabiler Markt mit Nachholpotenzial</h2>
+<p>Während der deutsche Immobilienmarkt nach Jahren des Booms deutlich abkühlt, zeigt sich Polen als Ausnahmemarkt: Die Preise wachsen moderat, die Nachfrage bleibt konstant hoch – vor allem in Großstädten wie Warschau, Krakau, Danzig oder Posen. Das polnische Statistikamt (GUS) meldete für 2024 ein durchschnittliches Preiswachstum von rund 7 %. Gleichzeitig bleiben Mieten bezahlbar, was auf einen gesunden Markt ohne Überhitzung hindeutet. Im EU-Vergleich zählt Polen weiterhin zu den Ländern mit den niedrigsten durchschnittlichen Quadratmeterpreisen – besonders im Vergleich zu Westeuropa.
+
+<h2 style="font-size: 1.25rem;">Zinsen, Inflation und reale Rendite</h2>
+<p>Während Immobilienkäufer in Deutschland mit Bauzinsen von über 4 % zu kämpfen haben, ist der polnische Zinsmarkt durch eine schnellere geldpolitische Reaktion der Narodowy Bank Polski (NBP) wieder in ruhigeren Bahnen. Viele Banken vergeben Kredite derzeit zu rund 6–6,5 %, wobei staatliche Programme für junge Familien zusätzliche Entlastung schaffen. Im Gegenzug steigen die Mieten – was die reale Netto-Rendite für Vermieter erhöht. Besonders in touristisch geprägten Regionen und Universitätsstädten sin...
+
+<h2 style="font-size: 1.25rem;">Demografische Entwicklung: Städter ziehen in die Höhe</h2>
+<p>In Deutschland stagniert die Bautätigkeit – auch wegen bürokratischer Hürden. In Polen hingegen wird weiter gebaut – und vor allem: zu einem Bedarf. Die Urbanisierung nimmt zu, viele junge Familien und Fachkräfte zieht es in die Metropolen. Der Wohnraumbedarf in Danzig, Breslau oder Lublin steigt weiter. Laut einer Analyse von PKO Bank Polski fehlen in Polen mittelfristig rund 1 Million Wohneinheiten, um die Wohnraumnachfrage zu decken. Für Investoren bedeutet das: Eine wachsende Mietklientel mit ste...
+
+<h2 style="font-size: 1.25rem;">Vergleich Deutschland–Polen: Einstiegskosten und Steuerlast</h2>
+<p>Ein oft unterschätzter Vorteil ist die niedrigere Steuer- und Nebenkostenlast beim Erwerb polnischer Immobilien. Während Käufer in Deutschland je nach Bundesland bis zu 6,5 % Grunderwerbsteuer zahlen, liegt die sogenannte PCC (podatek od czynności cywilnoprawnych) in Polen bei nur 2 %. Maklerprovisionen sind oft niedriger oder entfallen bei Privatangeboten ganz. Auch die Grundsteuer fällt in Polen moderater aus – was besonders bei Mehrfamilienhäusern eine spürbare Entlastung bedeutet.</p>
+
+<h2 style="font-size: 1.25rem;">Residare: Der Marktplatz für grenzüberschreitende Käufer</h2>
+<p>Viele Deutsche schrecken vor dem Immobilienkauf im Ausland zurück – zu groß wirken Sprachbarriere und Bürokratie. Residare setzt genau hier an: zweisprachige Angebote, klare Strukturen, zuverlässige Vermittlungspartner. Das schafft Sicherheit, Orientierung und Vergleichbarkeit. Ob zur Eigennutzung, als Ferienimmobilie oder zur Kapitalanlage – Residare bietet Zugang zu einem Markt, der gerade erst richtig ins Rollen kommt.</p>
+
+<h2 style="font-size: 1.25rem;">Fazit: 2025 als Chance für Vorausschauende</h2>
+<p>Polen ist kein Geheimtipp mehr – aber auch noch kein ausgereizter Markt. Wer heute einsteigt, profitiert von attraktiven Einstiegspreisen, strukturell wachsender Nachfrage und einem wirtschaftlichen Umfeld, das Sachwerte wie Immobilien weiterhin besonders begünstigt. Mit der richtigen Plattform und etwas Marktverständnis wird der Immobilienkauf in Polen zu einer strategisch klugen Entscheidung.</p>
+    </section>
+  </div>
+  <div data-lang="pl" data-translate="True" style="display:none;"><section class="text-content"><h1 style="font-size: 2rem;">Dlaczego warto inwestować teraz? Argumenty ekonomiczne za nieruchomościami w Polsce w 2025 roku</h1>
+
+<h2 style="font-size: 1.25rem;">Stabilny rynek z potencjałem wzrostu</h2>
+<p>Podczas gdy niemiecki rynek nieruchomości po latach boomu wykazuje oznaki stagnacji, Polska wyróżnia się stabilnością. Ceny rosną umiarkowanie, a popyt – szczególnie w dużych miastach jak Warszawa, Kraków, Gdańsk czy Poznań – utrzymuje się na wysokim poziomie. Główny Urząd Statystyczny (GUS) odnotował w 2024 roku średni wzrost cen nieruchomości na poziomie ok. 7 %. Czynsze pozostają rozsądne, co wskazuje na zdrowy rynek nieruchomości bez oznak bańki spekulacyjnej.</p>
+
+<h2 style="font-size: 1.25rem;">Stopy procentowe, inflacja i realna rentowność</h2>
+<p>Podczas gdy niemieccy kupujący zmagają się z wysokimi stopami procentowymi, Polska szybciej zareagowała na presję inflacyjną. Narodowy Bank Polski (NBP) ustabilizował rynek kredytowy, a wiele banków oferuje kredyty hipoteczne na poziomie 6–6,5 %. Równolegle rosną czynsze, co poprawia realną rentowność inwestycji. Dotyczy to zwłaszcza regionów turystycznych oraz miast akademickich, gdzie popyt na wynajem pozostaje wysoki.</p>
+
+<h2 style="font-size: 1.25rem;">Demografia i urbanizacja</h2>
+<p>W Niemczech spada aktywność budowlana, natomiast w Polsce nadal powstają nowe inwestycje – odpowiadające realnym potrzebom mieszkaniowym. Proces urbanizacji przyspiesza, a młode rodziny i specjaliści migrują do miast. Zgodnie z analizą PKO Banku Polskiego, w Polsce brakuje obecnie około miliona mieszkań. Dla inwestorów oznacza to rosnący popyt na wynajem i długoterminową stabilność dochodu.</p>
+
+<h2 style="font-size: 1.25rem;">Porównanie Polska–Niemcy: koszty wejścia i opodatkowanie</h2>
+<p>Zakup nieruchomości w Polsce wiąże się z niższymi kosztami transakcyjnymi niż w Niemczech. Podatek PCC wynosi tylko 2 %, podczas gdy niemiecki podatek od zakupu nieruchomości sięga nawet 6,5 %. Prowizje dla pośredników są często niższe, a w przypadku ofert prywatnych – nieobecne. Również podatek od nieruchomości (podatek od nieruchomości) pozostaje na umiarkowanym poziomie, co ma znaczenie zwłaszcza dla inwestorów instytucjonalnych.</p>
+
+<h2 style="font-size: 1.25rem;">Residare – platforma dla inwestorów transgranicznych</h2>
+<p>Dla wielu Niemców zakup nieruchomości za granicą wydaje się skomplikowany – z uwagi na język i różnice prawne. Residare upraszcza ten proces, oferując oferty dwujęzyczne, jasną strukturę i bezpieczne kanały kontaktu. Dzięki temu możliwy staje się zakup mieszkania na wynajem, domu wakacyjnego lub lokalu inwestycyjnego – bez stresu i ryzyka.</p>
+
+<h2 style="font-size: 1.25rem;">Podsumowanie: 2025 to dobry moment</h2>
+<p>Polska nie jest już rynkiem nieznanym, ale nadal oferuje duże możliwości. Dla świadomych inwestorów rok 2025 może być idealnym momentem na wejście: niskie koszty zakupu, rosnący popyt i otoczenie sprzyjające inwestycjom w wartości trwałe, takie jak nieruchomości.</p></section></div>
+</main>
+
+<footer class="footer">
+  <nav>
+    <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+    <a data-i18n="nav.agb" href="agb.html">AGB</a>
+    <a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a>
+    <a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+  </nav>
+  <p data-i18n="auto._2025_residare">© 2025 Residare</p>
+</footer>
+
+<div id="overlay"></div>
+<script>
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("sidebar");
+    const hamburger = document.querySelector(".hamburger");
+    if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById("language-selector");
+    if (selector && typeof updateLanguage === "function") {
+      updateLanguage(selector.value || "de");
+    }
+  });
+</script>
+</body>
+</html>
