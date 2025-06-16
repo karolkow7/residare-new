@@ -1,23 +1,14 @@
 <!DOCTYPE html>
-<html lang="de"><head><meta charset="utf-8"/><title>Listings</title><style>
+<html lang="de"><head><meta charset="utf-8"/><title>Listings – Residare</title><style>
 body {
-  font-family: sans-serif;
   margin: 0;
-  padding: 0;
-}
-header {
-  position: relative;
-  text-align: center;
-  padding: 1rem 0 0.5rem;
-}
-.header-logo {
-  height: 240px;
+  font-family: Arial, sans-serif;
 }
 .hamburger {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 2rem;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
   background: none;
   border: none;
   cursor: pointer;
@@ -44,7 +35,7 @@ header {
 }
 #sidebar li {
   margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 #overlay {
   display: none;
@@ -56,28 +47,88 @@ header {
 #overlay.show {
   display: block;
 }
-footer {
+header {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  text-align: left;
+  padding-left: 80px;
+}
+.header-logo {
+  height: 90px;
+}
+#language-selector {
+  position: fixed;
+  top: 25px;
+  right: 20px;
+  font-size: 1.2rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.search-bar {
   padding: 1rem;
-  background: #f5f5f5;
-  text-align: center;
-  font-size: 0.95rem;
+  background: #f4f4f4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.search-bar input,
+.search-bar select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 150px;
+}
+.search-bar button {
+  padding: 0.5rem 1rem;
+  background: #00bfa6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+}
+#results {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
 }
 .card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.02);
 }
 .card img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 1/1;
   object-fit: cover;
 }
 .card div {
   padding: 0.8rem;
 }
-</style></head><body><button class="hamburger">☰</button><header><img alt="Residare Logo" class="header-logo" src="logo.png"/></header>
+footer {
+  padding: 1rem;
+  font-size: 0.95rem;
+  background: #f5f5f5;
+  text-align: center;
+}
+</style></head><body><button class="hamburger">☰</button>
+<select id="language-selector">
+<option value="de">🇩🇪</option>
+<option value="pl">🇵🇱</option>
+</select>
+<header><img alt="Residare Logo" class="header-logo" src="logo.png"/></header>
 <nav id="sidebar">
 <ul>
 <li><a data-i18n="menu.listings" href="listings.html">Angebote</a></li>
@@ -89,16 +140,16 @@ footer {
 </nav>
 <div id="overlay"></div>
 
-<section class="search-bar" style="padding: 1rem; background: #f4f4f4; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-<input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="padding: 0.5rem; min-width: 180px;" type="text"/>
-<select data-i18n-placeholder="search.price" style="padding: 0.5rem;"><option>Kaufpreis</option></select>
-<select data-i18n-placeholder="search.area" style="padding: 0.5rem;"><option>Wohnfläche</option></select>
-<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem;"><option>Zimmer</option></select>
-<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 4px;">Suche speichern</button>
+<section class="search-bar">
+<input data-i18n-placeholder="search.location" placeholder="📍 Kassel" type="text"/>
+<select data-i18n-placeholder="search.price"><option>Kaufpreis</option></select>
+<select data-i18n-placeholder="search.area"><option>Wohnfläche</option></select>
+<select data-i18n-placeholder="search.rooms"><option>Zimmer</option></select>
+<button data-i18n="search.save">Suche speichern</button>
 </section>
 
-<main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
-<div id="results" style="flex: 1.5; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+<main>
+<div id="results">
 <div class="card">
 <img alt="Wohnung 1" src="wohnung1.jpg"/>
 <div>
@@ -125,7 +176,7 @@ footer {
 </div>
 </div>
 <div id="map" style="flex: 1; min-width: 380px; height: 600px; border: 1px solid #ccc; border-radius: 8px;">
-<!-- Google Map oder OSM -->
+<!-- Map Container -->
 </div>
 </main>
 
