@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Residare – Template-Seite</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer src="translate.js"></script>
+<style>
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    padding: 5rem 1rem 1rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #sidebar.open {
+    left: 0;
+  }
+  #sidebar a {
+    display: block;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  #main-logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    #main-logo {
+      max-width: 240px;
+    }
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .topbar .logo {
+    height: 160px !important;
+    width: auto !important;
+    margin-left: 1rem;
+  }
+
+  .topbar select {
+    height: 2.5rem;
+    font-size: 1rem;
+    margin-left: auto;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: -80px;
+    left: 25%;
+    transform: translateX(-50%);
+    height: 240px;
+  }
+
+  .header-logo {
+    height: 240px;
+    width: auto;
+  }
+
+  i.fa-heart {
+    color: crimson;
+  }
+
+  i.fa-circle-plus {
+    color: teal;
+  }
+
+  i.fa-user {
+    color: darkslateblue;
+  }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 998;
+  }
+
+  .sidebar.open ~ #overlay {
+    display: block;
+  }
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body style="background-color: white; color: #1f2937;">
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+  <a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
+  <a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
+  <a data-i18n="nav.post" href="admin.html">Inserieren</a>
+  <a data-i18n="nav.blog" href="faq.html">Blog</a>
+  <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</div>
+
+<header class="header">
+  <div class="header-container" style="gap: 2rem;">
+    <div class="logo-container">
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo"/></a>
+    </div>
+    <div style="position: absolute; top: 1rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+      <a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-heart"></i> Favoriten</a>
+      <a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
+      <a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-user"></i> Einloggen</a>
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;"">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
+</header>
+
+<main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
+<div data-lang="de" data-translate="True">
+  <section class="text-content">
+    <h1 style="font-size: 2rem;">Immobilienkauf in Polen – Chancen und Herausforderungen für deutsche Käufer</h1>
+
+    <h2 style="font-size: 1.25rem;">Ein wachsender Markt mit Potenzial</h2>
+    <p>Der polnische Immobilienmarkt hat sich in den letzten zehn Jahren dynamisch entwickelt. Steigende Kaufkraft im Inland, ein solides Wirtschaftswachstum sowie EU-Fördermittel haben insbesondere in Städten wie Danzig, Posen oder Krakau für einen Bauboom gesorgt. Dennoch sind die Immobilienpreise im Vergleich zu deutschen Großstädten nach wie vor deutlich günstiger. Für Kapitalanleger, Auswanderungswillige oder Ferienhausinteressierte aus Deutschland ergibt sich dadurch ein spannendes Marktumfeld – mit Chancen, aber auch mit Herausforderungen.</p>
+
+    <h2 style="font-size: 1.25rem;">Regionale Unterschiede verstehen</h2>
+    <p>Polen ist ein vielfältiges Land mit sehr unterschiedlichen regionalen Immobilienmärkten. Während in Warschau oder Breslau eine rege Bautätigkeit herrscht, bieten kleinere Städte oder Küstenregionen wie Swinemünde oder Misdroy oftmals besonders attraktive Einstiegspreise. Gerade deutsche Käufer, die auf der Suche nach Ruhe, Natur oder Erholung sind, bevorzugen zunehmend die Ostseegebiete. Gleichzeitig gibt es dort aber auch Besonderheiten bei der Grundstücksvergabe oder beim Denkmalschutz, die beachtet werden sollten.</p>
+
+    <h2 style="font-size: 1.25rem;">Rechtliche Rahmenbedingungen für EU-Bürger</h2>
+    <p>Der Immobilienerwerb durch deutsche Staatsbürger ist in Polen grundsätzlich möglich, bedarf jedoch einer sorgfältigen Vorbereitung. Zwar benötigen EU-Bürger seit einigen Jahren keine spezielle Genehmigung mehr, dennoch unterscheiden sich viele rechtliche Abläufe – etwa bei der Eintragung ins Grundbuch oder bei der Vertragsgestaltung – teils erheblich vom deutschen Standard. Empfehlenswert ist daher, sich frühzeitig mit einem zweisprachigen Notar oder auf Immobilienrecht spezialisierten Berater in Verbindung zu setzen.</p>
+
+    
+
+<h2 style="font-size: 1.25rem;">Residare: Eine Plattform für Eigentümer, Käufer und Makler</h2>
+<p>Residare bietet einen modernen digitalen Raum, auf dem Immobilienanzeigen transparent und zweisprachig veröffentlicht werden können. Sowohl private Eigentümer als auch professionelle Makler haben hier die Möglichkeit, ihre Angebote strukturiert darzustellen und potenzielle Interessenten direkt zu erreichen. Für Käufer wird die Suche durch klare Kategorien und vertrauenswürdige Beschreibungen erleichtert – ganz gleich, ob es sich um eine Ferienwohnung, ein Einfamilienhaus oder ein Investitionsobjekt ...
+
+
+    
+    <h2 style="font-size: 1.25rem;">Fazit: Vorbereitung ist der Schlüssel</h2>
+    <p>Wer eine Immobilie in Polen kaufen möchte, findet derzeit viele günstige Gelegenheiten. Dennoch sollte der Schritt gut überlegt sein – von der Wahl der Region über rechtliche Fragen bis hin zur konkreten Abwicklung. Mit etwas Geduld, dem richtigen Partner und einem realistischen Blick auf den Markt kann der Immobilienkauf in Polen jedoch zu einer lohnenden und sicheren Investition werden.</p>
+  </section>
+</div>
+
+<div data-lang="pl" data-translate="True" style="display:none;">
+  <section class="text-content">
+    <h1 style="font-size: 2rem;">Zakup nieruchomości w Polsce – szanse i wyzwania dla nabywców z Niemiec</h1>
+
+    <h2 style="font-size: 1.25rem;">Rozwijający się rynek z potencjałem</h2>
+    <p>Polski rynek nieruchomości dynamicznie rozwija się od ponad dekady. Rosnąca siła nabywcza, stabilny wzrost gospodarczy i środki unijne sprawiły, że w takich miastach jak Gdańsk, Poznań czy Kraków nastąpił boom budowlany. Ceny nieruchomości, mimo wzrostów, nadal pozostają konkurencyjne w porównaniu z niemieckimi miastami. To sprawia, że Polska staje się atrakcyjna dla inwestorów, emigrantów i osób szukających domów wakacyjnych.</p>
+
+    <h2 style="font-size: 1.25rem;">Zróżnicowanie regionalne</h2>
+    <p>Polska to kraj o dużej różnorodności regionalnej, co znajduje odzwierciedlenie także na rynku nieruchomości. Podczas gdy w Warszawie czy Wrocławiu trwa intensywna urbanizacja, mniejsze miejscowości i regiony nadmorskie – jak Świnoujście czy Międzyzdroje – oferują atrakcyjne ceny wejścia. Niemieccy nabywcy coraz częściej wybierają wybrzeże Bałtyku ze względu na bliskość natury i spokój, ale muszą też pamiętać o lokalnych regulacjach, np. związanych z ochroną zabytków.</p>
+
+    <h2 style="font-size: 1.25rem;">Ramy prawne dla obywateli UE</h2>
+    <p>Obywatele UE mogą kupować nieruchomości w Polsce bez specjalnych zezwoleń, jednak procedury prawne różnią się od niemieckich. Dotyczy to m.in. wpisów do księgi wieczystej oraz formy umowy. Warto skorzystać z usług tłumacza przysięgłego lub notariusza znającego oba systemy prawne, aby uniknąć nieporozumień i komplikacji.</p>
+
+    
+
+<h2 style="font-size: 1.25rem;">Residare – platforma dla właścicieli, kupujących i pośredników</h2>
+<p>Residare to nowoczesna przestrzeń cyfrowa, w której ogłoszenia nieruchomości są prezentowane w sposób przejrzysty i dwujęzyczny. Zarówno właściciele prywatni, jak i licencjonowani pośrednicy mogą tu publikować swoje oferty i nawiązywać kontakt z zainteresowanymi klientami. Dla kupujących oznacza to łatwiejsze poruszanie się po rynku – niezależnie od tego, czy szukają domu wakacyjnego, mieszkania czy nieruchomości inwestycyjnej.</p>
+
+
+    
+    <h2 style="font-size: 1.25rem;">Podsumowanie: dobra przygotowanie to podstawa</h2>
+    <p>Zakup nieruchomości w Polsce może być korzystny, ale wymaga odpowiedniego przygotowania. Wybór lokalizacji, znajomość przepisów i ostrożność przy podpisywaniu dokumentów to kluczowe aspekty. Dzięki odpowiednim narzędziom i wsparciu proces ten może być jednak prosty i bezpieczny.</p>
+  </section>
+</div>
+
+  
+</main>
+
+<footer class="footer">
+  <nav>
+    <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+    <a data-i18n="nav.agb" href="agb.html">AGB</a>
+    <a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a>
+    <a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+  </nav>
+  <p data-i18n="auto._2025_residare">© 2025 Residare</p>
+</footer>
+
+<div id="overlay"></div>
+<script>
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("sidebar");
+    const hamburger = document.querySelector(".hamburger");
+    if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById("language-selector");
+    if (selector && typeof updateLanguage === "function") {
+      updateLanguage(selector.value || "de");
+    }
+  });
+</script>
+</body>
+</html>

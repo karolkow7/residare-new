@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferienhaus an der Ostsee kaufen – Polen für Käufer aus Deutschland</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="translate.js"></script>
+</head>
+<body style="background-color: white; color: #1f2937;">
+  <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+  <div id="sidebar">
+    <a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
+    <a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
+    <a data-i18n="nav.post" href="admin.html">Inserieren</a>
+    <a data-i18n="nav.blog" href="faq.html">Blog</a>
+    <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+  </div>
+
+  <header class="header">
+    <div class="header-container" style="gap: 2rem;">
+      <div class="logo-container">
+        <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo"/></a>
+      </div>
+      <div style="position: absolute; top: 1rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+        <a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-heart"></i> Favoriten</a>
+        <a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
+        <a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-user"></i> Einloggen</a>
+      </div>
+      <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;">
+        <option value="de">🇩🇪</option>
+        <option value="pl">🇵🇱</option>
+      </select>
+    </div>
+  </header>
+
+  <main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
+    <div data-lang="de" data-translate="True">
+      <section class="text-content">
+        <h1 style="font-size: 2rem;">Ferienhaus an der Ostsee kaufen – Was Sie in Polen beachten sollten</h1>
+
+        <h2 style="font-size: 1.25rem;">Polens Küste als Rückzugsort</h2>
+        <p>Immer mehr Deutsche träumen von einem Ferienhaus in Strandnähe – und die polnische Ostseeküste wird dabei zunehmend zur echten Alternative. Orte wie Swinemünde, Kolberg oder Misdroy bieten nicht nur günstige Preise, sondern auch eine gute Infrastruktur, saubere Strände und eine solide medizinische Versorgung. Gleichzeitig ist die Anbindung aus Deutschland hervorragend – sowohl mit dem Auto als auch mit der Bahn.</p>
+
+        <h2 style="font-size: 1.25rem;">Worauf Käufer achten sollten</h2>
+        <p>Beim Kauf eines Ferienhauses in Polen gibt es jedoch einige Dinge zu beachten: Wie wird das Grundstück genutzt? Gibt es eine klare Eintragung im Grundbuch? Ist das Haus ganzjährig nutzbar oder handelt es sich um eine reine Sommerimmobilie? Eine gründliche Prüfung der Unterlagen sowie eine verlässliche Vor-Ort-Beratung sind unerlässlich.</p>
+
+        <h2 style="font-size: 1.25rem;">Vermieten oder selbst nutzen?</h2>
+        <p>Viele Käufer überlegen, ihr Ferienhaus auch zu vermieten. In Polen ist dies grundsätzlich möglich, jedoch gelten bestimmte Regelungen für Kurzzeitvermietung, besonders in touristischen Gemeinden. Wer plant, regelmäßig Einnahmen zu generieren, sollte sich frühzeitig mit steuerlichen Fragen und der lokalen Verwaltung auseinandersetzen.</p>
+
+        <h2 style="font-size: 1.25rem;">Warum Residare die Suche erleichtert</h2>
+        <p>Mit Residare lassen sich Ferienimmobilien an Polens Küste einfach und zweisprachig finden – sowohl von Privatpersonen als auch von Maklern. Die Angebote sind klar strukturiert und enthalten alle wichtigen Informationen. Das erleichtert den Einstieg und schafft Vertrauen.</p>
+
+        <h2 style="font-size: 1.25rem;">Fazit</h2>
+        <p>Ein Ferienhaus an der Ostsee kann eine tolle Investition sein – sowohl für Erholung als auch als Wertanlage. Wer sich gut informiert und auf eine saubere Abwicklung achtet, findet in Polen beste Voraussetzungen für ein eigenes Stück Küste.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <nav>
+      <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+      <a data-i18n="nav.agb" href="agb.html">AGB</a>
+      <a data-i18n="nav.privacy" href="datenschutz.html">Datenschutz</a>
+      <a data-i18n="nav.impress" href="impressum.html">Impressum</a>
+    </nav>
+    <p data-i18n="auto._2025_residare">© 2025 Residare</p>
+  </footer>
+
+  <div id="overlay"></div>
+  <script>
+    document.addEventListener("click", function (event) {
+      const sidebar = document.getElementById("sidebar");
+      const hamburger = document.querySelector(".hamburger");
+      if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+        sidebar.classList.remove("open");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const selector = document.getElementById("language-selector");
+      if (selector && typeof updateLanguage === "function") {
+        updateLanguage(selector.value || "de");
+      }
+    });
+  </script>
+</body>
+</html>
