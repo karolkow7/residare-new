@@ -137,7 +137,7 @@
 <a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
 <a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-user"></i> Einloggen</a>
 </div>
-<select "="" id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;">
+<select "="" id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;; border-radius: 8px; border: 1px solid #ccc">
 <option value="de">🇩🇪</option>
 <option value="pl">🇵🇱</option>
 </select>
@@ -162,16 +162,16 @@
     }
   });
 </script>
-<section class="search-bar" style="padding: 1rem; background: #f4f4f4; display: flex; flex-wrap: wrap; gap: 1rem;">
-<input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="flex: 1; min-width: 180px; padding: 0.5rem;" type="text"/>
-<select data-i18n-placeholder="search.price" style="padding: 0.5rem; min-width: 120px;"><option>Kaufpreis</option></select>
-<select data-i18n-placeholder="search.area" style="padding: 0.5rem; min-width: 120px;"><option>Wohnfläche</option></select>
-<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;"><option>Zimmer</option></select>
-<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 4px;">Suche speichern</button>
+<section class="search-bar" style="padding: 1rem; background: white; display: flex; flex-wrap: wrap; gap: 1rem;">
+<input data-i18n-placeholder="search.location" placeholder="Ort / PLZ" style="padding: 0.5rem; min-width: 120px; max-width: 160px; border-radius: 8px; border: 1px solid #ccc;" style="flex: 1; min-width: 180px; padding: 0.5rem;" type="text"/>
+<select data-i18n-placeholder="search.price" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Kaufpreis</option></select>
+<select data-i18n-placeholder="search.area" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Wohnfläche</option></select>
+<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Zimmer</option></select>
+<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 8px; font-weight: bold;">Suche speichern</button>
 </section>
 <main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
 <div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.2); transform-origin: top left;">
   <div style="flex: 5; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
     <img src="wohnung1.jpg" style="width: 100%; height: 100%; object-fit: cover;" />
   </div>
@@ -180,7 +180,7 @@
     <div style="font-size: 0.95rem; color: #4b5563;">330.000 €    105 m²    3 Zi.</div>
   </div>
 </div>
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.2); transform-origin: top left;">
   <div style="flex: 5; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
     <img src="wohnung2.jpg" style="width: 100%; height: 100%; object-fit: cover;" />
   </div>
@@ -189,7 +189,7 @@
     <div style="font-size: 0.95rem; color: #4b5563;">298.000 €    101 m²    4 Zi.</div>
   </div>
 </div>
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.2); transform-origin: top left;">
   <div style="flex: 5; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
     <img src="wohnung3.jpg" style="width: 100%; height: 100%; object-fit: cover;" />
   </div>
