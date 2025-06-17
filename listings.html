@@ -1,102 +1,153 @@
 
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Listings – Residare</title>
-  <link href="style.css" rel="stylesheet"/>
-  <script defer src="translate.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    button, select, input { font-family: inherit; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Listings – Residare</title>
+<link href="style.css" rel="stylesheet"/>
 
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: all 0.2s ease-in-out;
-    }
-    .card img { aspect-ratio: 1/1; object-fit: cover; }
-    .card {
-      border-radius: 12px;
-      overflow: hidden;
-      background: white;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    }
-    .search-bar input, .search-bar select, .search-bar button {
-      border-radius: 8px;
-    }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    padding: 5rem 1rem 1rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #sidebar.open {
+    left: 0;
+  }
+  #sidebar a {
+    display: block;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 
-    #sidebar {
-      position: fixed;
-      top: 0;
-      left: -300px;
-      width: 250px;
-      height: 100%;
-      background: #ffffff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      padding: 5rem 1rem 1rem;
-      transition: left 0.3s ease-in-out;
-      z-index: 1000;
+  #main-logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    #main-logo {
+      max-width: 240px;
     }
-    #sidebar.open { left: 0; }
-    #sidebar a {
-      display: block;
-      margin-bottom: 1rem;
-      color: #1f2937;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hamburger {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      z-index: 1100;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    .logo-container {
-      position: absolute;
-      top: -80px;
-      left: 25%;
-      transform: translateX(-50%);
-      height: 240px;
-    }
-    .header-logo {
-      height: 240px;
-      width: auto;
-    }
-  </style>
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .topbar .logo {
+    height: 160px !important;
+    width: auto !important;
+    margin-left: 1rem;
+  }
+
+  .topbar select {
+    height: 2.5rem;
+    font-size: 1rem;
+    margin-left: auto;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: -80px;
+    left: 25%;
+    transform: translateX(-50%);
+    height: 240px;
+  }
+
+  .header-logo {
+    height: 240px;
+    width: auto;
+  }
+
+  i.fa-heart {
+    color: crimson;
+  }
+
+  i.fa-circle-plus {
+    color: teal;
+  }
+
+  i.fa-user {
+    color: darkslateblue;
+  }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 998;
+  }
+
+  .sidebar.open ~ #overlay {
+    display: block;
+  }
+</style>
 </head>
-<body>
-
+<body><button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button><div id="sidebar">
+<a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
+<a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
+<a data-i18n="nav.post" href="admin.html">Inserieren</a>
+<a data-i18n="nav.blog" href="faq.html">Blog</a>
+<a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</div><header class="header">
+<div class="header-container" style="gap: 2rem;">
 <div class="logo-container">
-  <a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
+<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
 </div>
-
-<header style="display: flex; justify-content: flex-end; align-items: center; padding: 1rem; background: white; border-bottom: 1px solid #ddd;">
-  <button class="hamburger" onclick="toggleSidebar()">☰</button>
-  <div style="position: absolute; top: 1.5rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
-    <a data-i18n="nav.favorites" href="favoriten.html" style="display:flex;align-items:center;gap:0.3rem;border:1px solid black;border-radius:8px;padding:0.4rem 0.8rem;text-decoration:none;color:black;"><i class="fa-solid fa-heart" style="color: red;"></i> Favoriten</a>
-    <a data-i18n="nav.post" href="admin.html" style="display:flex;align-items:center;gap:0.3rem;border:1px solid black;border-radius:8px;padding:0.4rem 0.8rem;text-decoration:none;color:black;"><i class="fa-solid fa-circle-plus" style="color: green;"></i> Inserieren</a>
-    <a data-i18n="nav.login" href="login.html" style="display:flex;align-items:center;gap:0.3rem;border:1px solid black;border-radius:8px;padding:0.4rem 0.8rem;text-decoration:none;color:black;"><i class="fa-solid fa-user" style="color: blue;"></i> Einloggen</a>
-  </div>
-  <select id="language-selector" style="margin-left:auto; font-size: 1rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem;">
-    <option value="de">🇩🇪</option>
-    <option value="pl">🇵🇱</option>
-  </select>
+<div style="position: absolute; top: 1rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+<a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-heart"></i> Favoriten</a>
+<a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
+<a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-user"></i> Einloggen</a>
+</div>
+<select "="" id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;">
+<option value="de">🇩🇪</option>
+<option value="pl">🇵🇱</option>
+</select>
+</div>
 </header>
-
-<div id="sidebar">
-  <a data-i18n="menu.listings" href="listings.html">Angebote</a>
-  <a data-i18n="menu.favorites" href="favoriten.html">Favoriten</a>
-  <a data-i18n="menu.submit" href="admin.html">Inserieren</a>
-  <a data-i18n="menu.blog" href="faq.html">Blog</a>
-  <a data-i18n="menu.contact" href="kontakt.html">Kontakt</a>
+<div class="logo-container">
+<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
 </div>
+
 
 <script>
   function toggleSidebar() {
@@ -104,33 +155,29 @@
     sidebar.classList.toggle('open');
   }
 </script>
-
 <section class="search-bar" style="padding: 1rem; background: #f4f4f4; display: flex; flex-wrap: wrap; gap: 1rem;">
-  <input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="flex: 1; min-width: 180px; padding: 0.5rem;" type="text"/>
-  <select data-i18n-placeholder="search.price" style="padding: 0.5rem; min-width: 120px;"><option>Kaufpreis</option></select>
-  <select data-i18n-placeholder="search.area" style="padding: 0.5rem; min-width: 120px;"><option>Wohnfläche</option></select>
-  <select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;"><option>Zimmer</option></select>
-  <button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 4px;">Suche speichern</button>
+<input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="flex: 1; min-width: 180px; padding: 0.5rem;" type="text"/>
+<select data-i18n-placeholder="search.price" style="padding: 0.5rem; min-width: 120px;"><option>Kaufpreis</option></select>
+<select data-i18n-placeholder="search.area" style="padding: 0.5rem; min-width: 120px;"><option>Wohnfläche</option></select>
+<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;"><option>Zimmer</option></select>
+<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 4px;">Suche speichern</button>
 </section>
-
 <main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
-  <div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
-    <div class="card"><img src="wohnung1.jpg"/><div style="padding:0.8rem;"><h3>Moderne Wohnung in Kassel</h3><p>330.000 € – 105 m² – 3 Zi.</p></div></div>
-    <div class="card"><img src="wohnung2.jpg"/><div style="padding:0.8rem;"><h3>Helle Wohnung mit Balkon</h3><p>298.000 € – 101 m² – 4 Zi.</p></div></div>
-    <div class="card"><img src="wohnung3.jpg"/><div style="padding:0.8rem;"><h3>Zentrale Wohnung mit Aufzug</h3><p>315.000 € – 98 m² – 3 Zi.</p></div></div>
-  </div>
-  <div id="map" style="flex: 1; min-width: 400px; height: 600px; background: #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center;">Karte folgt hier...</div>
+<div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+<div class="card"><img src="wohnung1.jpg"/><div style="padding:0.8rem;"><h3>Moderne Wohnung in Kassel</h3><p>330.000 € – 105 m² – 3 Zi.</p></div></div>
+<div class="card"><img src="wohnung2.jpg"/><div style="padding:0.8rem;"><h3>Helle Wohnung mit Balkon</h3><p>298.000 € – 101 m² – 4 Zi.</p></div></div>
+<div class="card"><img src="wohnung3.jpg"/><div style="padding:0.8rem;"><h3>Zentrale Wohnung mit Aufzug</h3><p>315.000 € – 98 m² – 3 Zi.</p></div></div>
+</div>
+<div id="map" style="flex: 1; min-width: 400px; height: 600px; background: #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center;">Karte folgt hier...</div>
 </main>
-
 <footer class="footer" style="padding: 2rem 1rem; background: #1f2937; color: white; text-align: center; font-size: 0.95rem;">
-  <nav style="margin-bottom: 0.5rem;">
-    <a data-i18n="nav.contact" href="kontakt.html" style="color: white; margin-right: 1rem;">Kontakt</a>
-    <a data-i18n="nav.agb" href="agb.html" style="color: white; margin-right: 1rem;">AGB</a>
-    <a data-i18n="nav.privacy" href="datenschutz.html" style="color: white; margin-right: 1rem;">Datenschutz</a>
-    <a data-i18n="nav.impress" href="impressum.html" style="color: white;">Impressum</a>
-  </nav>
-  <p data-i18n="auto._2025_residare">© 2025 Residare</p>
+<nav style="margin-bottom: 0.5rem;">
+<a data-i18n="nav.contact" href="kontakt.html" style="color: white; margin-right: 1rem;">Kontakt</a>
+<a data-i18n="nav.agb" href="agb.html" style="color: white; margin-right: 1rem;">AGB</a>
+<a data-i18n="nav.privacy" href="datenschutz.html" style="color: white; margin-right: 1rem;">Datenschutz</a>
+<a data-i18n="nav.impress" href="impressum.html" style="color: white;">Impressum</a>
+</nav>
+<p data-i18n="auto._2025_residare">© 2025 Residare</p>
 </footer>
-
-</body>
+<div id="overlay"></div><script defer="" src="translate.js"></script></body>
 </html>
