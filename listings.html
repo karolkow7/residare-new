@@ -7,7 +7,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Listings – Residare</title>
 <link href="style.css" rel="stylesheet"/>
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
   #sidebar {
@@ -147,13 +146,21 @@
 <div class="logo-container">
 <a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
 </div>
-
-
 <script>
-  function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
-  }
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("sidebar");
+    const hamburger = document.querySelector(".hamburger");
+    if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById("language-selector");
+    if (selector && typeof updateLanguage === "function") {
+      updateLanguage(selector.value || "de");
+    }
+  });
 </script>
 <section class="search-bar" style="padding: 1rem; background: #f4f4f4; display: flex; flex-wrap: wrap; gap: 1rem;">
 <input data-i18n-placeholder="search.location" placeholder="📍 Kassel" style="flex: 1; min-width: 180px; padding: 0.5rem;" type="text"/>
