@@ -146,94 +146,53 @@
 </select>
 </div>
 </header>
-<main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
-<style>
-  .form-section { background: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-  .form-section h2 { font-size: 1.4rem; margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .form-group { display: flex; flex-direction: column; }
-  .form-group label { font-weight: 600; margin-bottom: 0.4rem; }
-  .form-group input, .form-group select, .form-group textarea { padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
-</style>
-<form id="full-flat-sale-form">
-<div class="form-section">
+<main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;"><div class="form-wrapper" style="max-width: 900px; margin: auto; padding: 2rem;">
+<h1>Wohnung verkaufen</h1>
+<section class="card">
 <h2>Grunddaten</h2>
-<div class="form-grid">
-<div class="form-group"><label>Titel</label><input type="text"/></div>
-<div class="form-group"><label>Untertitel</label><input type="text"/></div>
-<div class="form-group"><label>Wohnfläche (m²)</label><input type="number"/></div>
-<div class="form-group"><label>Nutzfläche (m²)</label><input type="number"/></div>
-<div class="form-group"><label>Preis (€)</label><input type="number"/></div>
-<div class="form-group"><label>Preis pro m² (€)</label><input type="number"/></div>
-<div class="form-group"><label>Hausgeld (€)</label><input type="number"/></div>
-<div class="form-group"><label>Zimmer</label><input type="number"/></div>
-<div class="form-group"><label>Anzahl Bäder</label><input type="number"/></div>
-<div class="form-group"><label>Separates WC</label><select><option>Ja</option><option>Nein</option></select></div>
+<div class="form-block">
+<label>Wohnfläche</label><input type="number"/>
+<label>Nutzfläche</label><input type="number"/>
+<label>Preis</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div>
+<label>Preis pro m²</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div>
+<hr/>
+<label>Anzahl Zimmer</label><input type="number"/>
+<label>Stockwerk</label><input type="text"/>
+<label>Anzahl Stockwerke</label><input type="number"/>
+<label>Aufzug</label>
+<div style="display:flex; gap:0.5rem;">
+<button style="padding:0.5rem 1rem;" type="button">Ja</button>
+<button style="padding:0.5rem 1rem;" type="button">Nein</button>
+</div>
+<label>Gebäudetyp</label>
+<select>
+<option>Wohnblock</option>
+<option>Mehrfamilienhaus</option>
+<option>Freistehendes Haus</option>
+<option>Altbau</option>
+<option>Apartmenthaus</option>
+<option>Loft</option>
+<option>Residenz</option>
+</select>
+<label>Baujahr</label><input type="text"/>
+<label>Zustand</label>
+<select>
+<option>Hochwertig</option>
+<option>Sehr gut</option>
+<option>Gut</option>
+<option>Auffrischungsbedürftig</option>
+<option>Renovierungsbedürftig</option>
+<option>Neubau (unfertig)</option>
+<option>Neu &amp; bezugsfertig</option>
+</select>
+<label>Energieausweis</label>
+<div style="display:flex; gap:0.5rem;">
+<button style="padding:0.5rem 1rem;" type="button">Ja</button>
+<button style="padding:0.5rem 1rem;" type="button">Nein</button>
 </div>
 </div>
-<div class="form-section">
-<h2>Gebäude &amp; Zustand</h2>
-<div class="form-grid">
-<div class="form-group"><label>Etage</label><input type="text"/></div>
-<div class="form-group"><label>Etagen gesamt</label><input type="number"/></div>
-<div class="form-group"><label>Aufzug</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Baujahr</label><input type="text"/></div>
-<div class="form-group"><label>Zustand</label><select><option>Sehr gut</option><option>Renoviert</option><option>Renovierungsbedürftig</option></select></div>
-<div class="form-group"><label>Gebäudetyp</label><select><option>Block</option><option>Altbau</option><option>Neubau</option></select></div>
-<div class="form-group"><label>Dachgeschoss</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Etagenanzahl in Wohnung</label><select><option>1</option><option>2</option><option>3+</option></select></div>
-</div>
-</div>
-<div class="form-section">
-<h2>Ausstattung</h2>
-<div class="form-grid">
-<div class="form-group"><label>Balkon</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Keller</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Garten</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Stellplatz</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Einbauküche</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Möbliert</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Haushaltsgeräte</label><select><option>Voll</option><option>Teil</option><option>Keine</option></select></div>
-</div>
-</div>
-<div class="form-section">
-<h2>Energie &amp; Medien</h2>
-<div class="form-grid">
-<div class="form-group"><label>Energieausweis</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Energieklasse</label><select><option>A+</option><option>A</option><option>B</option><option>C</option></select></div>
-<div class="form-group"><label>Heizungsart</label><select><option>Zentral</option><option>Etagenheizung</option><option>Fußboden</option></select></div>
-<div class="form-group"><label>Strom</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Gas</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Wasserzähler</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Fernwärme</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Klimaanlage</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label>Internet</label><select><option>Ja</option><option>Nein</option></select></div>
-</div>
-</div>
-<div class="form-section">
-<h2>Weitere Angaben</h2>
-<div class="form-grid">
-<div class="form-group"><label>Verfügbarkeit</label><select><option>Sofort</option><option>Nach Vereinbarung</option></select></div>
-<div class="form-group"><label>Eigentumsform</label><select><option>Eigentum</option><option>Genossenschaft</option></select></div>
-<div class="form-group"><label>Grundbuch vorhanden</label><select><option>Ja</option><option>Nein</option></select></div>
-<div class="form-group"><label><input type="checkbox"/> Tausch möglich</label></div>
-<div class="form-group"><label><input type="checkbox"/> Auch als Büro nutzbar</label></div>
-</div>
-</div>
-<div class="form-section">
-<h2>Beschreibung &amp; Fotos</h2>
-<div class="form-grid">
-<div class="form-group" style="grid-column: span 2;"><label>Ort</label><input type="text"/></div>
-<div class="form-group" style="grid-column: span 2;"><label>Beschreibung</label><textarea rows="4"></textarea></div>
-<div class="form-group" style="grid-column: span 2;"><label>Fotos</label><input accept="image/*" multiple="" type="file"/></div>
-</div>
-</div>
-<div style="display: flex; gap: 1rem;">
-<button class="primary-btn" type="submit">Inserat speichern</button>
-<button class="secondary-btn" type="button">Später abschließen</button>
-</div>
-</form>
-</main>
+</section>
+</div></main>
 <footer class="footer">
 <nav>
 <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
