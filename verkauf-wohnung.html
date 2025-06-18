@@ -120,6 +120,34 @@
   }
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+<style>
+  .form-card {
+    max-width: 1600px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .form-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  input, select, textarea, button {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 0.6rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+  textarea { resize: vertical; }
+</style>
 </head>
 <body style="background-color: white; color: #1f2937;">
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
@@ -146,11 +174,8 @@
 </select>
 </div>
 </header>
-<main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;"><div class="form-wrapper" style="max-width: 900px; margin: auto; padding: 2rem;">
-<h1>Wohnung verkaufen</h1>
-<section class="card">
-<h2>Grunddaten</h2>
-<div class="form-block">
+<main style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
+<section class="form-card"><h2>Grunddaten</h2><div class="form-block">
 <label>Wohnfläche</label><input type="number"/>
 <label>Nutzfläche</label><input type="number"/>
 <label>Preis</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div>
@@ -159,40 +184,50 @@
 <label>Anzahl Zimmer</label><input type="number"/>
 <label>Stockwerk</label><input type="text"/>
 <label>Anzahl Stockwerke</label><input type="number"/>
-<label>Aufzug</label>
-<div style="display:flex; gap:0.5rem;">
-<button style="padding:0.5rem 1rem;" type="button">Ja</button>
-<button style="padding:0.5rem 1rem;" type="button">Nein</button>
-</div>
-<label>Gebäudetyp</label>
-<select>
-<option>Wohnblock</option>
-<option>Mehrfamilienhaus</option>
-<option>Freistehendes Haus</option>
-<option>Altbau</option>
-<option>Apartmenthaus</option>
-<option>Loft</option>
-<option>Residenz</option>
-</select>
+<label>Aufzug</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div>
+<label>Gebäudetyp</label><select><option>Wohnblock</option><option>Mehrfamilienhaus</option><option>Freistehendes Haus</option><option>Altbau</option><option>Apartmenthaus</option><option>Loft</option><option>Residenz</option></select>
 <label>Baujahr</label><input type="text"/>
-<label>Zustand</label>
-<select>
-<option>Hochwertig</option>
-<option>Sehr gut</option>
-<option>Gut</option>
-<option>Auffrischungsbedürftig</option>
-<option>Renovierungsbedürftig</option>
-<option>Neubau (unfertig)</option>
-<option>Neu &amp; bezugsfertig</option>
-</select>
-<label>Energieausweis</label>
-<div style="display:flex; gap:0.5rem;">
-<button style="padding:0.5rem 1rem;" type="button">Ja</button>
-<button style="padding:0.5rem 1rem;" type="button">Nein</button>
-</div>
-</div>
-</section>
-</div></main>
+<label>Zustand</label><select><option>Hochwertig</option><option>Sehr gut</option><option>Gut</option><option>Auffrischungsbedürftig</option><option>Renovierungsbedürftig</option><option>Neubau (unfertig)</option><option>Neu &amp; bezugsfertig</option></select>
+<label>Energieausweis</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div>
+</div></section>
+<section class="form-card"><h2>Weitere Angaben</h2><div class="form-block">
+<label>Ort</label><input placeholder="z. B. Danzig" type="text"/>
+<label>Beschreibung</label><textarea placeholder="Beschreibung der Immobilie" rows="4"></textarea>
+<label>Verfügbarkeit</label><select><option>Sofort</option><option>Nach Vereinbarung</option><option>Genaues Datum</option></select>
+<label>Eigentumsform</label><select><option>Eigentum</option><option>Genossenschaft</option><option>Andere</option></select>
+<label>Grundbuch vorhanden</label><div><button>Ja</button><button>Nein</button></div>
+<label>Hausgeld</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div>
+<div><input type="checkbox"/> Als Büro nutzbar</div>
+<div><input type="checkbox"/> Tausch möglich</div>
+<label>Balkon</label><div><button>Ja</button><button>Nein</button></div>
+<label>Keller</label><div><button>Ja</button><button>Nein</button></div>
+<label>Garten</label><div><button>Ja</button><button>Nein</button></div>
+<label>Dachboden</label><div><button>Ja</button><button>Nein</button></div>
+<label>Stellplatz</label><div><button>Ja</button><button>Nein</button></div>
+<label>Einbauküche</label><div><button>Ja</button><button>Nein</button></div>
+<label>Möbliert</label><div><button>Ja</button><button>Nein</button><button>Teilweise</button></div>
+<label>Haushaltsgeräte</label><div><button>Ja</button><button>Nein</button><button>Teilweise</button></div>
+<label>Anzahl der Etagen</label><select><option>1</option><option>2</option></select>
+<label>Anzahl Badezimmer</label><select><option>1</option><option>2</option></select>
+<label>Badezimmerausstattung</label><select><option>Badewanne</option><option>Dusche</option><option>Bidet</option><option>Mit Fenster</option></select>
+<label>Bauweise</label><select><option>Neue Technologie</option><option>Traditionell / Ziegel</option><option>Plattenbau</option></select>
+<label>Installationszustand</label><select><option>Neu / Erneuert</option><option>Guter Zustand</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Nicht verlegt</option></select>
+<label>Fenster</label><select><option>Neu / Erneuert</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Denkmalgeschützt</option><option>Kunststoff</option><option>Holz</option><option>Aluminium</option></select>
+<label>Heizungsart</label><select><option>Fernwärme</option><option>Eigene Heizung</option><option>Zentralheizung</option><option>Keine Heizung</option><option>Ofen</option><option>Kamin</option><option>Elektro</option><option>Gas</option><option>Öl</option><option>Andere</option></select>
+<label>Wasserzähler</label><div><button>Ja</button><button>Nein</button></div>
+<label>Klimaanlage</label><div><button>Ja</button><button>Nein</button></div>
+<label>Internet</label><div><button>Ja</button><button>Nein</button></div>
+<label>Kabel-TV</label><div><button>Ja</button><button>Nein</button></div>
+<label>Telefon</label><div><button>Ja</button><button>Nein</button></div>
+<hr/>
+<label>Sicherheitsvorkehrungen</label>
+<div><input type="checkbox"/> Sicherheitstür<br/><input type="checkbox"/> Sicherheitsrollos<br/><input type="checkbox"/> Gegensprechanlage / Videofon<br/><input type="checkbox"/> Alarmanlage<br/><input type="checkbox"/> Kameraüberwachung<br/><input type="checkbox"/> Sicherheitsdienst<br/><input type="checkbox"/> Eingezäuntes Gelände</div>
+<label>Behindertengerecht</label><div><button>Ja</button><button>Nein</button></div>
+<label>Umgebungsbebauung</label><select><option>Wohnblocksiedlung</option><option>Einfamilienhaussiedlung</option><option>Lockere Einfamilienhausbebauung</option><option>Grünflächen / Freizeitflächen</option><option>Gewerbeobjekte</option><option>Industrieobjekte</option><option>Unbebautes Gelände</option></select>
+<label>Lautstärke</label><select><option>Ruhig</option><option>Mittelruhig</option><option>Mittel laut</option><option>Laut</option></select>
+<label>Natur in der Umgebung</label><select><option>Wiese</option><option>Wald</option><option>See</option><option>Fluss</option><option>Meer</option><option>Berge</option></select>
+</div></section>
+</main>
 <footer class="footer">
 <nav>
 <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
