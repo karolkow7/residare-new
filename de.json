@@ -49,5 +49,13 @@
   "admin.language": "Sprache des Inserats",
   "admin.description": "Beschreibung",
   "admin.submit": "Inserat speichern",
-  "admin.transaction": "Art des Inserats"
+  "admin.transaction": "Art des Inserats",
+  "admin.sell": "Verkaufen",
+  "admin.rent": "Vermieten",
+  "type.flat": "Wohnung",
+  "type.house": "Haus",
+  "type.plot": "Grundstück",
+  "type.lokal": "Lokal",
+  "type.building": "Gewerbegebäude",
+  "type.room": "Zimmer"
 }

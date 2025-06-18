@@ -49,5 +49,13 @@
   "admin.language": "Język ogłoszenia",
   "admin.description": "Opis",
   "admin.submit": "Zapisz ogłoszenie",
-  "admin.transaction": "Typ ogłoszenia"
+  "admin.transaction": "Typ ogłoszenia",
+  "admin.sell": "Sprzedaż",
+  "admin.rent": "Wynajem",
+  "type.flat": "Mieszkanie",
+  "type.house": "Dom",
+  "type.plot": "Działka",
+  "type.lokal": "Lokal",
+  "type.building": "Budynek użytkowy",
+  "type.room": "Pokój"
 }
