@@ -118,6 +118,18 @@
   .sidebar.open ~ #overlay {
     display: block;
   }
+
+.toggle-group {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+}
+.toggle-group .toggle-btn {
+  margin-left: -1px;
+}
+.toggle-group .toggle-btn:first-child {
+  margin-left: 0;
+}
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
@@ -154,9 +166,20 @@
   .form-group { display: flex; flex-direction: column; }
   .form-group label { font-weight: 600; margin-bottom: 0.4rem; }
   .form-group input, .form-group select, .form-group textarea { padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+
+.toggle-group {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+}
+.toggle-group .toggle-btn {
+  margin-left: -1px;
+}
+.toggle-group .toggle-btn:first-child {
+  margin-left: 0;
+}
 </style>
-<form id="full-flat-sale-form"><div class="form-section"><h2>Grunddaten</h2><div class="form-block"><div class="form-group"><label>Wohnfläche</label><input type="number"/></div><div class="form-group"><label>Nutzfläche</label><input type="number"/></div><div class="form-group"><label>Preis</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group"><label>Preis pro m²</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><hr/><div class="form-group"><label>Anzahl Zimmer</label><input type="number"/></div><div class="form-group"><label>Stockwerk</label><input type="text"/></div><div class="form-group"><label>Anzahl Stockwerke</label><input type="number"/></div><div class="form-group"><label>Aufzug</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Gebäudetyp</label>
-<select>
+<form id="full-flat-sale-form"><div class="form-section"><h2>Grunddaten</h2><div class="form-block"><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Wohnfläche</label><input type="number"/ name="wohnflaeche" ></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Nutzfläche</label><input type="number"/ name="nutzflaeche" ></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Preis</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Preis pro m²</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl Zimmer</label><input type="number"/ name="zimmer" ></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Stockwerk</label><input type="text"/ name="etage" ></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl Stockwerke</label><input type="number"/ name="stockwerke" ></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Aufzug</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Gebäudetyp</label><select>
 <option>Wohnblock</option>
 <option>Mehrfamilienhaus</option>
 <option>Freistehendes Haus</option>
@@ -164,8 +187,7 @@
 <option>Apartmenthaus</option>
 <option>Loft</option>
 <option>Residenz</option>
-</select></div><div class="form-group"><label>Baujahr</label><input type="text"/></div><div class="form-group"><label>Zustand</label>
-<select>
+</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Baujahr</label><input type="text"/ name="baujahr" ></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Zustand</label><select name="zustand" >
 <option>Hochwertig</option>
 <option>Sehr gut</option>
 <option>Gut</option>
@@ -173,12 +195,11 @@
 <option>Renovierungsbedürftig</option>
 <option>Neubau (unfertig)</option>
 <option>Neu &amp; bezugsfertig</option>
-</select></div><div class="form-group"><label>Energieausweis</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div></div></div><div class="form-section"><h2>Weitere Angaben</h2><div class="form-block"><div class="form-group"><label>Ort</label><input list="orte" placeholder="z. B. Danzig" type="text"/><datalist id="orte"><option>Danzig</option><option>Swinemünde</option><option>Misdroy</option></datalist></div><div class="form-group"><label>Beschreibung</label><textarea placeholder="Beschreibung der Immobilie" rows="4"></textarea></div><div class="form-group"><label>Verfügbarkeit</label>
-<select>
+</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Energieausweis</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div></div></div><div class="form-section"><h2>Weitere Angaben</h2><div class="form-block"><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Ort</label><input list="orte" placeholder="z. B. Danzig" type="text"/ name="adresse" ><datalist id="orte"><option>Danzig</option><option>Swinemünde</option><option>Misdroy</option></datalist></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Beschreibung</label><textarea name="beschreibung"  placeholder="Beschreibung der Immobilie" rows="4" style="font-family: inherit;"></textarea></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Verfügbarkeit</label><select name="verfuegbar" >
 <option>Sofort</option>
 <option>Nach Vereinbarung</option>
 <option>Genaues Datum</option>
-</select></div><div class="form-group"><label>Eigentumsform</label><select><option>Eigentum</option><option>Genossenschaft</option><option>Andere</option></select></div><div class="form-group"><label>Grundbuch vorhanden</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Hausgeld</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group"><label>Als Büro nutzbar</label><input type="checkbox"/></div><div class="form-group"><label>Tausch möglich</label><input type="checkbox"/></div><div class="form-group"><label>Balkon</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Keller</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Garten</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Dachboden</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Stellplatz</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Einbauküche</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Möbliert</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button><button>Teilweise</button></div></div><div class="form-group"><label>Haushaltsgeräte</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button><button>Teilweise</button></div></div><div class="form-group"><label>Anzahl der Etagen</label><select><option>1</option><option>2</option></select></div><div class="form-group"><label>Anzahl Badezimmer</label><select><option>1</option><option>2</option></select></div><div class="form-group"><label>Badezimmerausstattung</label><select><option>Badewanne</option><option>Dusche</option><option>Bidet</option><option>Mit Fenster</option></select></div><div class="form-group"><label>Technik der Bauweise</label><select><option>Neue Technologie</option><option>Traditionell / Ziegel</option><option>Großplatte</option></select></div><div class="form-group"><label>Zustand der Installationen</label><select><option>Neu / Erneuert</option><option>Guter Zustand</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Nicht verlegt</option></select></div><div class="form-group"><label>Fenster</label><select><option>Neu / Erneuert</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Historisch</option><option>Kunststoff</option><option>Holz</option><option>Aluminium</option></select></div><div class="form-group"><label>Heizungsart</label><select><option>Fernwärme</option><option>Eigenständig</option><option>Zentralheizung</option><option>Keine Heizung</option><option>Ofen</option><option>Kamin</option><option>Elektro</option><option>Gas</option><option>Öl</option><option>Andere</option></select></div><div class="form-group"><label>Wasserzähler</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Klimaanlage</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Internet</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Kabel-TV</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Telefon</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><hr/><div class="form-group"><label>Sicherheitsvorkehrungen</label>
+</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Eigentumsform</label><select><option>Eigentum</option><option>Genossenschaft</option><option>Andere</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Grundbuch vorhanden</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Hausgeld</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Als Büro nutzbar</label><input type="checkbox"/></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Tausch möglich</label><input type="checkbox"/></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Balkon</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Keller</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Garten</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Dachboden</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Stellplatz</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Einbauküche</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Möbliert</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button><button>Teilweise</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Haushaltsgeräte</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button><button>Teilweise</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl der Etagen</label><select><option>1</option><option>2</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl Badezimmer</label><select><option>1</option><option>2</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Badezimmerausstattung</label><select><option>Badewanne</option><option>Dusche</option><option>Bidet</option><option>Mit Fenster</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Technik der Bauweise</label><select><option>Neue Technologie</option><option>Traditionell / Ziegel</option><option>Großplatte</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Zustand der Installationen</label><select><option>Neu / Erneuert</option><option>Guter Zustand</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Nicht verlegt</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Fenster</label><select><option>Neu / Erneuert</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Historisch</option><option>Kunststoff</option><option>Holz</option><option>Aluminium</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Heizungsart</label><select><option>Fernwärme</option><option>Eigenständig</option><option>Zentralheizung</option><option>Keine Heizung</option><option>Ofen</option><option>Kamin</option><option>Elektro</option><option>Gas</option><option>Öl</option><option>Andere</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Wasserzähler</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Klimaanlage</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Internet</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Kabel-TV</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Telefon</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><hr/><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Sicherheitsvorkehrungen</label>
 <div>
 <input type="checkbox"/> Sicherheitstür<br/>
 <input type="checkbox"/> Sicherheitsrollos<br/>
@@ -188,7 +209,7 @@
 <input type="checkbox"/> Sicherheitsdienst<br/>
 <input type="checkbox"/> Eingezäuntes Gelände
 </div>
-</div><div class="form-group"><label>Behindertengerecht</label><div style="display:flex; gap:0.5rem;"><button>Ja</button><button>Nein</button></div></div><div class="form-group"><label>Umgebungsbebauung</label><select><option>Wohnblocksiedlung</option><option>Einfamilienhaussiedlung</option><option>Lockere Einfamilienhausbebauung</option><option>Grünflächen / Freizeitflächen</option><option>Gewerbeobjekte</option><option>Industrieobjekte</option><option>Unbebautes Gelände</option></select></div><div class="form-group"><label>Lautstärke</label><select><option>Ruhig</option><option>Mittelruhig</option><option>Mittel laut</option><option>Laut</option></select></div><div class="form-group"><label>Natur in der Umgebung</label><select><option>Wiese</option><option>Wald</option><option>See</option><option>Fluss</option><option>Meer</option><option>Berge</option></select></div></div></div>
+</div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Behindertengerecht</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Umgebungsbebauung</label><select><option>Wohnblocksiedlung</option><option>Einfamilienhaussiedlung</option><option>Lockere Einfamilienhausbebauung</option><option>Grünflächen / Freizeitflächen</option><option>Gewerbeobjekte</option><option>Industrieobjekte</option><option>Unbebautes Gelände</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Lautstärke</label><select><option>Ruhig</option><option>Mittelruhig</option><option>Mittel laut</option><option>Laut</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Natur in der Umgebung</label><select><option>Wiese</option><option>Wald</option><option>See</option><option>Fluss</option><option>Meer</option><option>Berge</option></select></div></div></div>
 
 
 
@@ -199,6 +220,23 @@
 <button class="primary-btn" type="submit">Inserat speichern</button>
 <button class="secondary-btn" type="button">Später abschließen</button>
 </div>
+
+<div class="form-section">
+  <h2>Fotos</h2>
+  <div class="form-group" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+    <label for="file-upload" style="grid-column: 1 / -1; font-weight: 600;">Fotos hinzufügen</label>
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+    <input type="file" id="file-upload" accept="image/*" multiple style="display: none;" onchange="previewPhotos(event)"/>
+  </div>
+</div>
+<script>
+function previewPhotos(event) {
+  // Hier kannst du später eine Vorschau oder Upload-Logik einbauen
+  alert('Fotos ausgewählt: ' + event.target.files.length);
+}
+</script>
 </form>
 </main>
 <footer class="footer">
@@ -226,6 +264,56 @@
       updateLanguage(selector.value || "de");
     }
   });
+</script>
+
+<style>
+.toggle-btn {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.toggle-btn.active {
+  background-color: #1f2937;
+  color: white;
+}
+
+.toggle-group {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+}
+.toggle-group .toggle-btn {
+  margin-left: -1px;
+}
+.toggle-group .toggle-btn:first-child {
+  margin-left: 0;
+}
+</style>
+<script>
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const siblings = btn.parentElement.querySelectorAll('.toggle-btn');
+    siblings.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+<script src="form-save.js"></script>
+
+<script>
+document.querySelectorAll('.toggle-group').forEach(group => {
+  const hidden = group.nextElementSibling;
+  group.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      group.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (hidden) hidden.value = btn.textContent.toLowerCase();
+    });
+  });
+});
 </script>
 </body>
 </html>
