@@ -2,59 +2,77 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Favoriten – Residare</title>
-  <link href="style.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <script defer src="translate.js"></script>
-  <style>
-    #sidebar {
-      position: fixed;
-      top: 0;
-      left: -290px;
-      width: 250px;
-      height: 100%;
-      background: #ffffff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      padding: 5rem 1rem 1rem;
-      transition: left 0.3s ease-in-out;
-      z-index: 1000;
-    }
-    #sidebar.open {
-      left: 0;
-    }
-    #sidebar a {
-      display: block;
-      margin-bottom: 1rem;
-      color: #1f2937;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .hamburger {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      z-index: 1100;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      display: none;
-      z-index: 998;
-    }
-    #sidebar.open ~ #overlay {
-      display: block;
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Favoriten – Residare</title>
+<link href="style.css" rel="stylesheet"/>
+<script defer src="translate.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    padding: 5rem 1rem 1rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #sidebar.open { left: 0; }
+  #sidebar a {
+    display: block;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .logo-container {
+    position: absolute;
+    top: -80px;
+    left: 25%;
+    transform: translateX(-50%);
+    height: 240px;
+  }
+  .header-logo {
+    height: 240px;
+    width: auto;
+  }
+  i.fa-heart { color: crimson; }
+  i.fa-circle-plus { color: teal; }
+  i.fa-user { color: darkslateblue; }
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    z-index: 998;
+  }
+  #sidebar.open ~ #overlay {
+    display: block;
+  }
+</style>
 </head>
 <body style="background-color: white; color: #1f2937;">
 <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
@@ -99,62 +117,61 @@
 </footer>
 
 <div id="overlay"></div>
-
 <script>
-document.addEventListener("click", function (event) {
-  const sidebar = document.getElementById("sidebar");
-  const hamburger = document.querySelector(".hamburger");
-  if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
-    sidebar.classList.remove("open");
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const selector = document.getElementById("language-selector");
-  if (selector && typeof updateLanguage === "function") {
-    updateLanguage(selector.value || "de");
-  }
-
-  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-  const cards = [
-    {
-      title: "Moderne Wohnung in Gdańsk",
-      img: "wohnung1.jpg",
-      subtitle: "330.000 €    105 m²    3 Zi.",
-      address: "ul. Długa 15, 80-831 Gdańsk"
-    },
-    {
-      title: "Helle Wohnung mit Balkon in Świnoujście",
-      img: "wohnung2.jpg",
-      subtitle: "298.000 €    101 m²    4 Zi.",
-      address: "ul. Piłsudskiego 8, 72-600 Świnoujście"
-    },
-    {
-      title: "Zentrale Wohnung mit Aufzug in Międzyzdroje",
-      img: "wohnung3.jpg",
-      subtitle: "315.000 €    98 m²    3 Zi.",
-      address: "ul. Książąt Pomorskich 12, 72-510 Międzyzdroje"
+  document.addEventListener("click", function (event) {
+    const sidebar = document.getElementById("sidebar");
+    const hamburger = document.querySelector(".hamburger");
+    if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+      sidebar.classList.remove("open");
     }
-  ];
+  });
 
-  const container = document.getElementById("results");
-  for (const card of cards) {
-    if (!favorites.includes(card.title)) continue;
-    const el = document.createElement("div");
-    el.className = "card";
-    el.style.cssText = "background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.44); transform-origin: top left;";
-    el.innerHTML = `
-      <div style='flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;'>
-        <img src='${card.img}' style='width: 100%; height: 100%; object-fit: cover;' />
-      </div>
-      <div style='flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center;'>
-        <div style='font-weight: 600; font-size: 0.8rem;'>${card.title}</div>
-        <div style='font-size: 0.7rem; color: #4b5563;'>${card.subtitle}</div>
-        <div style='font-size: 0.65rem; color: #6b7280;'>${card.address}</div>
-      </div>`;
-    container.appendChild(el);
-  }
-});
+  document.addEventListener("DOMContentLoaded", function () {
+    const selector = document.getElementById("language-selector");
+    if (selector && typeof updateLanguage === "function") {
+      updateLanguage(selector.value || "de");
+    }
+
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const cards = [
+      {
+        title: "Moderne Wohnung in Gdańsk",
+        img: "wohnung1.jpg",
+        subtitle: "330.000 €    105 m²    3 Zi.",
+        address: "ul. Długa 15, 80-831 Gdańsk"
+      },
+      {
+        title: "Helle Wohnung mit Balkon in Świnoujście",
+        img: "wohnung2.jpg",
+        subtitle: "298.000 €    101 m²    4 Zi.",
+        address: "ul. Piłsudskiego 8, 72-600 Świnoujście"
+      },
+      {
+        title: "Zentrale Wohnung mit Aufzug in Międzyzdroje",
+        img: "wohnung3.jpg",
+        subtitle: "315.000 €    98 m²    3 Zi.",
+        address: "ul. Książąt Pomorskich 12, 72-510 Międzyzdroje"
+      }
+    ];
+
+    const container = document.getElementById("results");
+    for (const card of cards) {
+      if (!favorites.includes(card.title)) continue;
+      const el = document.createElement("div");
+      el.className = "card";
+      el.style.cssText = "background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.44); transform-origin: top left;";
+      el.innerHTML = `
+        <div style='flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;'>
+          <img src='${card.img}' style='width: 100%; height: 100%; object-fit: cover;' />
+        </div>
+        <div style='flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center;'>
+          <div style='font-weight: 600; font-size: 0.8rem;'>${card.title}</div>
+          <div style='font-size: 0.7rem; color: #4b5563;'>${card.subtitle}</div>
+          <div style='font-size: 0.65rem; color: #6b7280;'>${card.address}</div>
+        </div>`;
+      container.appendChild(el);
+    }
+  });
 </script>
 </body>
 </html>
