@@ -8,8 +8,7 @@
 <title>Listings – Residare</title>
 <link href="style.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<style>
-  #sidebar {
+<style>#sidebar {
     position: fixed;
     top: 0;
     left: -290px;
@@ -119,6 +118,50 @@
   .sidebar.open ~ #overlay {
     display: block;
   }
+.heart-icon {
+  color: crimson;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.heart-icon.filled {
+  color: white !important;
+  background-color: crimson !important;
+  border-radius: 4px;
+  padding: 0.15rem 0.3rem;
+}
+
+.heart-icon {
+  color: crimson;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.heart-icon.filled {
+  color: crimson !important;
+  background: none !important;
+}
+
+.heart-icon {
+  color: crimson;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  line-height: 1;
+}
+.heart-icon.filled {
+  color: crimson !important;
+  background: none !important;
+}
 </style>
 </head>
 <body><button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button><div id="sidebar">
@@ -166,34 +209,34 @@
 <input data-i18n-placeholder="search.location" placeholder="Ort / PLZ" style="padding: 0.5rem; min-width: 120px; max-width: 160px; border-radius: 8px; border: 1px solid #ccc;" type="text"/>
 <select data-i18n-placeholder="search.price" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Kaufpreis</option></select>
 <select data-i18n-placeholder="search.area" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Wohnfläche</option></select>
-<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Zimmer</option></select>
-<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 8px; font-weight: bold;">Suche speichern</button>
+<select data-i18n-placeholder="search.rooms" style="padding: 0.5rem; min-width: 120px;; border-radius: 8px; border: 1px solid #ccc"><option>Zimmer</option></select><button style="padding: 0.5rem 1rem; background: white; color: black; border: 1px solid black; border-radius: 8px; font-weight: bold; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-sliders"></i> Filter</button>
+<button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 8px; font-weight: bold;">Suchen</button>
 </section>
 <main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
 <div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.44); transform-origin: top left;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.5); transform-origin: top left;">
 <div style="flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
-<img src="wohnung1.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
+<img src="gdansk.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
 </div>
-<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center;">
+<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid'); this.classList.toggle('fa-regular'); this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
 <div data-i18n="listing.title1" style="font-weight: 600; font-size: 0.8rem;">Moderne Wohnung in Gdańsk</div>
 <div data-i18n="listing.subtitle1" style="font-size: 0.7rem; color: #4b5563;">330.000 €    105 m²    3 Zi.</div>
 <div style="font-size: 0.65rem; color: #6b7280;">ul. Długa 15, 80-831 Gdańsk</div></div>
 </div>
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.44); transform-origin: top left;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.5); transform-origin: top left;">
 <div style="flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
-<img src="wohnung2.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
+<img src="swinemünde.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
 </div>
-<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center;">
+<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid'); this.classList.toggle('fa-regular'); this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
 <div data-i18n="listing.title2" style="font-weight: 600; font-size: 0.8rem;">Helle Wohnung mit Balkon in Świnoujście</div>
 <div data-i18n="listing.subtitle2" style="font-size: 0.7rem; color: #4b5563;">298.000 €    101 m²    4 Zi.</div>
 <div style="font-size: 0.65rem; color: #6b7280;">ul. Piłsudskiego 8, 72-600 Świnoujście</div></div>
 </div>
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.44); transform-origin: top left;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.5); transform-origin: top left;">
 <div style="flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
-<img src="wohnung3.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
+<img src="miedzyzdroje.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
 </div>
-<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center;">
+<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid'); this.classList.toggle('fa-regular'); this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
 <div data-i18n="listing.title3" style="font-weight: 600; font-size: 0.8rem;">Zentrale Wohnung mit Aufzug in Międzyzdroje</div>
 <div data-i18n="listing.subtitle3" style="font-size: 0.7rem; color: #4b5563;">315.000 €    98 m²    3 Zi.</div>
 <div style="font-size: 0.65rem; color: #6b7280;">ul. Książąt Pomorskich 12, 72-510 Międzyzdroje</div></div>
