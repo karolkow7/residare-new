@@ -1,122 +1,160 @@
 
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Favoriten – Residare</title>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="translate.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<style>
-    .card {
-      background-color: white;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      position: relative;
-      height: 320px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Favoriten – Residare</title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <script defer src="translate.js"></script>
+  <style>
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -290px;
+      width: 250px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 5rem 1rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
     }
-    .card img {
-      height: 180px;
-      width: 100%;
-      object-fit: cover;
+    #sidebar.open {
+      left: 0;
     }
-    .card .info {
-      padding: 0.5rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    #sidebar a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #1f2937;
+      text-decoration: none;
+      font-weight: 500;
     }
-    .card h2 {
-      min-height: 3rem;
-      font-size: 1rem;
-    }
-    .heart-icon {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
       font-size: 1.5rem;
-      color: crimson;
-      border: 2px solid crimson;
-      border-radius: 50%;
-      padding: 0.2rem 0.4rem;
-      background: white;
       cursor: pointer;
     }
-    .heart-icon.filled {
-      background: crimson;
-      color: white;
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 998;
+    }
+    #sidebar.open ~ #overlay {
+      display: block;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body style="background-color: white; color: #1f2937;">
+<button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+<div id="sidebar">
+  <a data-i18n="nav.listings" href="listings.html">Angebote finden</a>
+  <a data-i18n="nav.favorites" href="favoriten.html">Favoriten</a>
+  <a data-i18n="nav.post" href="admin.html">Inserieren</a>
+  <a data-i18n="nav.blog" href="faq.html">Blog</a>
+  <a data-i18n="nav.contact" href="kontakt.html">Kontakt</a>
+</div>
+
 <header class="header">
-<div class="header-container">
-<div class="logo-container">
-<a href="index.html"><img alt="Residare Logo" class="header-logo" src="logo.png"/></a>
-</div>
-<select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem;">
-<option value="de">🇩🇪</option>
-<option value="pl">🇵🇱</option>
-</select>
-<div style="position: absolute; top: 1.5rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
-<a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;">
-<i class="fa-regular fa-heart"></i> Favoriten
-    </a>
-<a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;">
-<i class="fa-solid fa-circle-plus"></i> Inserieren
-    </a>
-<a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem;">
-<i class="fa-regular fa-user"></i> Einloggen
-    </a>
-</div></div>
+  <div class="header-container" style="gap: 2rem;">
+    <div class="logo-container">
+      <a href="index.html"><img src="logo.png" alt="Residare Logo" class="header-logo"/></a>
+    </div>
+    <div style="position: absolute; top: 1rem; right: 8rem; display: flex; gap: 1rem; font-size: 0.9rem;">
+      <a data-i18n="nav.favorites" href="favoriten.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-heart"></i> Favoriten</a>
+      <a data-i18n="nav.post" href="admin.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-solid fa-circle-plus"></i> Inserieren</a>
+      <a data-i18n="nav.login" href="login.html" style="font-family: inherit; color: #000; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; border: 1px solid black; border-radius: 8px; padding: 0.4rem 0.8rem;"><i class="fa-regular fa-user"></i> Einloggen</a>
+    </div>
+    <select id="language-selector" style="position: absolute; top: 1rem; right: 1rem; z-index: 10; height: 2.5rem; font-size: 1rem; border-radius: 8px; border: 1px solid black;">
+      <option value="de">🇩🇪</option>
+      <option value="pl">🇵🇱</option>
+    </select>
+  </div>
 </header>
-<main class="listings">
-<h1 data-i18n="favorites.title">Ihre Favoriten</h1>
-<div class="listings-grid" style="background-color: white; padding: 1rem; border-radius: 0.5rem;">
-<a href="#" style="text-decoration: none; color: inherit; display: block;">
-<div class="card">
-<img alt="Danzig – Altbauwohnung im Zentrum" src="gdansk.jpg"/>
-<div class="info">
-<h2 data-lang="de" data-translate="title-Danzig">Danzig – Altbauwohnung im Zentrum</h2>
-<h2 data-lang="pl" data-translate="title-Danzig" style="display: none;">Gdańsk – Mieszkanie w kamienicy w centrum</h2>
-<p>65 m² · 3 Zimmer · 299.000 EUR</p>
-</div>
-<i class="fa fa-heart heart-icon" onclick="this.classList.toggle('filled')"></i>
-</div>
-</a>
-<a href="#" style="text-decoration: none; color: inherit; display: block;">
-<div class="card">
-<img alt="Swinemünde – Moderne Ferienwohnung" src="swinemünde.jpg"/>
-<div class="info">
-<h2 data-lang="de" data-translate="title-Swinemünde">Swinemünde – Moderne Ferienwohnung</h2>
-<h2 data-lang="pl" data-translate="title-Swinemünde" style="display: none;">Świnoujście – Nowoczesne mieszkanie wakacyjne</h2>
-<p>48 m² · 2 Zimmer · 179.000 EUR</p>
-</div>
-<i class="fa fa-heart heart-icon" onclick="this.classList.toggle('filled')"></i>
-</div>
-</a>
-</div>
+
+<main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
+  <div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;"></div>
+  <div id="map" style="flex: 1; min-width: 400px; height: 600px; background: #ddd; border-radius: 8px; display: flex; align-items: center; justify-content: center;">Karte folgt hier...</div>
 </main>
+
+<footer class="footer" style="padding: 2rem 1rem; background: #1f2937; color: white; text-align: center; font-size: 0.95rem;">
+  <nav style="margin-bottom: 0.5rem;">
+    <a data-i18n="nav.contact" href="kontakt.html" style="color: white; margin-right: 1rem;">Kontakt</a>
+    <a data-i18n="nav.agb" href="agb.html" style="color: white; margin-right: 1rem;">AGB</a>
+    <a data-i18n="nav.privacy" href="datenschutz.html" style="color: white; margin-right: 1rem;">Datenschutz</a>
+    <a data-i18n="nav.impress" href="impressum.html" style="color: white;">Impressum</a>
+  </nav>
+  <p data-i18n="auto._2025_residare">© 2025 Residare</p>
+</footer>
+
+<div id="overlay"></div>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-      document.querySelectorAll(".card").forEach(card => {
-        const titleEl = card.querySelector("h2[data-lang='de']");
-        const title = titleEl?.textContent?.trim();
-        if (!favorites.includes(title)) {
-          card.parentElement.remove(); // Entferne ganze Kachel
-        } else {
-          const icon = card.querySelector(".heart-icon");
-          if (icon) icon.classList.add("filled");
-        }
-      });
-    });
-  </script>
+document.addEventListener("click", function (event) {
+  const sidebar = document.getElementById("sidebar");
+  const hamburger = document.querySelector(".hamburger");
+  if (sidebar.classList.contains("open") && !sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+    sidebar.classList.remove("open");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const selector = document.getElementById("language-selector");
+  if (selector && typeof updateLanguage === "function") {
+    updateLanguage(selector.value || "de");
+  }
+
+  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+  const cards = [
+    {
+      title: "Moderne Wohnung in Gdańsk",
+      img: "wohnung1.jpg",
+      subtitle: "330.000 €    105 m²    3 Zi.",
+      address: "ul. Długa 15, 80-831 Gdańsk"
+    },
+    {
+      title: "Helle Wohnung mit Balkon in Świnoujście",
+      img: "wohnung2.jpg",
+      subtitle: "298.000 €    101 m²    4 Zi.",
+      address: "ul. Piłsudskiego 8, 72-600 Świnoujście"
+    },
+    {
+      title: "Zentrale Wohnung mit Aufzug in Międzyzdroje",
+      img: "wohnung3.jpg",
+      subtitle: "315.000 €    98 m²    3 Zi.",
+      address: "ul. Książąt Pomorskich 12, 72-510 Międzyzdroje"
+    }
+  ];
+
+  const container = document.getElementById("results");
+  for (const card of cards) {
+    if (!favorites.includes(card.title)) continue;
+    const el = document.createElement("div");
+    el.className = "card";
+    el.style.cssText = "background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.44); transform-origin: top left;";
+    el.innerHTML = `
+      <div style='flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;'>
+        <img src='${card.img}' style='width: 100%; height: 100%; object-fit: cover;' />
+      </div>
+      <div style='flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center;'>
+        <div style='font-weight: 600; font-size: 0.8rem;'>${card.title}</div>
+        <div style='font-size: 0.7rem; color: #4b5563;'>${card.subtitle}</div>
+        <div style='font-size: 0.65rem; color: #6b7280;'>${card.address}</div>
+      </div>`;
+    container.appendChild(el);
+  }
+});
+</script>
 </body>
 </html>
