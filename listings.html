@@ -118,7 +118,6 @@
   .sidebar.open ~ #overlay {
     display: block;
   }
-.heart-icon {
   color: crimson;
   background: none;
   font-size: 1.4rem;
@@ -127,14 +126,12 @@
   top: 8px;
   right: 8px;
 }
-.heart-icon.filled {
   color: white !important;
   background-color: crimson !important;
   border-radius: 4px;
   padding: 0.15rem 0.3rem;
 }
 
-.heart-icon {
   color: crimson;
   background: none;
   font-size: 1.4rem;
@@ -143,12 +140,10 @@
   top: 8px;
   right: 8px;
 }
-.heart-icon.filled {
   color: crimson !important;
   background: none !important;
 }
 
-.heart-icon {
   color: crimson;
   background: none;
   font-size: 1.4rem;
@@ -158,9 +153,23 @@
   right: 8px;
   line-height: 1;
 }
-.heart-icon.filled {
   color: crimson !important;
   background: none !important;
+}
+.heart-icon {
+  font-size: 1.4rem;
+  color: crimson;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  line-height: 1;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.heart-icon.filled {
+  color: crimson;
 }
 </style>
 </head>
@@ -213,30 +222,30 @@
 <button data-i18n="search.save" style="padding: 0.5rem 1rem; background: #00bfa6; color: white; border: none; border-radius: 8px; font-weight: bold;">Suchen</button>
 </section>
 <main style="display: flex; flex-direction: row; gap: 1rem; padding: 1rem;">
-<div id="results" style="flex: 1.2; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.5); transform-origin: top left;">
+<div id="results" style="flex: 1.2; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1.5rem;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; width: 450px; height: 450px;">
 <div style="flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
 <img src="gdansk.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
 </div>
-<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid'); this.classList.toggle('fa-regular'); this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
+<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid');this.classList.toggle('fa-regular');this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
 <div data-i18n="listing.title1" style="font-weight: 600; font-size: 0.8rem;">Moderne Wohnung in Gdańsk</div>
 <div data-i18n="listing.subtitle1" style="font-size: 0.7rem; color: #4b5563;">330.000 €    105 m²    3 Zi.</div>
 <div style="font-size: 0.65rem; color: #6b7280;">ul. Długa 15, 80-831 Gdańsk</div></div>
 </div>
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.5); transform-origin: top left;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; width: 450px; height: 450px;">
 <div style="flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
 <img src="swinemünde.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
 </div>
-<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid'); this.classList.toggle('fa-regular'); this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
+<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid');this.classList.toggle('fa-regular');this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
 <div data-i18n="listing.title2" style="font-weight: 600; font-size: 0.8rem;">Helle Wohnung mit Balkon in Świnoujście</div>
 <div data-i18n="listing.subtitle2" style="font-size: 0.7rem; color: #4b5563;">298.000 €    101 m²    4 Zi.</div>
 <div style="font-size: 0.65rem; color: #6b7280;">ul. Piłsudskiego 8, 72-600 Świnoujście</div></div>
 </div>
-<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 1 / 1; transform: scale(1.5); transform-origin: top left;">
+<div class="card" style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; width: 450px; height: 450px;">
 <div style="flex: 2; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center;">
 <img src="miedzyzdroje.jpg" style="width: 100%; height: 100%; object-fit: cover;"/>
 </div>
-<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid'); this.classList.toggle('fa-regular'); this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
+<div style="flex: 1; background-color: #f3f4f6; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0.8rem; text-align: center; position: relative;"><i class="fa-regular fa-heart heart-icon" onclick="this.classList.toggle('fa-solid');this.classList.toggle('fa-regular');this.classList.toggle('filled');" style="position: absolute; top: 8px; right: 8px; font-size: 1.4rem; color: crimson; cursor: pointer;"></i>
 <div data-i18n="listing.title3" style="font-weight: 600; font-size: 0.8rem;">Zentrale Wohnung mit Aufzug in Międzyzdroje</div>
 <div data-i18n="listing.subtitle3" style="font-size: 0.7rem; color: #4b5563;">315.000 €    98 m²    3 Zi.</div>
 <div style="font-size: 0.65rem; color: #6b7280;">ul. Książąt Pomorskich 12, 72-510 Międzyzdroje</div></div>
