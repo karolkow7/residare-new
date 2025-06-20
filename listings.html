@@ -262,5 +262,37 @@
 </nav>
 <p data-i18n="auto._2025_residare">© 2025 Residare</p>
 </footer>
-<div id="overlay"></div><script defer="" src="translate.js"></script></body>
+<div id="overlay"></div><script defer="" src="translate.js"></script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+  document.querySelectorAll(".card").forEach(card => {
+    const titleEl = card.querySelector("div[style*='font-weight']");
+    const title = titleEl?.textContent?.trim();
+
+    const heart = card.querySelector(".heart-icon");
+    if (!heart || !title) return;
+
+    if (favorites.includes(title)) {
+      heart.classList.remove("fa-regular");
+      heart.classList.add("fa-solid", "filled");
+    }
+
+    heart.addEventListener("click", function () {
+      const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+      const index = favs.indexOf(title);
+      if (index >= 0) {
+        favs.splice(index, 1);
+        heart.classList.remove("fa-solid", "filled");
+        heart.classList.add("fa-regular");
+      } else {
+        favs.push(title);
+        heart.classList.remove("fa-regular");
+        heart.classList.add("fa-solid", "filled");
+      }
+      localStorage.setItem("favorites", JSON.stringify(favs));
+    });
+  });
+});
+</script></body>
 </html>
