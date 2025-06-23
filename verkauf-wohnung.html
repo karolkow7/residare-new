@@ -216,11 +216,6 @@
 
 
 
-<div style="display: flex; gap: 1rem;">
-<button class="primary-btn" type="submit">Inserat speichern</button>
-<button class="secondary-btn" type="button">Später abschließen</button>
-</div>
-
 <div class="form-section">
   <h2>Fotos</h2>
   <div class="form-group" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
@@ -231,6 +226,13 @@
     <input type="file" id="file-upload" accept="image/*" multiple style="display: none;" onchange="previewPhotos(event)"/>
   </div>
 </div>
+
+<div style="display: flex; gap: 1rem;">
+<button class="primary-btn" type="submit">Inserat speichern</button>
+<button class="secondary-btn" type="button">Später abschließen</button>
+</div>
+
+
 <script>
 function previewPhotos(event) {
   // Hier kannst du später eine Vorschau oder Upload-Logik einbauen
