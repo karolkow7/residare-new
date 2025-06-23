@@ -130,6 +130,63 @@
 .toggle-group .toggle-btn:first-child {
   margin-left: 0;
 }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-section + .form-section {
+    margin-top: 3rem;
+  }
+
+  .primary-btn, .secondary-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .primary-btn {
+    background-color: #1f2937;
+    color: white;
+  }
+
+  .secondary-btn {
+    background-color: #eee;
+    color: #1f2937;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2rem;
+  }
+
+  .form-block {
+    padding-left: 2rem;
+  }
+
+  .form-group label {
+    text-align: right;
+    margin-right: 1rem;
+    flex: 0 0 160px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 </head>
@@ -195,11 +252,11 @@
 <option>Renovierungsbedürftig</option>
 <option>Neubau (unfertig)</option>
 <option>Neu &amp; bezugsfertig</option>
-</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Energieausweis</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div></div></div><div class="form-section"><h2>Weitere Angaben</h2><div class="form-block"><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Ort</label><input list="orte" placeholder="z. B. Danzig" type="text"/ name="adresse" ><datalist id="orte"><option>Danzig</option><option>Swinemünde</option><option>Misdroy</option></datalist></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Beschreibung</label><textarea name="beschreibung"  placeholder="Beschreibung der Immobilie" rows="4" style="font-family: inherit;"></textarea></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Verfügbarkeit</label><select name="verfuegbar" >
+</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Energieausweis</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div></div></div><div class="form-section"><h2>Weitere Angaben</h2><div class="form-block"><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Ort</label><input list="orte" placeholder="z. B. Danzig" type="text"/ name="adresse" ><datalist id="orte"><option>Danzig</option><option>Swinemünde</option><option>Misdroy</option></datalist></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Beschreibung</label><textarea name="beschreibung"  placeholder="Beschreibung der Immobilie" rows="8" style="font-family: inherit; width: 100%;" style="font-family: inherit;"></textarea></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Verfügbarkeit</label><select name="verfuegbar" >
 <option>Sofort</option>
 <option>Nach Vereinbarung</option>
 <option>Genaues Datum</option>
-</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Eigentumsform</label><select><option>Eigentum</option><option>Genossenschaft</option><option>Andere</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Grundbuch vorhanden</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Hausgeld</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Als Büro nutzbar</label><input type="checkbox"/></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Tausch möglich</label><input type="checkbox"/></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Balkon</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Keller</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Garten</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Dachboden</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Stellplatz</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Einbauküche</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Möbliert</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button><button>Teilweise</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Haushaltsgeräte</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button><button>Teilweise</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl der Etagen</label><select><option>1</option><option>2</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl Badezimmer</label><select><option>1</option><option>2</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Badezimmerausstattung</label><select><option>Badewanne</option><option>Dusche</option><option>Bidet</option><option>Mit Fenster</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Technik der Bauweise</label><select><option>Neue Technologie</option><option>Traditionell / Ziegel</option><option>Großplatte</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Zustand der Installationen</label><select><option>Neu / Erneuert</option><option>Guter Zustand</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Nicht verlegt</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Fenster</label><select><option>Neu / Erneuert</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Historisch</option><option>Kunststoff</option><option>Holz</option><option>Aluminium</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Heizungsart</label><select><option>Fernwärme</option><option>Eigenständig</option><option>Zentralheizung</option><option>Keine Heizung</option><option>Ofen</option><option>Kamin</option><option>Elektro</option><option>Gas</option><option>Öl</option><option>Andere</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Wasserzähler</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Klimaanlage</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Internet</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Kabel-TV</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Telefon</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><hr/><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Sicherheitsvorkehrungen</label>
+</select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Eigentumsform</label><select><option>Eigentum</option><option>Genossenschaft</option><option>Andere</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Grundbuch vorhanden</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Hausgeld</label><div style="display:flex; gap:0.5rem;"><input type="number"/><select><option>PLN</option><option>EUR</option></select></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Als Büro nutzbar</label><input type="checkbox"/></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Tausch möglich</label><input type="checkbox"/></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Balkon</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Keller</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Garten</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Dachboden</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Stellplatz</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Einbauküche</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Möbliert</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button><button type="button" class="toggle-btn">Teilweise</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Haushaltsgeräte</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button><button type="button" class="toggle-btn">Teilweise</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl der Etagen</label><select><option>1</option><option>2</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Anzahl Badezimmer</label><select><option>1</option><option>2</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Badezimmerausstattung</label><select><option>Badewanne</option><option>Dusche</option><option>Bidet</option><option>Mit Fenster</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Technik der Bauweise</label><select><option>Neue Technologie</option><option>Traditionell / Ziegel</option><option>Großplatte</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Zustand der Installationen</label><select><option>Neu / Erneuert</option><option>Guter Zustand</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Nicht verlegt</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Fenster</label><select><option>Neu / Erneuert</option><option>Teilweise erneuert</option><option>Erneuerungsbedürftig</option><option>Historisch</option><option>Kunststoff</option><option>Holz</option><option>Aluminium</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px;">Heizungsart</label><select><option>Fernwärme</option><option>Eigenständig</option><option>Zentralheizung</option><option>Keine Heizung</option><option>Ofen</option><option>Kamin</option><option>Elektro</option><option>Gas</option><option>Öl</option><option>Andere</option></select></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Wasserzähler</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Klimaanlage</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Internet</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Kabel-TV</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Telefon</label><div style="display:flex; gap:0.5rem;"><button type="button" class="toggle-btn">Ja</button><button type="button" class="toggle-btn">Nein</button></div></div><div style='height: 1rem;'></div><div class="form-group" style="flex-direction: row; align-items: center; gap: 1rem;"><label style="min-width: 150px; display: inline-block;">Sicherheitsvorkehrungen</label>
 <div>
 <input type="checkbox"/> Sicherheitstür<br/>
 <input type="checkbox"/> Sicherheitsrollos<br/>
@@ -217,14 +274,110 @@
 
 
 <div class="form-section">
-  <h2>Fotos</h2>
+  <h2>Fotos hinzufügen</h2>
   <div class="form-group" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
-    <label for="file-upload" style="grid-column: 1 / -1; font-weight: 600;">Fotos hinzufügen</label>
+    
     <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
       <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
     </div>
-    <input type="file" id="file-upload" accept="image/*" multiple style="display: none;" onchange="previewPhotos(event)"/>
-  </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+    <div style="width: 100%; aspect-ratio: 1 / 1; border: 2px dashed #ccc; display: flex; justify-content: center; align-items: center; cursor: pointer;" onclick="document.getElementById('file-upload').click();">
+      <i class="fa-solid fa-camera" style="font-size: 2rem;"></i>
+    </div>
+
+<input type="file" id="file-upload" accept="image/*" multiple style="display: none;" onchange="previewPhotos(event)"/>
 </div>
 
 <div style="display: flex; gap: 1rem;">
