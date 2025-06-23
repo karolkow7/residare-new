@@ -181,3 +181,16 @@ body {
   height: 2.5rem;
   margin-left: auto;
 }
+
+
+/* Entfernt Spinner in Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Entfernt Spinner in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
