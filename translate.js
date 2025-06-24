@@ -1,56 +1,53 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-  const translations = {
-    de: {
-      "hero.dream": "Finden Sie Ihre Traumimmobilie in Polen",
-      "nav.home": "Start",
-      "nav.listings": "Angebote",
-      "nav.faq": "FAQ",
-      "nav.contact": "Kontakt",
-      "nav.impress": "Impressum",
-      "nav.agb": "AGB",
-      "nav.privacy": "Datenschutz",
-      "nav.favorites": "Favoriten",
-      "nav.post": "Inserieren",
-      "nav.login": "Einloggen",
-      "nav.blog": "Blog",
-      "hero.title": "Finden Sie Ihre Immobilie in Polen",
-      "hero.subtitle": "Grenzüberschreitend. Einfach. residare.",
-      "transaction.buy": "Kaufen",
-      "transaction.rent": "Mieten",
-      "property.flat": "Wohnung",
-      "property.house": "Haus",
-      "property.lokal": "Gewerbeeinheit",
-      "property.building": "Nutzgebäude",
-      "search.placeholder": "Ort oder Postleitzahl eingeben",
-      "search.button": "Suchen",
-      "regions.popular": "Beliebteste Regionen",
-      "regions.title": "Beliebteste Regionen",
-      "region.gdansk": "Danzig",
-      "region.swinemuende": "Swinemünde",
-      "region.misdroy": "Misdroy",
-      "why.title": "Warum residare?",
-      "why.one": "Verlässliche Partner in Deutschland und Polen",
-      "why.two": "Zweisprachige Abwicklung ohne Missverständnisse",
-      "why.three": "Unabhängig, bodenständig und leicht erreichbar",
-      "cta.title": "Jetzt unverbindlich Kontakt aufnehmen",
-      "cta.button": "Kontaktformular öffnen",
-      "contact.title": "Kontaktformular",
-      "contact.name": "Ihr Name",
-      "contact.email": "Ihre E-Mail",
-      "contact.message": "Nachricht",
-      "contact.send": "Absenden"
-    },
-    pl: {
+let currentLanguage = localStorage.getItem("lang") || "de";
+
+function updateLanguage() {
+  const lang = currentLanguage;
+  const dict = translations[lang] || {};
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const value = dict[key];
+    if (value) el.innerText = value;
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    const value = dict[key];
+    if (value) el.setAttribute("placeholder", value);
+  });
+
+  document.querySelectorAll("[data-i18n-title]").forEach(el => {
+    const key = el.getAttribute("data-i18n-title");
+    const value = dict[key];
+    if (value) el.setAttribute("title", value);
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach(el => {
+    const key = el.getAttribute("data-i18n-alt");
+    const value = dict[key];
+    if (value) el.setAttribute("alt", value);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.getElementById("language-select");
+  if (select) {
+    select.value = currentLanguage;
+    select.addEventListener("change", e => {
+      currentLanguage = e.target.value;
+      localStorage.setItem("lang", currentLanguage);
+      updateLanguage();
+    });
+  }
+  updateLanguage();
+});
+
+const translations = {
+  de: {},
+  pl: {
   "hero.title": "Znajdź swoją nieruchomość w Polsce",
   "hero.subtitle": "Ponad granicami. Prosto. Residare.",
-  "form.transaction.buy": "Kupno",
-  "form.transaction.rent": "Wynajem",
-  "form.property.flat": "Mieszkanie",
-  "form.property.house": "Dom",
-  "form.property.lokal": "Lokal użytkowy",
-  "form.property.building": "Budynek użytkowy",
-  "form.search.placeholder": "Miasto / dzielnica / ulica",
   "regions.title": "Najpopularniejsze regiony",
   "why.title": "Dlaczego Residare?",
   "why.one": "Transgraniczne podejście",
@@ -62,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
   "nav.listings": "Oferty",
   "nav.faq": "FAQ",
   "nav.contact": "Kontakt",
-  "nav.impress": "Impressum",
+  "nav.impress": "Nota prawna",
   "region.gdansk": "Gdańsk",
   "region.swinemuende": "Świnoujście",
   "region.misdroy": "Międzyzdroje",
@@ -102,10 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
   "type.building": "Budynek użytkowy",
   "type.room": "Pokój",
   "form.button_0": "☰",
-  "nav.favorites": "Favoriten",
-  "nav.post": "Inserieren",
+  "nav.favorites": "Ulubione",
+  "nav.post": "Dodaj ogłoszenie",
   "nav.blog": "Blog",
-  "nav.login": "Einloggen",
+  "nav.login": "Zaloguj się",
   "form.select_0.0": "🇩🇪",
   "form.select_0.1": "🇵🇱",
   "form.section_0": "Grunddaten",
@@ -277,50 +274,70 @@ document.addEventListener("DOMContentLoaded", function () {
   "form.section_2": "Fotos hinzufügen",
   "form.button_37": "Zapisz ogłoszenie",
   "form.button_38": "Später abschließen",
-  "nav.agb": "AGB",
-  "nav.privacy": "Datenschutz",
+  "nav.agb": "Regulamin",
+  "nav.privacy": "Polityka prywatności",
   "auto._2025_residare": "© 2025 Residare",
   "form.placeholder_z. b._danzig": "z. B. Danzig",
-  "form.placeholder_beschreibung_der_imm": "Beschreibung der Immobilie"
+  "form.placeholder_beschreibung_der_imm": "Beschreibung der Immobilie",
+  "auto.": "auto.",
+  "hero.dream": "hero.dream",
+  "listing.subtitle1": "listing.subtitle1",
+  "listing.subtitle2": "listing.subtitle2",
+  "listing.subtitle3": "listing.subtitle3",
+  "listing.title1": "listing.title1",
+  "listing.title2": "listing.title2",
+  "listing.title3": "listing.title3",
+  "login.create": "login.create",
+  "login.submit": "login.submit",
+  "login.title": "login.title",
+  "placeholder.form.placeholder_beschreibung_der_imm": "placeholder.form.placeholder_beschreibung_der_imm",
+  "placeholder.form.placeholder_z. b._danzig": "placeholder.form.placeholder_z. b._danzig",
+  "placeholder.search.area": "placeholder.search.area",
+  "placeholder.search.location": "placeholder.search.location",
+  "placeholder.search.price": "placeholder.search.price",
+  "placeholder.search.rooms": "placeholder.search.rooms",
+  "privacy.accessData": "privacy.accessData",
+  "privacy.accessData.text": "privacy.accessData.text",
+  "privacy.analytics": "privacy.analytics",
+  "privacy.analytics.text": "privacy.analytics.text",
+  "privacy.changes": "privacy.changes",
+  "privacy.changes.text": "privacy.changes.text",
+  "privacy.consent": "privacy.consent",
+  "privacy.consent.text": "privacy.consent.text",
+  "privacy.contactform": "privacy.contactform",
+  "privacy.contactform.text": "privacy.contactform.text",
+  "privacy.controller": "privacy.controller",
+  "privacy.controller.text": "privacy.controller.text",
+  "privacy.cookies": "privacy.cookies",
+  "privacy.cookies.text": "privacy.cookies.text",
+  "privacy.googlefonts": "privacy.googlefonts",
+  "privacy.googlefonts.text": "privacy.googlefonts.text",
+  "privacy.hosting": "privacy.hosting",
+  "privacy.hosting.text": "privacy.hosting.text",
+  "privacy.maps": "privacy.maps",
+  "privacy.maps.text": "privacy.maps.text",
+  "privacy.marketing": "privacy.marketing",
+  "privacy.marketing.text": "privacy.marketing.text",
+  "privacy.rights": "privacy.rights",
+  "privacy.rights.access": "privacy.rights.access",
+  "privacy.rights.contact": "privacy.rights.contact",
+  "privacy.rights.contact.text": "privacy.rights.contact.text",
+  "privacy.rights.deletion": "privacy.rights.deletion",
+  "privacy.rights.objection": "privacy.rights.objection",
+  "privacy.rights.portability": "privacy.rights.portability",
+  "privacy.rights.rectification": "privacy.rights.rectification",
+  "privacy.rights.restriction": "privacy.rights.restriction",
+  "privacy.title": "privacy.title",
+  "property.building": "Budynek użytkowy",
+  "property.flat": "Mieszkanie",
+  "property.house": "Dom",
+  "property.lokal": "Lokal użytkowy",
+  "search.button": "Szukaj",
+  "search.placeholder": "Miasto / dzielnica / ulica",
+  "search.save": "search.save",
+  "transaction.buy": "Kupno",
+  "transaction.rent": "Wynajem",
+  "thank.title": "",
+  "thank.message": ""
 }
-  };
-
-  function updateLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      const value = translations[lang]?.[key];
-      if (!value) return;
-
-      if (el.tagName === "OPTION" || el.tagName === "LABEL") {
-        el.textContent = value;
-      } else if (el.placeholder !== undefined) {
-        el.placeholder = value;
-      } else if (el.hasAttribute("title")) {
-        el.setAttribute("title", value);
-      } else if (el.hasAttribute("alt")) {
-        el.setAttribute("alt", value);
-      } else {
-        // Spezialsupport für <i>Symbole + Text
-        const icon = el.querySelector("i");
-        if (icon) {
-          el.innerHTML = icon.outerHTML + " " + value;
-        } else {
-          el.textContent = value;
-        }
-      }
-    });
-
-    document.querySelectorAll("[data-lang]").forEach(el => {
-      el.style.display = el.getAttribute("data-lang") === lang ? "" : "none";
-    });
-  }
-
-  const selector = document.getElementById("language-selector");
-  if (selector) {
-    selector.addEventListener("change", e => {
-      const lang = e.target.value;
-      updateLanguage(lang);
-    });
-    updateLanguage(selector.value || "de");
-  }
-});
+};
