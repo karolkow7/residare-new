@@ -293,25 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (el.tagName === "OPTION" || el.tagName === "LABEL") {
         el.textContent = value;
-      }
-    document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      const value = translations[lang]?.[key];
-      if (value) el.setAttribute("placeholder", value);
-    });
-
-    document.querySelectorAll("[data-i18n-title]").forEach(el => {
-      const key = el.getAttribute("data-i18n-title");
-      const value = translations[lang]?.[key];
-      if (value) el.setAttribute("title", value);
-    });
-
-    document.querySelectorAll("[data-i18n-alt]").forEach(el => {
-      const key = el.getAttribute("data-i18n-alt");
-      const value = translations[lang]?.[key];
-      if (value) el.setAttribute("alt", value);
-    });
-     else if (el.placeholder !== undefined) {
+      } else if (el.placeholder !== undefined) {
         el.placeholder = value;
       } else if (el.hasAttribute("title")) {
         el.setAttribute("title", value);
